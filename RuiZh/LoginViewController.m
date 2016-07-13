@@ -62,7 +62,7 @@
     //do net request check Userinfo
     
     [self checkLogin:self.namefield.text pwd:self.pwdfield.text ];
-//    [self doQuery];
+    [self doQuery];
     if (! [self.namefield.text isEqualToString:@"lihang"]) {
         [MBProgressHUD showError:@"账号不存在"];
         return;
@@ -103,27 +103,40 @@
 
 // 开始查询
 - (void)doQuery  {
-    NSMutableArray *result;
-        BaseServiceSoapOperation oper = []
-    
-//    ServiceSoap12Bingding *binding =[Service ServiceSoap];
-//    Service_Course *request = [[Service_Course alloc] init];
-//    ServiceSoap12BindingResponse *response = [binding CourseUsingParameters:request];
-//    for(id mine in response.bodyParts){
-//        if([mine isKindOfClass:[Service_CourseResponse class]])
-//        {
-//            [request  release];
-//            result = [mine CourseResult].CourseEntity;
-//        }
-//        for(Service_CourseEntity *t in result){
-//            NSLog(@"ID:%d ParentID:%d CourseName:%@ CoursePPT:%@ CourseVidio:%@",[t.CourseID intvalue],
-//                  [t.ParentID intvalue],t.CourseName,t.CoursePPT,t.CourseVidio
-//                  );
-//        }
-//    }
+//    IHelloWorldServiceBinding *binding = [IHelloWorldService IHelloWorldServiceBinding];
+    BaseServiceSoap * binding = [[BaseServiceSoap alloc] init];
+    binding.logXMLInOut = YES;
+    BaseServiceSvc_CheckUserLogin *checklogin =  [[BaseServiceSvc_CheckUserLogin new] autorelease];
+    checklogin.user = _namefield.text;
+    checklogin.pwd = _pwdfield.text;
+    [binding  CheckUserLoginAsyncUsingParameters:checklogin delegate:self];
 }
 - (void) operation:(BaseServiceSoapOperation *)operation completedWithResponse:(BaseServiceSoapResponse *)response{
     
+    
+    NSArray *responseHeaders = response.headers;
+    NSArray *responseBodyParts = response.bodyParts;
+    
+    for(id header in responseHeaders) {
+        // here do what you want with the headers, if there's anything of value in them
+    }
+    
+    for(id bodyPart in responseBodyParts) {
+        
+        if ([bodyPart isKindOfClass:[SOAPFault class]]) {
+            //
+            continue;
+        }
+        
+        if([bodyPart isKindOfClass:[BaseServiceSvc_CheckUserLoginResponse
+                                    class]]) {
+            BaseServiceSvc_CheckUserLoginResponse *body = (BaseServiceSvc_CheckUserLoginResponse*)bodyPart;
+            NSString *text = body.CheckUserLoginResult;
+              NSLog(@"this  is  CheckUserLoginResponse data: %@",text );
+//            mMessageTextView.text = [NSString stringWithFormat:@"%@\n%@", mMessageTextView.text, text];
+            continue;
+        }
+    }
     
 }
 @end
