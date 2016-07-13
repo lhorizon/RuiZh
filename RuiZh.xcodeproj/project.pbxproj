@@ -273,7 +273,6 @@
 		304395781D326DCD00824021 /* RuiZh */ = {
 			isa = PBXGroup;
 			children = (
-				306CFBC01D362C2E00465FC8 /* New Group */,
 				30A32E291D340B8A00C0EE0D /* Services */,
 				304396CC1D32A5FF00824021 /* MBProgressHUD-MJ-master */,
 				304395B01D32702400824021 /* res */,
@@ -462,13 +461,6 @@
 				304396D21D32A5FF00824021 /* README.md */,
 			);
 			path = "MBProgressHUD-MJ-master";
-			sourceTree = "<group>";
-		};
-		306CFBC01D362C2E00465FC8 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "New Group";
 			sourceTree = "<group>";
 		};
 		30A32E291D340B8A00C0EE0D /* Services */ = {

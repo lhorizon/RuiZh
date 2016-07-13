@@ -7,16 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseServiceSvc.h"
 
-@interface LoginViewController : UIViewController  <NSXMLParserDelegate,  NSURLConnectionDelegate>
+@interface LoginViewController : UIViewController  <BaseServiceSoapResponseDelegate>
 
-//soap  request
-@property (strong, nonatomic) NSMutableData *webData;
-@property (strong, nonatomic) NSMutableString *soapResults;
-@property (strong, nonatomic) NSXMLParser *xmlParser;
-@property (nonatomic) BOOL elementFound;
-@property (strong, nonatomic) NSString *matchingElement;
-@property (strong, nonatomic) NSURLConnection *conn;
-//soap  request
 
 @end
