@@ -80,6 +80,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_bg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="wVS-AC-EyR">
+                                <rect key="frame" x="0.0" y="72" width="414" height="300"/>
+                            </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eyx-bf-u6Q">
                                 <rect key="frame" x="86" y="396" width="242" height="217"/>
                                 <subviews>
@@ -104,10 +107,6 @@
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Iie-f1-lqt">
                                         <rect key="frame" x="7" y="2" width="73" height="100"/>
                                         <subviews>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h4x-QO-4PL">
-                                                <rect key="frame" x="0.0" y="0.0" width="73" height="100"/>
-                                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="15"/>
-                                            </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hotel.png" translatesAutoresizingMaskIntoConstraints="NO" id="rhR-Kn-oEG">
                                                 <rect key="frame" x="10" y="8" width="53" height="53"/>
                                             </imageView>
@@ -116,16 +115,19 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h4x-QO-4PL">
+                                                <rect key="frame" x="0.0" y="0.0" width="73" height="100"/>
+                                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="15"/>
+                                                <connections>
+                                                    <segue destination="fsJ-Pw-uah" kind="show" id="ncL-Qi-ayi"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q8G-da-hWc">
                                         <rect key="frame" x="85" y="2" width="73" height="100"/>
                                         <subviews>
-                                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lrf-Hi-KJ6">
-                                                <rect key="frame" x="0.0" y="0.0" width="73" height="100"/>
-                                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="15"/>
-                                            </button>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="报表" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHA-zY-86y">
                                                 <rect key="frame" x="0.0" y="71" width="73" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -134,6 +136,13 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tablet_char.png" translatesAutoresizingMaskIntoConstraints="NO" id="axu-L3-MiO">
                                                 <rect key="frame" x="10" y="10" width="53" height="53"/>
                                             </imageView>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lrf-Hi-KJ6">
+                                                <rect key="frame" x="0.0" y="0.0" width="73" height="100"/>
+                                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="15"/>
+                                                <connections>
+                                                    <segue destination="bUX-DQ-OHc" kind="show" id="3hN-Z4-Ftr"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
@@ -193,9 +202,6 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_bg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="wVS-AC-EyR">
-                                <rect key="frame" x="0.0" y="72" width="414" height="300"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -206,6 +212,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tJr-W6-bGA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="749" y="279"/>
+        </scene>
+        <!--房态管理-->
+        <scene sceneID="BDZ-ng-bEZ">
+            <objects>
+                <viewController id="fsJ-Pw-uah" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZEI-m6-cFs"/>
+                        <viewControllerLayoutGuide type="bottom" id="7Yj-jG-vqw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QwZ-AH-5CC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="SIv-QF-knU">
+                                <rect key="frame" x="0.0" y="72" width="414" height="29"/>
+                                <segments>
+                                    <segment title="实时房态"/>
+                                    <segment title="预测房态"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="房态管理" id="uDJ-It-ZAn">
+                        <barButtonItem key="backBarButtonItem" title=" " id="wx1-te-50C"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="MxQ-br-JOC"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pbD-Vd-ZO2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1322" y="-142"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oGg-OL-pE1">
@@ -223,6 +260,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pus-eK-SCK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-614" y="281"/>
+        </scene>
+        <!--统计分析-->
+        <scene sceneID="hFe-vL-cSg">
+            <objects>
+                <viewController id="bUX-DQ-OHc" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LD5-Ai-ibB"/>
+                        <viewControllerLayoutGuide type="bottom" id="zjT-7J-Iw4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="koB-LA-ISg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LJK-f3-mpB">
+                                <rect key="frame" x="0.0" y="72" width="414" height="29"/>
+                                <segments>
+                                    <segment title="营业简报"/>
+                                    <segment title="营业收入分析"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="统计分析" id="69F-V1-EXh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x3L-2O-8bm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1355" y="687"/>
         </scene>
     </scenes>
     <resources>
