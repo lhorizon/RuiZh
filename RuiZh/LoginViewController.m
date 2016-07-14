@@ -105,7 +105,9 @@
 - (void)doQuery  {
 //    IHelloWorldServiceBinding *binding = [IHelloWorldService IHelloWorldServiceBinding];
     BaseServiceSoap * binding = [[BaseServiceSoap alloc] init];
+    [binding initWithAddress:@"http://61.4.83.137/rzservice/RZHotelService.asmx"];
     binding.logXMLInOut = YES;
+    
     BaseServiceSvc_CheckUserLogin *checklogin =  [[BaseServiceSvc_CheckUserLogin new] autorelease];
     checklogin.user = _namefield.text;
     checklogin.pwd = _pwdfield.text;
