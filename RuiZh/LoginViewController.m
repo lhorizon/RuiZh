@@ -7,6 +7,7 @@
 //test github
 #import "LoginViewController.h"
 #import "MBProgressHUD+MJ.h"
+#import "NetUtil.h"
 
 #define UserNameKey @"name"
 #define PwdKey @"pwd"
@@ -62,12 +63,12 @@
     //do net request check Userinfo
     
     [self checkLogin:self.namefield.text pwd:self.pwdfield.text ];
-    [self doQuery];
-    if (! [self.namefield.text isEqualToString:@"lihang"]) {
+    [self getData];
+    if (! [self.namefield.text isEqualToString:@"000"]) {
         [MBProgressHUD showError:@"账号不存在"];
         return;
     }
-    if (! [self.pwdfield.text isEqualToString:@"123"]) {
+    if (! [self.pwdfield.text isEqualToString:@"888888"]) {
         [MBProgressHUD showError:@"password error"];
         return;
     }
@@ -101,12 +102,21 @@
 }
 
 
+//发起http 请求
+-(void) getData{
+    
+    NSString *urlStr=[NSString stringWithFormat:@"/CheckUserLogin?user=%@&pwd=%@",_namefield.text,_pwdfield.text];
+    NSURL *url=[NSURL URLWithString:urlStr];
+    [NetUtil doGetSync:urlStr];
+    
+}
+
 // 开始查询
 - (void)doQuery  {
 //    IHelloWorldServiceBinding *binding = [IHelloWorldService IHelloWorldServiceBinding];
     BaseServiceSoap * binding = [[BaseServiceSoap alloc] init];
     [binding initWithAddress:@"http://61.4.83.137/rzservice/RZHotelService.asmx"];
-    binding.logXMLInOut = YES;
+//    binding.logXMLInOut = YES;
     
     BaseServiceSvc_CheckUserLogin *checklogin =  [[BaseServiceSvc_CheckUserLogin new] autorelease];
     checklogin.user = _namefield.text;
@@ -134,7 +144,7 @@
                                     class]]) {
             BaseServiceSvc_CheckUserLoginResponse *body = (BaseServiceSvc_CheckUserLoginResponse*)bodyPart;
             NSString *text = body.CheckUserLoginResult;
-              NSLog(@"this  is  CheckUserLoginResponse data: %@",text );
+//              NSLog(@"this  is  CheckUserLoginResponse data: %@",text );
 //            mMessageTextView.text = [NSString stringWithFormat:@"%@\n%@", mMessageTextView.text, text];
             continue;
         }

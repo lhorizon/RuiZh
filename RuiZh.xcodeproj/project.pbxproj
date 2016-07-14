@@ -95,6 +95,7 @@
 		306CFBD01D362C6600465FC8 /* USAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 306CFBC81D362C6600465FC8 /* USAdditions.m */; };
 		306CFBD11D362C6600465FC8 /* USGlobals.m in Sources */ = {isa = PBXBuildFile; fileRef = 306CFBCA1D362C6600465FC8 /* USGlobals.m */; };
 		306CFBD21D362C6600465FC8 /* xsd.m in Sources */ = {isa = PBXBuildFile; fileRef = 306CFBCC1D362C6600465FC8 /* xsd.m */; };
+		306CFC2A1D37918800465FC8 /* NetUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 306CFC291D37918800465FC8 /* NetUtil.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -223,6 +224,8 @@
 		306CFBCA1D362C6600465FC8 /* USGlobals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = USGlobals.m; path = Service/USGlobals.m; sourceTree = "<group>"; };
 		306CFBCB1D362C6600465FC8 /* xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = xsd.h; path = Service/xsd.h; sourceTree = "<group>"; };
 		306CFBCC1D362C6600465FC8 /* xsd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = xsd.m; path = Service/xsd.m; sourceTree = "<group>"; };
+		306CFC281D37918800465FC8 /* NetUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetUtil.h; sourceTree = "<group>"; };
+		306CFC291D37918800465FC8 /* NetUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetUtil.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,6 +276,7 @@
 		304395781D326DCD00824021 /* RuiZh */ = {
 			isa = PBXGroup;
 			children = (
+				306CFBD31D376C2800465FC8 /* util */,
 				30A32E291D340B8A00C0EE0D /* Services */,
 				304396CC1D32A5FF00824021 /* MBProgressHUD-MJ-master */,
 				304395B01D32702400824021 /* res */,
@@ -461,6 +465,15 @@
 				304396D21D32A5FF00824021 /* README.md */,
 			);
 			path = "MBProgressHUD-MJ-master";
+			sourceTree = "<group>";
+		};
+		306CFBD31D376C2800465FC8 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				306CFC281D37918800465FC8 /* NetUtil.h */,
+				306CFC291D37918800465FC8 /* NetUtil.m */,
+			);
+			name = util;
 			sourceTree = "<group>";
 		};
 		30A32E291D340B8A00C0EE0D /* Services */ = {
@@ -694,6 +707,7 @@
 				306CFBCD1D362C6600465FC8 /* BaseServiceSvc.m in Sources */,
 				304396D61D32A5FF00824021 /* README.md in Sources */,
 				3043957B1D326DCD00824021 /* main.m in Sources */,
+				306CFC2A1D37918800465FC8 /* NetUtil.m in Sources */,
 				304396D51D32A5FF00824021 /* MBProgressHUD.m in Sources */,
 				306CFBD01D362C6600465FC8 /* USAdditions.m in Sources */,
 				306CFBD21D362C6600465FC8 /* xsd.m in Sources */,
@@ -829,6 +843,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/RuiZh/ATCommonLibrary",
+					"$(PROJECT_DIR)/RuiZh/util",
 				);
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_BUNDLE_IDENTIFIER = lihang.RuiZh;
@@ -849,6 +864,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/RuiZh/ATCommonLibrary",
+					"$(PROJECT_DIR)/RuiZh/util",
 				);
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_BUNDLE_IDENTIFIER = lihang.RuiZh;
