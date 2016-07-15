@@ -1,27 +1,29 @@
 //
-//  HomeViewController.m
+//  RoomStatusViewController.m
 //  RuiZh
 //
-//  Created by 行 on 16/7/10.
+//  Created by 行 on 16/7/15.
 //  Copyright © 2016年 lihang personal. All rights reserved.
 //
 
-#import "HomeViewController.h"
+#import "RoomStatusViewController.h"
 
-@interface HomeViewController ()
+@interface RoomStatusViewController ()
 
 @end
 
-@implementation HomeViewController
+@implementation RoomStatusViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+//    [MBProgressHUD showMessage:@"Loading..."];
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-
+    // Dispose of any resources that can be recreated.
 }
 
 /*

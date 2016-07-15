@@ -216,7 +216,7 @@
         <!--房态管理-->
         <scene sceneID="BDZ-ng-bEZ">
             <objects>
-                <viewController id="fsJ-Pw-uah" sceneMemberID="viewController">
+                <viewController id="fsJ-Pw-uah" customClass="RoomStatusViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZEI-m6-cFs"/>
                         <viewControllerLayoutGuide type="bottom" id="7Yj-jG-vqw"/>

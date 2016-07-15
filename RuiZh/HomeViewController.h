@@ -6,8 +6,7 @@
 //  Copyright © 2016年 lihang personal. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
+#import <UIKit/UIKit.h> 
 @interface HomeViewController : UIViewController
 
 @end

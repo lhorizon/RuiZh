@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BaseServiceSvc.h"
 
-@interface LoginViewController : UIViewController  <BaseServiceSoapResponseDelegate>
+@interface LoginViewController : UIViewController
 
 
 @end

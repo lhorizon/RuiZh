@@ -10,11 +10,10 @@
 
 @implementation NetUtil
 
-+(void) doGetSync:(NSString *) paramString{
-    [self doGetSync:defaultDomain paramString:paramString];
-    
++(NSDictionary *) doGetSync:(NSString *) paramString{
+    return [self doGetSync:defaultDomain paramString:paramString];
 }
-+(void) doGetSync :(NSString *)domain paramString:(NSString *) paramString{
++(NSDictionary *) doGetSync :(NSString *)domain paramString:(NSString *) paramString{
     //    1.设置请求路径
     NSString *urlStr=[domain stringByAppendingString:paramString ];
     NSURL *url=[NSURL URLWithString:urlStr];
@@ -25,14 +24,14 @@
     //    request.
     NSURLResponse * response = nil;
     NSError * error = nil;
-    NSData * data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-    if (error) {
-        NSLog(@"error: %@",[error localizedDescription]);
-    }else{
-        NSLog(@"response : %@",response);
-        NSLog(@"backData : %@",[[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding]);
-    }
+    NSData * data =  [NSData dataWithContentsOfURL:url];
+    GDataXMLDocument *doc = [[GDataXMLDocument alloc]initWithData:data options:GDataXMLInvalidKind error:&error];
+    GDataXMLElement *arr = [doc rootElement];
+    NSArray *names = [arr children];
+    GDataXMLElement *name = [names objectAtIndex:0];
     
+   NSLog(@"response data: %@",[name stringValue] );
+    return  [SystemUtil dictionaryWithJsonString:[name stringValue]];
 }
 +(void) doGetAsync{
     

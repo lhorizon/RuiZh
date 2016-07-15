@@ -64,36 +64,7 @@
     
     [self checkLogin:self.namefield.text pwd:self.pwdfield.text ];
     [self getData];
-    if (! [self.namefield.text isEqualToString:@"000"]) {
-        [MBProgressHUD showError:@"账号不存在"];
-        return;
-    }
-    if (! [self.pwdfield.text isEqualToString:@"888888"]) {
-        [MBProgressHUD showError:@"password error"];
-        return;
-    }
-    [MBProgressHUD showMessage:@"Loading..."];
-    
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2*NSEC_PER_SEC)) , dispatch_get_main_queue(),^{
-        [MBProgressHUD hideHUD];
-        [self performSegueWithIdentifier:@"LoginToHome" sender:nil];
-        
-    });
-    
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if(self.rembSwitch.isOn){
-        [defaults setObject:_namefield.text forKey:UserNameKey];
-        [defaults setObject:_pwdfield.text forKey:PwdKey];
-        [defaults setBool:_rembSwitch.isOn forKey:RembPwdKey];
-    }else{
-        [defaults setObject:@"" forKey:UserNameKey];
-        [defaults setObject:@"" forKey:PwdKey];
-        [defaults setBool:NO forKey:RembPwdKey];
-    }
-    [defaults synchronize];
-    
+  
 }
 - (void) checkLogin:(NSString *) user  pwd:(NSString *) pwd{
 //    NSL
@@ -104,51 +75,32 @@
 
 //发起http 请求
 -(void) getData{
-    
+    [MBProgressHUD showMessage:@"Loading..."];
     NSString *urlStr=[NSString stringWithFormat:@"/CheckUserLogin?user=%@&pwd=%@",_namefield.text,_pwdfield.text];
     NSURL *url=[NSURL URLWithString:urlStr];
-    [NetUtil doGetSync:urlStr];
-    
+    NSDictionary * data= [NetUtil doGetSync:urlStr];
+    [MBProgressHUD hideHUD];
+    if([[data valueForKey:@"Result"] isEqualToString:@"True"]) {
+         
+        [MBProgressHUD showSuccess:@"登录成功"];
+        [self performSegueWithIdentifier:@"LoginToHome" sender:nil];
+        
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        if(self.rembSwitch.isOn){
+            [defaults setObject:_namefield.text forKey:UserNameKey];
+            [defaults setObject:_pwdfield.text forKey:PwdKey];
+            [defaults setBool:_rembSwitch.isOn forKey:RembPwdKey];
+        }else{
+            [defaults setObject:@"" forKey:UserNameKey];
+            [defaults setObject:@"" forKey:PwdKey];
+            [defaults setBool:NO forKey:RembPwdKey];
+        }
+        [defaults synchronize];
+
+    }else{
+           [MBProgressHUD showError:@"登录失败"];
+    }
 }
 
-// 开始查询
-- (void)doQuery  {
-//    IHelloWorldServiceBinding *binding = [IHelloWorldService IHelloWorldServiceBinding];
-    BaseServiceSoap * binding = [[BaseServiceSoap alloc] init];
-    [binding initWithAddress:@"http://61.4.83.137/rzservice/RZHotelService.asmx"];
-//    binding.logXMLInOut = YES;
-    
-    BaseServiceSvc_CheckUserLogin *checklogin =  [[BaseServiceSvc_CheckUserLogin new] autorelease];
-    checklogin.user = _namefield.text;
-    checklogin.pwd = _pwdfield.text;
-    [binding  CheckUserLoginAsyncUsingParameters:checklogin delegate:self];
-}
-- (void) operation:(BaseServiceSoapOperation *)operation completedWithResponse:(BaseServiceSoapResponse *)response{
-    
-    
-    NSArray *responseHeaders = response.headers;
-    NSArray *responseBodyParts = response.bodyParts;
-    
-    for(id header in responseHeaders) {
-        // here do what you want with the headers, if there's anything of value in them
-    }
-    
-    for(id bodyPart in responseBodyParts) {
-        
-        if ([bodyPart isKindOfClass:[SOAPFault class]]) {
-            //
-            continue;
-        }
-        
-        if([bodyPart isKindOfClass:[BaseServiceSvc_CheckUserLoginResponse
-                                    class]]) {
-            BaseServiceSvc_CheckUserLoginResponse *body = (BaseServiceSvc_CheckUserLoginResponse*)bodyPart;
-            NSString *text = body.CheckUserLoginResult;
-//              NSLog(@"this  is  CheckUserLoginResponse data: %@",text );
-//            mMessageTextView.text = [NSString stringWithFormat:@"%@\n%@", mMessageTextView.text, text];
-            continue;
-        }
-    }
-    
-}
+ 
 @end

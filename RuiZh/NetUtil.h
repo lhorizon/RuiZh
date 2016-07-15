@@ -7,13 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "GDataXMLNode.h"
+#import "SystemUtil.h"
 
 #define  defaultDomain @"http://61.4.83.137/rzservice/RZHotelService.asmx"
 
 @interface NetUtil : NSObject
  
-+(void) doGetSync:(NSString *) paramString;
-+(void) doGetSync:(NSString *)domain paramString:(NSString *) paramString;
++(NSDictionary *) doGetSync:(NSString *) paramString;
++(NSDictionary *) doGetSync:(NSString *)domain paramString:(NSString *) paramString;
 + (void) doGetAsync;
 @end
