@@ -17,13 +17,34 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    [MBProgressHUD showMessage:@"Loading..."];
+    [MBProgressHUD showMessage:@"Loading..."];
 
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) loadStatusNow{
+    [MBProgressHUD showMessage:@"加载..."];
+    NSString *urlStr=@"/GetFormx";
+    NSURL *url=[NSURL URLWithString:urlStr];
+    NSDictionary * data= [NetUtil doGetSync:urlStr];
+    [MBProgressHUD hideHUD];
+    if([[data valueForKey:@"Result"] isEqualToString:@"True"]) {
+        
+        [MBProgressHUD showSuccess:@"获取成功"];
+         NSDictionary * floors= [data valueForKey:@"Data"];
+        for (id floor in floors){
+            NSDictionary * floorData= floors[floor];
+            NSString *floorId= [floorData valueForKey:@"floorid"];
+            NSDictionary *units = [floorData valueForKey:@"units"];
+        }
+    }else{
+        [MBProgressHUD showError:[data valueForKey:@"ErrMsg"] ];
+        
+    }
 }
 
 /*

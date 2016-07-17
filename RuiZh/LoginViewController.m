@@ -75,7 +75,7 @@
 
 //发起http 请求
 -(void) getData{
-    [MBProgressHUD showMessage:@"Loading..."];
+    [MBProgressHUD showMessage:@"加载..."];
     NSString *urlStr=[NSString stringWithFormat:@"/CheckUserLogin?user=%@&pwd=%@",_namefield.text,_pwdfield.text];
     NSURL *url=[NSURL URLWithString:urlStr];
     NSDictionary * data= [NetUtil doGetSync:urlStr];
@@ -102,5 +102,5 @@
     }
 }
 
- 
+
 @end
