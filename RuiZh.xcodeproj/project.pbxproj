@@ -88,6 +88,7 @@
 		304396D41D32A5FF00824021 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 304396CF1D32A5FF00824021 /* MBProgressHUD.bundle */; };
 		304396D51D32A5FF00824021 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 304396D11D32A5FF00824021 /* MBProgressHUD.m */; };
 		304396D61D32A5FF00824021 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 304396D21D32A5FF00824021 /* README.md */; };
+		3052796D1D3D34A4001E5F1C /* Roommodel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3052796C1D3D34A4001E5F1C /* Roommodel.m */; };
 		306CFC2A1D37918800465FC8 /* NetUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 306CFC291D37918800465FC8 /* NetUtil.m */; };
 		306CFC2D1D38C4FF00465FC8 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 306CFC2C1D38C4FF00465FC8 /* GDataXMLNode.m */; };
 		306CFC301D38CFD700465FC8 /* SystemUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 306CFC2F1D38CFD700465FC8 /* SystemUtil.m */; };
@@ -206,6 +207,8 @@
 		304396D01D32A5FF00824021 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		304396D11D32A5FF00824021 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		304396D21D32A5FF00824021 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		3052796B1D3D34A4001E5F1C /* Roommodel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Roommodel.h; sourceTree = "<group>"; };
+		3052796C1D3D34A4001E5F1C /* Roommodel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Roommodel.m; sourceTree = "<group>"; };
 		306CFC281D37918800465FC8 /* NetUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetUtil.h; sourceTree = "<group>"; };
 		306CFC291D37918800465FC8 /* NetUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetUtil.m; sourceTree = "<group>"; };
 		306CFC2B1D38C4FF00465FC8 /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
@@ -312,6 +315,8 @@
 			children = (
 				304396851D32A34300824021 /* UserModel.h */,
 				304396861D32A34300824021 /* UserModel.m */,
+				3052796B1D3D34A4001E5F1C /* Roommodel.h */,
+				3052796C1D3D34A4001E5F1C /* Roommodel.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -674,6 +679,7 @@
 				304396411D328CD800824021 /* HomeViewController.m in Sources */,
 				304396D31D32A5FF00824021 /* MBProgressHUD+MJ.m in Sources */,
 				306CFC301D38CFD700465FC8 /* SystemUtil.m in Sources */,
+				3052796D1D3D34A4001E5F1C /* Roommodel.m in Sources */,
 				304396871D32A34300824021 /* UserModel.m in Sources */,
 				304396D61D32A5FF00824021 /* README.md in Sources */,
 				3043957B1D326DCD00824021 /* main.m in Sources */,

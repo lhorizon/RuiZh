@@ -16,8 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [MBProgressHUD showMessage:@"Loading..."];
+    [self loadStatusNow];
+//    [MBProgressHUD showMessage:@"Loading..."];
 
 }
 
@@ -37,13 +37,12 @@
         [MBProgressHUD showSuccess:@"获取成功"];
          NSDictionary * floors= [data valueForKey:@"Data"];
         for (id floor in floors){
-            NSDictionary * floorData= floors[floor];
+            NSDictionary * floorData= floor;
             NSString *floorId= [floorData valueForKey:@"floorid"];
             NSDictionary *units = [floorData valueForKey:@"units"];
         }
     }else{
         [MBProgressHUD showError:[data valueForKey:@"ErrMsg"] ];
-        
     }
 }
 
