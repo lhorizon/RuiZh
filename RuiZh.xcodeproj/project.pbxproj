@@ -89,6 +89,8 @@
 		304396D51D32A5FF00824021 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 304396D11D32A5FF00824021 /* MBProgressHUD.m */; };
 		304396D61D32A5FF00824021 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 304396D21D32A5FF00824021 /* README.md */; };
 		3052796D1D3D34A4001E5F1C /* Roommodel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3052796C1D3D34A4001E5F1C /* Roommodel.m */; };
+		305279751D3E5661001E5F1C /* CollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 305279741D3E5661001E5F1C /* CollectionCell.xib */; };
+		305279781D3E57AC001E5F1C /* CollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 305279771D3E57AC001E5F1C /* CollectionCell.m */; };
 		306CFC2A1D37918800465FC8 /* NetUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 306CFC291D37918800465FC8 /* NetUtil.m */; };
 		306CFC2D1D38C4FF00465FC8 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 306CFC2C1D38C4FF00465FC8 /* GDataXMLNode.m */; };
 		306CFC301D38CFD700465FC8 /* SystemUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 306CFC2F1D38CFD700465FC8 /* SystemUtil.m */; };
@@ -209,6 +211,9 @@
 		304396D21D32A5FF00824021 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		3052796B1D3D34A4001E5F1C /* Roommodel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Roommodel.h; sourceTree = "<group>"; };
 		3052796C1D3D34A4001E5F1C /* Roommodel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Roommodel.m; sourceTree = "<group>"; };
+		305279741D3E5661001E5F1C /* CollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionCell.xib; sourceTree = "<group>"; };
+		305279761D3E57AC001E5F1C /* CollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionCell.h; sourceTree = "<group>"; };
+		305279771D3E57AC001E5F1C /* CollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionCell.m; sourceTree = "<group>"; };
 		306CFC281D37918800465FC8 /* NetUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetUtil.h; sourceTree = "<group>"; };
 		306CFC291D37918800465FC8 /* NetUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetUtil.m; sourceTree = "<group>"; };
 		306CFC2B1D38C4FF00465FC8 /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
@@ -267,6 +272,7 @@
 		304395781D326DCD00824021 /* RuiZh */ = {
 			isa = PBXGroup;
 			children = (
+				3052796E1D3E5606001E5F1C /* view */,
 				306CFBD31D376C2800465FC8 /* util */,
 				304396CC1D32A5FF00824021 /* MBProgressHUD-MJ-master */,
 				304395B01D32702400824021 /* res */,
@@ -461,6 +467,16 @@
 			path = "MBProgressHUD-MJ-master";
 			sourceTree = "<group>";
 		};
+		3052796E1D3E5606001E5F1C /* view */ = {
+			isa = PBXGroup;
+			children = (
+				305279741D3E5661001E5F1C /* CollectionCell.xib */,
+				305279761D3E57AC001E5F1C /* CollectionCell.h */,
+				305279771D3E57AC001E5F1C /* CollectionCell.m */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
 		306CFBD31D376C2800465FC8 /* util */ = {
 			isa = PBXGroup;
 			children = (
@@ -638,6 +654,7 @@
 				304396121D32702400824021 /* refresh_white.png in Resources */,
 				304395861D326DCD00824021 /* Assets.xcassets in Resources */,
 				304396321D32702400824021 /* app_movie.png in Resources */,
+				305279751D3E5661001E5F1C /* CollectionCell.xib in Resources */,
 				304396031D32702400824021 /* hotel.png in Resources */,
 				304396351D32702400824021 /* app_transfer.png in Resources */,
 				304396191D32702400824021 /* btn_login_press.png in Resources */,
@@ -677,6 +694,7 @@
 				306CFC391D38E20800465FC8 /* RoomStatusViewController.m in Sources */,
 				306CFC2D1D38C4FF00465FC8 /* GDataXMLNode.m in Sources */,
 				304396411D328CD800824021 /* HomeViewController.m in Sources */,
+				305279781D3E57AC001E5F1C /* CollectionCell.m in Sources */,
 				304396D31D32A5FF00824021 /* MBProgressHUD+MJ.m in Sources */,
 				306CFC301D38CFD700465FC8 /* SystemUtil.m in Sources */,
 				3052796D1D3D34A4001E5F1C /* Roommodel.m in Sources */,

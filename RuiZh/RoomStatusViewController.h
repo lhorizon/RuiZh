@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "SystemUtil.h"
+#import "CollectionCell.h"
 
-@interface RoomStatusViewController : UIViewController
-
+@interface RoomStatusViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate>
+ 
 @end
