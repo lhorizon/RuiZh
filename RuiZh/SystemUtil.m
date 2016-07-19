@@ -34,4 +34,55 @@
     
 }
 
++(NSString *)decimalToHex:(long long int)decimalStr
+{
+    NSString *nLetterValue;
+    NSString *str =@"";
+    long long int ttmpig;
+    for (int i = 0; i<9; i++) {
+        ttmpig=decimalStr%16;
+        decimalStr=decimalStr/16;
+        switch (ttmpig)
+        {
+            case 10:
+                nLetterValue =@"A";break;
+            case 11:
+                nLetterValue =@"B";break;
+            case 12:
+                nLetterValue =@"C";break;
+            case 13:
+                nLetterValue =@"D";break;
+            case 14:
+                nLetterValue =@"E";break;
+            case 15:
+                nLetterValue =@"F";break;
+            default:nLetterValue=[[NSString alloc]initWithFormat:@"%lli",ttmpig];
+                
+        }
+        str = [nLetterValue stringByAppendingString:str];
+        if (decimalStr == 0) {
+            break;  
+        }  
+        
+    }  
+    return str;  
+}
+
+// [self getColor:@"#FFFFFFFF"];
++(UIColor *) getColor:(NSString *)hexColor
+{
+    unsigned int alpha, red, green, blue;
+    NSRange range;
+    range.length =2;
+    
+    range.location =1;
+    [[NSScanner scannerWithString:[hexColor substringWithRange:range]]scanHexInt:&alpha];//透明度
+    range.location =3;
+    [[NSScanner scannerWithString:[hexColor substringWithRange:range]]scanHexInt:&red];
+    range.location =5;
+    [[NSScanner scannerWithString:[hexColor substringWithRange:range]]scanHexInt:&green];
+    range.location =7;
+    [[NSScanner scannerWithString:[hexColor substringWithRange:range]]scanHexInt:&blue];
+    return [UIColor colorWithRed:(float)(red/255.0f)green:(float)(green/255.0f)blue:(float)(blue/255.0f)alpha:(float)(alpha/255.0f)];
+}
 @end
