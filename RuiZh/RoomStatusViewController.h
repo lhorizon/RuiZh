@@ -10,6 +10,6 @@
 #import "SystemUtil.h"
 #import "CollectionCell.h"
 
-@interface RoomStatusViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate>
+@interface RoomStatusViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
  
 @end

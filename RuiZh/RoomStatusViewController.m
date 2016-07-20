@@ -17,10 +17,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _collectionView.delegate = self;
+    _collectionView.dataSource = self;
     [self loadStatusNow];
-    [self.collectionView registerClass:[CollectionCell class] forCellWithReuseIdentifier:@"CollectionCell"];
+    [self.collectionView setBackgroundColor:[UIColor lightGrayColor]];
 
-//    [MBProgressHUD showMessage:@"Loading..."];
+    [self.collectionView registerClass:[CollectionCell class] forCellWithReuseIdentifier:@"CollectionCell"];//    [MBProgressHUD showMessage:@"Loading..."];
 
 }
 
@@ -58,14 +60,21 @@
 }
 */
 
-
+#pragma mark -- UICollectionViewDataSource
 //每个section的item个数
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    NSUInteger * stats= [[[_data valueForKey:@"RoomStat"] indexPath:0] valueForKey:@"种类"];
-    return stats ;
+//    NSUInteger * stats= [[[_data valueForKey:@"RoomStat"] indexPath:0] valueForKey:@"种类"];
+    return 6 ;
 }
 
+////定义展示的Section的个数
+//-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+//{
+//    return 1;
+//}
+
+//每个UICollectionView展示的内容
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     
