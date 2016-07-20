@@ -12,6 +12,7 @@
 
 - (void)dealloc {
     [_textContent release];
+    [_typeDesc release];
     [super dealloc];
 }
 

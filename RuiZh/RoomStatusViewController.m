@@ -11,6 +11,9 @@
 @interface RoomStatusViewController ()
 @property (retain, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (retain,nonatomic)   NSDictionary * data;
+@property (retain,nonatomic)   NSDictionary * stat;
+@property (retain,nonatomic)   NSDictionary * statColor;
+
 @end
 
 @implementation RoomStatusViewController
@@ -21,7 +24,8 @@
     _collectionView.dataSource = self;
     [self loadStatusNow];
     [self.collectionView setBackgroundColor:[UIColor lightGrayColor]];
-
+//    [self.collectionView ];
+    
     [self.collectionView registerClass:[CollectionCell class] forCellWithReuseIdentifier:@"CollectionCell"];//    [MBProgressHUD showMessage:@"Loading..."];
 
 }
@@ -45,10 +49,46 @@
             NSDictionary *units = [floorData valueForKey:@"units"];
             NSUInteger * count=units.count;
         }
+        
+        [self initTypeList];
+
     }else{
         [MBProgressHUD showError:[_data valueForKey:@"ErrMsg"] ];
     }
 }
+
+//初始化种类列表
+-(void) initTypeList{
+    NSArray * stats = [_data valueForKey:@"RoomStat"];
+    NSArray * statsColor = [_data valueForKey:@"RoomLegend"];
+    _stat = [stats objectAtIndex:0];
+    _statColor = [statsColor objectAtIndex:0];
+    
+    [_odNum setText:[[_stat valueForKey:@"OD"] stringValue]];
+    [_orNum setText:[[_stat valueForKey:@"OR"] stringValue]];
+    [_vcNum setText:[[_stat valueForKey:@"VC"] stringValue]];
+    [_vdNum setText:[[_stat valueForKey:@"VD"] stringValue]];
+    [_vmNum setText:[[_stat valueForKey:@"VM"] stringValue]];
+    [_vrNum setText:[[_stat valueForKey:@"VR"] stringValue]];
+    
+//    NSString * decimalStr =  [_statColor valueForKey:@"LOD"] ;
+//    UIColor * lableColor = [SystemUtil getColorFromDecimal:decimalStr];
+//    [_odNum setBackgroundColor:lableColor];
+    
+//    
+//    [_odNum setBackgroundColor:[SystemUtil getColorFromDecimal:[[_statColor valueForKey:@"LOD"] stringValue]]];
+    [_odNum setBackgroundColor:[SystemUtil getColorFromDecimal:[_statColor valueForKey:@"LOD"]]];
+    [_orNum setBackgroundColor:[SystemUtil getColorFromDecimal:[_statColor valueForKey:@"LOR"]]];
+    [_vcNum setBackgroundColor:[SystemUtil getColorFromDecimal:[_statColor valueForKey:@"LVC"]]];
+    [_vdNum setBackgroundColor:[SystemUtil getColorFromDecimal:[_statColor valueForKey:@"LVD"]]];
+    [_vmNum setBackgroundColor:[SystemUtil getColorFromDecimal:[_statColor valueForKey:@"LVM"]]];
+    [_vrNum setBackgroundColor:[SystemUtil getColorFromDecimal:[_statColor valueForKey:@"LVR"]]];
+//
+    
+    NSString* typeCount = [_stat valueForKey:@"种类"];
+    [_roomCount setText:[[_stat valueForKey:@"合计"] stringValue]];
+}
+
 
 /*
 #pragma mark - Navigation
@@ -64,34 +104,38 @@
 //每个section的item个数
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-//    NSUInteger * stats= [[[_data valueForKey:@"RoomStat"] indexPath:0] valueForKey:@"种类"];
-    return 6 ;
+
+    
+//    [SystemUtil decimalToHex:]
+    return 6;
 }
 
 ////定义展示的Section的个数
-//-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
-//{
-//    return 1;
-//}
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 3;
+}
 
+
+#pragma mark --UICollectionViewDelegateFlowLayout
 //每个UICollectionView展示的内容
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     
     CollectionCell *cell = (CollectionCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"CollectionCell" forIndexPath:indexPath];
     
-//    //图片名称
-//    NSString *imageToLoad = [NSString stringWithFormat:@"%d.png", indexPath.row];
-//    //加载图片
-//    cell.imageView.image = [UIImage imageNamed:imageToLoad];
-//    //设置label文字
-//    cell.label.text = [NSString stringWithFormat:@"{%ld,%ld}",(long)indexPath.row,(long)indexPath.section];
-//    
     return cell;
 }
 
 - (void)dealloc {
     [_collectionView release];
+    [_vrNum release];
+    [_orNum release];
+    [_odNum release];
+    [_vdNum release];
+    [_vmNum release];
+    [_vcNum release];
+    [_roomCount release];
     [super dealloc];
 }
 @end

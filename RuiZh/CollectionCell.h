@@ -10,6 +10,7 @@
 
 @interface CollectionCell : UICollectionViewCell
 @property (retain, nonatomic) IBOutlet UITextView *textContent;
+@property (retain, nonatomic) IBOutlet UITextView *typeDesc;
 
 @end
 

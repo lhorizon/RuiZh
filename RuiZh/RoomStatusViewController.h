@@ -11,5 +11,12 @@
 #import "CollectionCell.h"
 
 @interface RoomStatusViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
- 
+@property (retain, nonatomic) IBOutlet UITextField *vrNum;
+@property (retain, nonatomic) IBOutlet UITextField *orNum;
+@property (retain, nonatomic) IBOutlet UITextField *odNum;
+@property (retain, nonatomic) IBOutlet UITextField *vdNum;
+@property (retain, nonatomic) IBOutlet UITextField *vmNum;
+@property (retain, nonatomic) IBOutlet UITextField *vcNum;
+@property (retain, nonatomic) IBOutlet UITextField *roomCount;
+
 @end

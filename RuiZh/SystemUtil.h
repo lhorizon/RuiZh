@@ -12,5 +12,6 @@
 
 @interface SystemUtil : NSObject
 
++(UIColor *) getColorFromDecimal:(NSString *)decimalString;
 + (NSDictionary *)dictionaryWithJsonString:(NSString *) jsonString;
 @end
