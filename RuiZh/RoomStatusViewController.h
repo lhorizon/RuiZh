@@ -18,5 +18,11 @@
 @property (retain, nonatomic) IBOutlet UITextField *vmNum;
 @property (retain, nonatomic) IBOutlet UITextField *vcNum;
 @property (retain, nonatomic) IBOutlet UITextField *roomCount;
+@property (retain, nonatomic) IBOutlet UIBarButtonItem *btnBack;
+@property (retain, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (retain,nonatomic)   NSDictionary * data;
+@property (retain,nonatomic)   NSDictionary * stat;
+@property (retain,nonatomic)   NSDictionary * statColor;
+- (IBAction)backAction:(id)sender;
 
 @end

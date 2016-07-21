@@ -8,11 +8,10 @@
 
 #import "RoomStatusViewController.h"
 
-@interface RoomStatusViewController ()
-@property (retain, nonatomic) IBOutlet UICollectionView *collectionView;
-@property (retain,nonatomic)   NSDictionary * data;
-@property (retain,nonatomic)   NSDictionary * stat;
-@property (retain,nonatomic)   NSDictionary * statColor;
+@interface RoomStatusViewController () 
+
+@property (retain,nonatomic)   NSDictionary * typeNameMap;
+@property (retain,nonatomic)   NSDictionary * typeColorMap;
 
 @end
 
@@ -26,8 +25,11 @@
     [self.collectionView setBackgroundColor:[UIColor lightGrayColor]];
 //    [self.collectionView ];
     
-    [self.collectionView registerClass:[CollectionCell class] forCellWithReuseIdentifier:@"CollectionCell"];//    [MBProgressHUD showMessage:@"Loading..."];
+    [self.collectionView registerClass:[CollectionCell class] forCellWithReuseIdentifier:@"CollectionCell"];
+    //    [MBProgressHUD showMessage:@"Loading..."];
 
+    _typeNameMap = [NSDictionary dictionaryWithObjectsAndKeys:@"空净",@"VR",@"住净",@"OR",@"住脏",@"OD",@"维修",@"VM",@"清扫",@"VC",@"空脏",@"VD",nil];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,12 +45,7 @@
     if([[_data valueForKey:@"Result"] isEqualToString:@"True"]) {
         
         [MBProgressHUD showSuccess:@"获取成功"];
-         NSDictionary * floors= [_data valueForKey:@"Data"];
-        for (id floor in floors){
-            NSDictionary * floorData= floor;
-            NSDictionary *units = [floorData valueForKey:@"units"];
-            NSUInteger * count=units.count;
-        }
+      
         
         [self initTypeList];
 
@@ -78,14 +75,14 @@
 //    
 //    [_odNum setBackgroundColor:[SystemUtil getColorFromDecimal:[[_statColor valueForKey:@"LOD"] stringValue]]];
     [_odNum setBackgroundColor:[SystemUtil getColorFromDecimal:[_statColor valueForKey:@"LOD"]]];
+    
     [_orNum setBackgroundColor:[SystemUtil getColorFromDecimal:[_statColor valueForKey:@"LOR"]]];
     [_vcNum setBackgroundColor:[SystemUtil getColorFromDecimal:[_statColor valueForKey:@"LVC"]]];
     [_vdNum setBackgroundColor:[SystemUtil getColorFromDecimal:[_statColor valueForKey:@"LVD"]]];
     [_vmNum setBackgroundColor:[SystemUtil getColorFromDecimal:[_statColor valueForKey:@"LVM"]]];
     [_vrNum setBackgroundColor:[SystemUtil getColorFromDecimal:[_statColor valueForKey:@"LVR"]]];
 //
-    
-    NSString* typeCount = [_stat valueForKey:@"种类"];
+     
     [_roomCount setText:[[_stat valueForKey:@"合计"] stringValue]];
 }
 
@@ -106,7 +103,6 @@
 {
 
     
-//    [SystemUtil decimalToHex:]
     return 6;
 }
 
@@ -128,14 +124,9 @@
 }
 
 - (void)dealloc {
-    [_collectionView release];
-    [_vrNum release];
-    [_orNum release];
-    [_odNum release];
-    [_vdNum release];
-    [_vmNum release];
-    [_vcNum release];
-    [_roomCount release];
     [super dealloc];
+}
+- (IBAction)backAction:(id)sender {
+         [self.navigationController popViewControllerAnimated:NO];
 }
 @end
