@@ -21,9 +21,7 @@
     [super viewDidLoad];
     _collectionView.delegate = self;
     _collectionView.dataSource = self;
-    [self loadStatusNow];
-    [self.collectionView setBackgroundColor:[UIColor lightGrayColor]];
-//    [self.collectionView ];
+    [self loadStatusNow];  
     
     [self.collectionView registerClass:[CollectionCell class] forCellWithReuseIdentifier:@"CollectionCell"];
     //    [MBProgressHUD showMessage:@"Loading..."];
@@ -68,20 +66,14 @@
     [_vmNum setText:[[_stat valueForKey:@"VM"] stringValue]];
     [_vrNum setText:[[_stat valueForKey:@"VR"] stringValue]];
     
-//    NSString * decimalStr =  [_statColor valueForKey:@"LOD"] ;
-//    UIColor * lableColor = [SystemUtil getColorFromDecimal:decimalStr];
-//    [_odNum setBackgroundColor:lableColor];
     
-//    
-//    [_odNum setBackgroundColor:[SystemUtil getColorFromDecimal:[[_statColor valueForKey:@"LOD"] stringValue]]];
     [_odNum setBackgroundColor:[SystemUtil getColorFromDecimal:[_statColor valueForKey:@"LOD"]]];
-    
     [_orNum setBackgroundColor:[SystemUtil getColorFromDecimal:[_statColor valueForKey:@"LOR"]]];
     [_vcNum setBackgroundColor:[SystemUtil getColorFromDecimal:[_statColor valueForKey:@"LVC"]]];
     [_vdNum setBackgroundColor:[SystemUtil getColorFromDecimal:[_statColor valueForKey:@"LVD"]]];
     [_vmNum setBackgroundColor:[SystemUtil getColorFromDecimal:[_statColor valueForKey:@"LVM"]]];
     [_vrNum setBackgroundColor:[SystemUtil getColorFromDecimal:[_statColor valueForKey:@"LVR"]]];
-//
+
      
     [_roomCount setText:[[_stat valueForKey:@"合计"] stringValue]];
 }
@@ -103,7 +95,7 @@
 {
 
     
-    return 6;
+    return 20;
 }
 
 ////定义展示的Section的个数
@@ -119,7 +111,8 @@
 {
     
     CollectionCell *cell = (CollectionCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"CollectionCell" forIndexPath:indexPath];
-    
+    cell.textContent.text = [NSString stringWithFormat:@"%ld",(long)indexPath.row]; ;
+    cell.typeDesc.text =@"heiehie";
     return cell;
 }
 

@@ -229,18 +229,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="SIv-QF-knU">
-                                <rect key="frame" x="7" y="72" width="400" height="29"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="400" id="241-8I-sJJ"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="实时房态"/>
-                                    <segment title="预测房态"/>
-                                </segments>
-                            </segmentedControl>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gFX-W1-XSo">
-                                <rect key="frame" x="37" y="115" width="341" height="601"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gFX-W1-XSo">
+                                <rect key="frame" x="37" y="135" width="341" height="593"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="house.png" translatesAutoresizingMaskIntoConstraints="NO" id="dnw-GS-7DX">
                                         <rect key="frame" x="0.0" y="17" width="67" height="54"/>
@@ -267,10 +257,10 @@ CQ
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Oga-LO-rzB">
-                                        <rect key="frame" x="4" y="79" width="333" height="54"/>
+                                        <rect key="frame" x="0.0" y="79" width="337" height="54"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FHE-Ec-tLb">
-                                                <rect key="frame" x="13" y="5" width="44" height="43"/>
+                                                <rect key="frame" x="17" y="5" width="44" height="43"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="空净" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bwI-Qb-SwE">
                                                         <rect key="frame" x="0.0" y="18" width="44" height="30"/>
@@ -287,7 +277,7 @@ CQ
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7oC-dH-bxO">
-                                                <rect key="frame" x="65" y="5" width="44" height="43"/>
+                                                <rect key="frame" x="69" y="5" width="44" height="43"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="住净" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JU8-vd-jYU">
                                                         <rect key="frame" x="0.0" y="18" width="44" height="30"/>
@@ -304,7 +294,7 @@ CQ
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="etf-ns-bE2">
-                                                <rect key="frame" x="117" y="5" width="44" height="43"/>
+                                                <rect key="frame" x="121" y="5" width="44" height="43"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="住脏" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7wj-l4-ZCX">
                                                         <rect key="frame" x="0.0" y="18" width="44" height="30"/>
@@ -321,7 +311,7 @@ CQ
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BUI-dS-lVE">
-                                                <rect key="frame" x="169" y="5" width="44" height="43"/>
+                                                <rect key="frame" x="173" y="5" width="44" height="43"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="空脏" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HwL-Jg-Kkg">
                                                         <rect key="frame" x="0.0" y="18" width="44" height="30"/>
@@ -338,7 +328,7 @@ CQ
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="enX-yV-Iuz">
-                                                <rect key="frame" x="221" y="5" width="44" height="43"/>
+                                                <rect key="frame" x="225" y="5" width="44" height="43"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="维修" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="caM-Cb-g5Q">
                                                         <rect key="frame" x="0.0" y="18" width="44" height="30"/>
@@ -355,7 +345,7 @@ CQ
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qTp-MN-5lP">
-                                                <rect key="frame" x="273" y="5" width="44" height="43"/>
+                                                <rect key="frame" x="277" y="5" width="44" height="43"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="清扫" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jlk-pG-rFW">
                                                         <rect key="frame" x="0.0" y="18" width="44" height="30"/>
@@ -372,19 +362,11 @@ CQ
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.92642873525619507" green="0.86928325891494751" blue="0.64199262857437134" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.97230952978134155" green="0.97483068704605103" blue="0.92521828413009644" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="999" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zue-yh-9pi">
-                                        <rect key="frame" x="81" y="17" width="97" height="30"/>
-                                        <string key="placeholder" base64-UTF8="YES">
-CQ
-</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HFl-K7-9Ff">
-                                        <rect key="frame" x="0.0" y="147" width="341" height="163"/>
-                                        <color key="backgroundColor" red="0.016896601766347885" green="0.1973915696144104" blue="0.99737316370010376" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <rect key="frame" x="0.0" y="147" width="341" height="454"/>
+                                        <color key="backgroundColor" red="0.98802918195724487" green="0.99136847257614136" blue="0.96844393014907837" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="dKJ-fa-fMy">
                                             <size key="itemSize" width="50" height="50"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -414,6 +396,14 @@ CQ
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="999" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zue-yh-9pi">
+                                        <rect key="frame" x="81" y="17" width="97" height="30"/>
+                                        <string key="placeholder" base64-UTF8="YES">
+CQ
+</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -425,6 +415,16 @@ CQ
                                 </constraints>
                                 <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                             </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="SIv-QF-knU">
+                                <rect key="frame" x="7" y="110" width="400" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="400" id="241-8I-sJJ"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="实时房态"/>
+                                    <segment title="预测房态"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
