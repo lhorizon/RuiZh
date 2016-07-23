@@ -142,7 +142,19 @@
 //    [selfupdateCollectionViewCellStatus:cell selected:YES];
     
     NSDictionary * item = [[[self.floors objectAtIndex:indexPath.section] valueForKey:@"units"] objectAtIndex:indexPath.row];
-    
+    NSString* currentStatusDesc =[[[[[item valueForKey:@"rom"] stringByAppendingString:[item valueForKey:@"typ"]] stringByAppendingString:@"\n"]stringByAppendingString:[self.typeNameMap valueForKey:[item valueForKey:@"sta"]]]  stringByAppendingString:@"\n"];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:currentStatusDesc message:@" sure reset?" preferredStyle:UIAlertControllerStyleActionSheet];
+    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [self.navigationController popViewControllerAnimated:NO];
+    }]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [self.navigationController popViewControllerAnimated:NO];
+    }]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [self.navigationController popViewControllerAnimated:NO];
+    }]];
+    [self presentViewController:alert animated:YES completion:NULL];
     NSLog(@" cell item is section: %ld  row:%ld",(long)indexPath.section , (long)indexPath.row);
 }
 
