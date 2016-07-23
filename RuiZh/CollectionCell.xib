@@ -14,20 +14,23 @@
                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="42" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SS9-d9-u2j">
-                        <rect key="frame" x="0.0" y="-5" width="50" height="36"/>
-                        <color key="backgroundColor" red="0.91886651515960693" green="0.83724957704544067" blue="0.26131001114845276" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                    </textView>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="空净" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gG8-Or-sDX">
-                        <rect key="frame" x="0.0" y="20" width="50" height="30"/>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="空净" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gG8-Or-sDX">
+                        <rect key="frame" x="0.0" y="25" width="50" height="30"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="42" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="SS9-d9-u2j">
+                        <rect key="frame" x="0.0" y="-5" width="50" height="32"/>
+                        <color key="backgroundColor" red="0.91886651515960693" green="0.83724957704544067" blue="0.26131001114845276" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aIn-Cd-yvA">
+                        <rect key="frame" x="-95" y="-33" width="240" height="128"/>
+                    </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>

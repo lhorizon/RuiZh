@@ -19,12 +19,13 @@
     [super viewDidLoad];
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
-    [self loadStatusNow];  
-    
+    self.collectionView.allowsSelection = true;
+    self.typeNameMap = [NSDictionary dictionaryWithObjectsAndKeys:@"空净",@"VR",@"住净",@"OR",@"住脏",@"OD",@"维修",@"VM",@"清扫",@"VC",@"空脏",@"VD",nil];
+
     [self.collectionView registerClass:[CollectionCell class] forCellWithReuseIdentifier:@"CollectionCell"];
+    [self loadStatusNow];
     //    [MBProgressHUD showMessage:@"Loading..."];
 
-    self.typeNameMap = [NSDictionary dictionaryWithObjectsAndKeys:@"空净",@"VR",@"住净",@"OR",@"住脏",@"OD",@"维修",@"VM",@"清扫",@"VC",@"空脏",@"VD",nil];
     
 }
 
@@ -127,9 +128,24 @@
     cell.typeDesc.backgroundColor = bgColor;
     cell.typeDesc.textColor = [UIColor whiteColor];
     cell.textContent.textColor = [UIColor whiteColor];
+    cell.textContent.selectable = true;
+    cell.typeDesc.selectable = true;
+    
+//    cell.backgroundView pressesBegan:<#(nonnull NSSet<UIPress *> *)#> withEvent:<#(nullable UIPressesEvent *)#>
+    
     return cell;
 }
- 
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+//    MyCollectionViewCell *cell = (MyCollectionViewCell *)[self collectionView:collectionView cellForItemAtIndexPath:indexPath];
+//    
+//    [selfupdateCollectionViewCellStatus:cell selected:YES];
+    
+    NSDictionary * item = [[[self.floors objectAtIndex:indexPath.section] valueForKey:@"units"] objectAtIndex:indexPath.row];
+    
+    NSLog(@" cell item is section: %ld  row:%ld",(long)indexPath.section , (long)indexPath.row);
+}
+
 - (IBAction)backAction:(id)sender {
          [self.navigationController popViewControllerAnimated:NO];
 }
