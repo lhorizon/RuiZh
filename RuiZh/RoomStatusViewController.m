@@ -10,8 +10,6 @@
 
 @interface RoomStatusViewController () 
 
-@property (retain,nonatomic)   NSDictionary * typeNameMap;
-@property (retain,nonatomic)   NSDictionary * typeColorMap;
 
 @end
 
@@ -56,9 +54,10 @@
 -(void) initTypeList{
     NSArray * stats = [_data valueForKey:@"RoomStat"];
     NSArray * statsColor = [_data valueForKey:@"RoomLegend"];
+    _floors = [_data valueForKey:@"Data"];
     _stat = [stats objectAtIndex:0];
     _statColor = [statsColor objectAtIndex:0];
-    
+    [self dealColorMap];
     [_odNum setText:[[_stat valueForKey:@"OD"] stringValue]];
     [_orNum setText:[[_stat valueForKey:@"OR"] stringValue]];
     [_vcNum setText:[[_stat valueForKey:@"VC"] stringValue]];
@@ -67,17 +66,25 @@
     [_vrNum setText:[[_stat valueForKey:@"VR"] stringValue]];
     
     
-    [_odNum setBackgroundColor:[SystemUtil getColorFromDecimal:[_statColor valueForKey:@"LOD"]]];
-    [_orNum setBackgroundColor:[SystemUtil getColorFromDecimal:[_statColor valueForKey:@"LOR"]]];
-    [_vcNum setBackgroundColor:[SystemUtil getColorFromDecimal:[_statColor valueForKey:@"LVC"]]];
-    [_vdNum setBackgroundColor:[SystemUtil getColorFromDecimal:[_statColor valueForKey:@"LVD"]]];
-    [_vmNum setBackgroundColor:[SystemUtil getColorFromDecimal:[_statColor valueForKey:@"LVM"]]];
-    [_vrNum setBackgroundColor:[SystemUtil getColorFromDecimal:[_statColor valueForKey:@"LVR"]]];
+    [_odNum setBackgroundColor:[_typeColorMap valueForKey:@"LOD"]];
+    [_orNum setBackgroundColor:[_typeColorMap valueForKey:@"LOR"]];
+    [_vcNum setBackgroundColor:[_typeColorMap valueForKey:@"LVC"]];
+    [_vdNum setBackgroundColor:[_typeColorMap valueForKey:@"LVD"]];
+    [_vmNum setBackgroundColor:[_typeColorMap valueForKey:@"LVM"]];
+    [_vrNum setBackgroundColor:[_typeColorMap valueForKey:@"LVR"]];
 
      
     [_roomCount setText:[[_stat valueForKey:@"合计"] stringValue]];
 }
 
+- (void) dealColorMap{
+    _typeColorMap  = [NSMutableDictionary dictionary];
+    NSArray* allKeys= [_statColor allKeys];
+    for (id key in allKeys) {
+        [_typeColorMap  setObject:[SystemUtil getColorFromDecimal:[_statColor valueForKey:key]] forKey:key];
+    }
+    
+}
 
 /*
 #pragma mark - Navigation
@@ -93,15 +100,15 @@
 //每个section的item个数
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-
+    NSArray* units = [[_floors objectAtIndex:section ] valueForKey:@"units"];
     
-    return 20;
+    return [units count];
 }
 
 ////定义展示的Section的个数
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
-{
-    return 3;
+{   NSArray * data =[_data valueForKey:@"Data"];
+    return    [data count];
 }
 
 
@@ -109,16 +116,18 @@
 //每个UICollectionView展示的内容
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    NSDictionary * item = [[[_floors objectAtIndex:indexPath.section] valueForKey:@"units"] objectAtIndex:indexPath.row];
+    NSString* romNum= [item valueForKey:@"rom"];
+    NSString * status = [_typeNameMap valueForKey:[item valueForKey:@"sta"]];
+    UIColor * bgColor = [_typeColorMap valueForKey: [@"L" stringByAppendingString:[item valueForKey:@"sta"]]];
     CollectionCell *cell = (CollectionCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"CollectionCell" forIndexPath:indexPath];
-    cell.textContent.text = [NSString stringWithFormat:@"%ld",(long)indexPath.row]; ;
-    cell.typeDesc.text =@"heiehie";
+    cell.textContent.text = romNum; ;
+    cell.typeDesc.text =status;
+    cell.textContent.backgroundColor  = bgColor;
+    cell.typeDesc.backgroundColor = bgColor;
     return cell;
 }
-
-- (void)dealloc {
-    [super dealloc];
-}
+ 
 - (IBAction)backAction:(id)sender {
          [self.navigationController popViewControllerAnimated:NO];
 }

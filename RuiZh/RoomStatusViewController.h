@@ -25,4 +25,7 @@
 @property (retain,nonatomic)   NSDictionary * statColor;
 - (IBAction)backAction:(id)sender;
 
+@property (retain,nonatomic)   NSDictionary * typeNameMap;
+@property (retain,nonatomic)   NSMutableDictionary * typeColorMap;
+@property (retain,nonatomic)   NSArray * floors;
 @end
