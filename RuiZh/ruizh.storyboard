@@ -229,6 +229,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="SIv-QF-knU">
+                                <rect key="frame" x="7" y="110" width="400" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="400" id="241-8I-sJJ"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="实时房态"/>
+                                    <segment title="预测房态"/>
+                                </segments>
+                            </segmentedControl>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gFX-W1-XSo">
                                 <rect key="frame" x="37" y="135" width="341" height="593"/>
                                 <subviews>
@@ -419,16 +429,6 @@ CQ
                                 </constraints>
                                 <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                             </view>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="SIv-QF-knU">
-                                <rect key="frame" x="7" y="110" width="400" height="29"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="400" id="241-8I-sJJ"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="实时房态"/>
-                                    <segment title="预测房态"/>
-                                </segments>
-                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>

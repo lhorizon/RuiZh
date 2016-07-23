@@ -142,9 +142,9 @@
 //    [selfupdateCollectionViewCellStatus:cell selected:YES];
     
     NSDictionary * item = [[[self.floors objectAtIndex:indexPath.section] valueForKey:@"units"] objectAtIndex:indexPath.row];
-    NSString* currentStatusDesc =[[[[[item valueForKey:@"rom"] stringByAppendingString:[item valueForKey:@"typ"]] stringByAppendingString:@"\n"]stringByAppendingString:[self.typeNameMap valueForKey:[item valueForKey:@"sta"]]]  stringByAppendingString:@"\n"];
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:currentStatusDesc message:@" sure reset?" preferredStyle:UIAlertControllerStyleActionSheet];
-    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
+    NSString* currentStatusDesc = [NSString stringWithFormat:@"房间号:%@－%@\n当前状态:%@\n",[item valueForKey:@"rom"],[item valueForKey:@"typ"],[self.typeNameMap valueForKey:[item valueForKey:@"sta"]]];
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:currentStatusDesc message:@"请选择要修改的房态类型" preferredStyle:UIAlertControllerStyleActionSheet];
     [alert addAction:[UIAlertAction actionWithTitle:@"ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         [self.navigationController popViewControllerAnimated:NO];
     }]];
@@ -154,6 +154,8 @@
     [alert addAction:[UIAlertAction actionWithTitle:@"ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         [self.navigationController popViewControllerAnimated:NO];
     }]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDestructive handler:nil]];
+   
     [self presentViewController:alert animated:YES completion:NULL];
     NSLog(@" cell item is section: %ld  row:%ld",(long)indexPath.section , (long)indexPath.row);
 }
