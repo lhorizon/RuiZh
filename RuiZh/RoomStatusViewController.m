@@ -17,14 +17,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _collectionView.delegate = self;
-    _collectionView.dataSource = self;
+    self.collectionView.delegate = self;
+    self.collectionView.dataSource = self;
     [self loadStatusNow];  
     
     [self.collectionView registerClass:[CollectionCell class] forCellWithReuseIdentifier:@"CollectionCell"];
     //    [MBProgressHUD showMessage:@"Loading..."];
 
-    _typeNameMap = [NSDictionary dictionaryWithObjectsAndKeys:@"空净",@"VR",@"住净",@"OR",@"住脏",@"OD",@"维修",@"VM",@"清扫",@"VC",@"空脏",@"VD",nil];
+    self.typeNameMap = [NSDictionary dictionaryWithObjectsAndKeys:@"空净",@"VR",@"住净",@"OR",@"住脏",@"OD",@"维修",@"VM",@"清扫",@"VC",@"空脏",@"VD",nil];
     
 }
 
@@ -36,9 +36,9 @@
 - (void) loadStatusNow{
     [MBProgressHUD showMessage:@"加载..."];
     NSString *urlStr=@"/GetFormx";
-    _data= [NetUtil doGetSync:urlStr];
+    self.data= [NetUtil doGetSync:urlStr];
     [MBProgressHUD hideHUD];
-    if([[_data valueForKey:@"Result"] isEqualToString:@"True"]) {
+    if([[self.data valueForKey:@"Result"] isEqualToString:@"True"]) {
         
         [MBProgressHUD showSuccess:@"获取成功"];
       
@@ -46,42 +46,42 @@
         [self initTypeList];
 
     }else{
-        [MBProgressHUD showError:[_data valueForKey:@"ErrMsg"] ];
+        [MBProgressHUD showError:[self.data valueForKey:@"ErrMsg"] ];
     }
 }
 
 //初始化种类列表
 -(void) initTypeList{
-    NSArray * stats = [_data valueForKey:@"RoomStat"];
-    NSArray * statsColor = [_data valueForKey:@"RoomLegend"];
-    _floors = [_data valueForKey:@"Data"];
-    _stat = [stats objectAtIndex:0];
-    _statColor = [statsColor objectAtIndex:0];
+    NSArray * stats = [self.data valueForKey:@"RoomStat"];
+    NSArray * statsColor = [self.data valueForKey:@"RoomLegend"];
+    self.floors = [self.data valueForKey:@"Data"];
+    self.stat = [stats objectAtIndex:0];
+    self.statColor = [statsColor objectAtIndex:0];
     [self dealColorMap];
-    [_odNum setText:[[_stat valueForKey:@"OD"] stringValue]];
-    [_orNum setText:[[_stat valueForKey:@"OR"] stringValue]];
-    [_vcNum setText:[[_stat valueForKey:@"VC"] stringValue]];
-    [_vdNum setText:[[_stat valueForKey:@"VD"] stringValue]];
-    [_vmNum setText:[[_stat valueForKey:@"VM"] stringValue]];
-    [_vrNum setText:[[_stat valueForKey:@"VR"] stringValue]];
+    [self.odNum setText:[[self.stat valueForKey:@"OD"] stringValue]];
+    [self.orNum setText:[[self.stat valueForKey:@"OR"] stringValue]];
+    [self.vcNum setText:[[self.stat valueForKey:@"VC"] stringValue]];
+    [self.vdNum setText:[[self.stat valueForKey:@"VD"] stringValue]];
+    [self.vmNum setText:[[self.stat valueForKey:@"VM"] stringValue]];
+    [self.vrNum setText:[[self.stat valueForKey:@"VR"] stringValue]];
     
     
-    [_odNum setBackgroundColor:[_typeColorMap valueForKey:@"LOD"]];
-    [_orNum setBackgroundColor:[_typeColorMap valueForKey:@"LOR"]];
-    [_vcNum setBackgroundColor:[_typeColorMap valueForKey:@"LVC"]];
-    [_vdNum setBackgroundColor:[_typeColorMap valueForKey:@"LVD"]];
-    [_vmNum setBackgroundColor:[_typeColorMap valueForKey:@"LVM"]];
-    [_vrNum setBackgroundColor:[_typeColorMap valueForKey:@"LVR"]];
+    [self.odNum setBackgroundColor:[self.typeColorMap valueForKey:@"LOD"]];
+    [self.orNum setBackgroundColor:[self.typeColorMap valueForKey:@"LOR"]];
+    [self.vcNum setBackgroundColor:[self.typeColorMap valueForKey:@"LVC"]];
+    [self.vdNum setBackgroundColor:[self.typeColorMap valueForKey:@"LVD"]];
+    [self.vmNum setBackgroundColor:[self.typeColorMap valueForKey:@"LVM"]];
+    [self.vrNum setBackgroundColor:[self.typeColorMap valueForKey:@"LVR"]];
 
      
-    [_roomCount setText:[[_stat valueForKey:@"合计"] stringValue]];
+    [self.roomCount setText:[[self.stat valueForKey:@"合计"] stringValue]];
 }
 
 - (void) dealColorMap{
-    _typeColorMap  = [NSMutableDictionary dictionary];
-    NSArray* allKeys= [_statColor allKeys];
+    self.typeColorMap  = [NSMutableDictionary dictionary];
+    NSArray* allKeys= [self.statColor allKeys];
     for (id key in allKeys) {
-        [_typeColorMap  setObject:[SystemUtil getColorFromDecimal:[_statColor valueForKey:key]] forKey:key];
+        [self.typeColorMap  setObject:[SystemUtil getColorFromDecimal:[self.statColor valueForKey:key]] forKey:key];
     }
     
 }
@@ -100,14 +100,14 @@
 //每个section的item个数
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    NSArray* units = [[_floors objectAtIndex:section ] valueForKey:@"units"];
+    NSArray* units = [[self.floors objectAtIndex:section ] valueForKey:@"units"];
     
     return [units count];
 }
 
 ////定义展示的Section的个数
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
-{   NSArray * data =[_data valueForKey:@"Data"];
+{   NSArray * data =[self.data valueForKey:@"Data"];
     return    [data count];
 }
 
@@ -116,15 +116,17 @@
 //每个UICollectionView展示的内容
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSDictionary * item = [[[_floors objectAtIndex:indexPath.section] valueForKey:@"units"] objectAtIndex:indexPath.row];
+    NSDictionary * item = [[[self.floors objectAtIndex:indexPath.section] valueForKey:@"units"] objectAtIndex:indexPath.row];
     NSString* romNum= [item valueForKey:@"rom"];
-    NSString * status = [_typeNameMap valueForKey:[item valueForKey:@"sta"]];
-    UIColor * bgColor = [_typeColorMap valueForKey: [@"L" stringByAppendingString:[item valueForKey:@"sta"]]];
+    NSString * status = [self.typeNameMap valueForKey:[item valueForKey:@"sta"]];
+    UIColor * bgColor = [self.typeColorMap valueForKey: [@"L" stringByAppendingString:[item valueForKey:@"sta"]]];
     CollectionCell *cell = (CollectionCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"CollectionCell" forIndexPath:indexPath];
     cell.textContent.text = romNum; ;
     cell.typeDesc.text =status;
     cell.textContent.backgroundColor  = bgColor;
     cell.typeDesc.backgroundColor = bgColor;
+    cell.typeDesc.textColor = [UIColor whiteColor];
+    cell.textContent.textColor = [UIColor whiteColor];
     return cell;
 }
  

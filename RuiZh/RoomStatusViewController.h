@@ -27,5 +27,5 @@
 
 @property (retain,nonatomic)   NSDictionary * typeNameMap;
 @property (retain,nonatomic)   NSMutableDictionary * typeColorMap;
-@property (retain,nonatomic)   NSArray * floors;
+@property (nonatomic,strong)   NSMutableArray * floors;
 @end
