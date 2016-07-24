@@ -229,7 +229,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="SIv-QF-knU">
+                            <segmentedControl contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="SIv-QF-knU">
                                 <rect key="frame" x="7" y="110" width="400" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="400" id="241-8I-sJJ"/>
@@ -239,7 +239,7 @@
                                     <segment title="预测房态"/>
                                 </segments>
                             </segmentedControl>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gFX-W1-XSo">
+                            <view hidden="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gFX-W1-XSo">
                                 <rect key="frame" x="37" y="135" width="341" height="593"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="house.png" translatesAutoresizingMaskIntoConstraints="NO" id="dnw-GS-7DX">
@@ -429,13 +429,55 @@ CQ
                                 </constraints>
                                 <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                             </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Loo-0K-wKX">
+                                <rect key="frame" x="36" y="146" width="341" height="582"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cwR-Qa-Omk">
+                                        <rect key="frame" x="-8" y="0.0" width="341" height="64"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="起始日期:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sKy-3x-H0F">
+                                                <rect key="frame" x="8" y="10" width="96" height="44"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2016-07-16" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VeK-kT-6Vd">
+                                                <rect key="frame" x="105" y="0.0" width="236" height="64"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="chooseBeganAction" destination="fsJ-Pw-uah" eventType="touchDown" id="5lD-Sl-cnQ"/>
+                                                    <action selector="chooseBeganAction" destination="fsJ-Pw-uah" eventType="touchUpOutside" id="qpO-aT-qY0"/>
+                                                </connections>
+                                            </textField>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D0z-sq-B1y">
+                                                <rect key="frame" x="0.0" y="0.0" width="341" height="64"/>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Drp-h3-o8i">
+                                        <rect key="frame" x="0.0" y="72" width="341" height="510"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Loo-0K-wKX" secondAttribute="height" multiplier="341:601" id="F8I-CS-Ver"/>
+                                    <constraint firstAttribute="width" secondItem="Loo-0K-wKX" secondAttribute="height" multiplier="341:601" id="HHh-3A-tAx"/>
+                                    <constraint firstAttribute="width" constant="341" id="Sfy-Ye-Ct9"/>
+                                    <constraint firstAttribute="height" priority="750" constant="601" id="aWh-rn-EuL"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="750" constant="750" id="vHl-m8-liU"/>
+                                </constraints>
+                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="gFX-W1-XSo" firstAttribute="centerX" secondItem="SIv-QF-knU" secondAttribute="centerX" id="Hj8-Q2-8qG"/>
                             <constraint firstItem="gFX-W1-XSo" firstAttribute="top" secondItem="SIv-QF-knU" secondAttribute="bottom" constant="15" id="cTW-mR-QGl"/>
                             <constraint firstItem="gFX-W1-XSo" firstAttribute="centerX" secondItem="QwZ-AH-5CC" secondAttribute="centerX" id="dZA-CM-egW"/>
+                            <constraint firstItem="Loo-0K-wKX" firstAttribute="width" secondItem="Loo-0K-wKX" secondAttribute="height" multiplier="341:601" id="jRG-fA-dp6"/>
                             <constraint firstAttribute="bottom" secondItem="gFX-W1-XSo" secondAttribute="bottom" constant="20" symbolic="YES" id="tmj-iz-IED"/>
+                            <constraint firstItem="Loo-0K-wKX" firstAttribute="width" secondItem="Loo-0K-wKX" secondAttribute="height" multiplier="341:601" id="zqj-E9-TCk"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="房态管理" id="uDJ-It-ZAn">
@@ -451,11 +493,16 @@ CQ
                         <outlet property="CollectionView" destination="HFl-K7-9Ff" id="qIS-TF-D98"/>
                         <outlet property="btnBack" destination="acb-U4-fPX" id="Ss7-me-Xh1"/>
                         <outlet property="collectionView" destination="HFl-K7-9Ff" id="SEy-SD-bpm"/>
+                        <outlet property="dateTouchArea" destination="D0z-sq-B1y" id="zKc-f4-hKN"/>
                         <outlet property="odNum" destination="7EG-xL-0Rs" id="WcF-ev-xOu"/>
                         <outlet property="orNum" destination="nAL-Xh-xnw" id="UVT-65-QnN"/>
                         <outlet property="roomCount" destination="zue-yh-9pi" id="eIt-kl-ihk"/>
+                        <outlet property="segmentedStatus" destination="SIv-QF-knU" id="nuv-9s-h7R"/>
+                        <outlet property="textBeganDate" destination="VeK-kT-6Vd" id="Vw1-FT-biz"/>
                         <outlet property="vcNum" destination="dko-R1-KXT" id="7xa-ty-ezk"/>
                         <outlet property="vdNum" destination="9VY-2b-Osx" id="3Zp-Bd-aja"/>
+                        <outlet property="viewStatusForecast" destination="Loo-0K-wKX" id="fj4-cQ-jVm"/>
+                        <outlet property="viewStatusNow" destination="gFX-W1-XSo" id="yWv-ds-fDk"/>
                         <outlet property="vmNum" destination="yun-Ha-BHE" id="9hF-qP-bpT"/>
                         <outlet property="vrNum" destination="bjZ-zB-sGb" id="Y1N-C8-GnC"/>
                     </connections>

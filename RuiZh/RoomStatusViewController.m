@@ -25,15 +25,34 @@
     [self.collectionView registerClass:[CollectionCell class] forCellWithReuseIdentifier:@"CollectionCell"];
     [self loadStatusNow];
     //    [MBProgressHUD showMessage:@"Loading..."];
-
+    
+    [self.segmentedStatus addTarget:self action:@selector(doSomethingInSegment:)forControlEvents:UIControlEventValueChanged ];
     
 }
-
+//切换标签动作
+-(void)doSomethingInSegment:(UISegmentedControl *)Seg
+{
+    
+    NSInteger Index = Seg.selectedSegmentIndex;
+    
+    switch (Index)
+    {
+        case 0:
+            [self showView:self.viewStatusNow];
+               break;
+        case 1:
+            [self loadForecast:@"2016-07-01"];
+            [MBProgressHUD hideHUD];
+            break;
+       
+    }
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+//加载实时房态
 - (void) loadStatusNow{
     [MBProgressHUD showMessage:@"加载..."];
     NSString *urlStr=@"/GetFormx";
@@ -50,6 +69,34 @@
         [MBProgressHUD showError:[self.data valueForKey:@"ErrMsg"] ];
     }
 }
+
+//加载预测房态
+-(void) loadForecast:(NSString *) dateString{
+    [MBProgressHUD showMessage:@"加载..."];
+    NSString *urlStr=[NSString stringWithFormat:@"/GetFormxForecat?dtfrom=%@&days=20",dateString];
+    self.dataForecast= [NetUtil doGetSync:urlStr];
+//    dateTouchArea add
+//    self.textBeganDate action
+
+}
+
+-(void)hiddenView:(UIView *) view {
+    CATransition *animation = [CATransition animation];
+    animation.type = kCATransitionFade;
+    animation.duration = 0.4;
+    [view.layer addAnimation:animation forKey:nil];
+    
+    view.hidden = YES;
+}
+-(void)showView:(UIView *) view {
+    CATransition *animation = [CATransition animation];
+    animation.type = kCATransitionPush;
+    animation.duration = 0.4;
+    [view.layer addAnimation:animation forKey:nil];
+    
+    view.hidden = YES;
+}
+
 
 //初始化种类列表
 -(void) initTypeList{
@@ -131,15 +178,12 @@
     cell.textContent.selectable = true;
     cell.typeDesc.selectable = true;
     
-//    cell.backgroundView pressesBegan:<#(nonnull NSSet<UIPress *> *)#> withEvent:<#(nullable UIPressesEvent *)#>
-    
+ 
     return cell;
 }
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-//    MyCollectionViewCell *cell = (MyCollectionViewCell *)[self collectionView:collectionView cellForItemAtIndexPath:indexPath];
-//    
-//    [selfupdateCollectionViewCellStatus:cell selected:YES];
+ 
     
     NSDictionary * item = [[[self.floors objectAtIndex:indexPath.section] valueForKey:@"units"] objectAtIndex:indexPath.row];
     NSString* currentStatusDesc = [NSString stringWithFormat:@"房间号:%@－%@\n当前状态:%@\n",[item valueForKey:@"rom"],[item valueForKey:@"typ"],[self.typeNameMap valueForKey:[item valueForKey:@"sta"]]];
@@ -163,4 +207,32 @@
 - (IBAction)backAction:(id)sender {
          [self.navigationController popViewControllerAnimated:NO];
 }
+- (void)dealloc {
+ 
+    [_dateTouchArea release];
+    [super dealloc];
+}
+- (IBAction)chooseBeganAction {
+    //设置日期选择框
+    UIDatePicker *datePicker = [[UIDatePicker alloc] init]; datePicker.datePickerMode = UIDatePickerModeDate;
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"\n\n\n\n\n\n\n\n\n\n\n\n" message:nil 　　preferredStyle:UIAlertControllerStyleActionSheet];
+    [alert.view addSubview:datePicker];
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        NSDateFormatter* dateFormat = [[NSDateFormatter alloc] init];
+        //实例化一个NSDateFormatter对象
+        [dateFormat setDateFormat:@"yyyy-MM-dd"];//设定时间格式
+        NSString *dateString = [dateFormat stringFromDate:datePicker.date];
+        //求出当天的时间字符串
+        self.textBeganDate.text =dateString;
+        NSLog(@"%@",dateString);
+    }];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        　 }];
+    [alert addAction:ok];
+    [alert addAction:cancel];
+    [datePicker setLocale:[[NSLocale alloc]initWithLocaleIdentifier:@"zh_Hans_CN"]];
+    
+    [self presentViewController:alert animated:YES completion:^{ }];
+}
+
 @end

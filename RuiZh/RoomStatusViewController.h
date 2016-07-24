@@ -19,6 +19,9 @@
 @property (retain, nonatomic) IBOutlet UITextField *vcNum;
 @property (retain, nonatomic) IBOutlet UITextField *roomCount;
 @property (retain, nonatomic) IBOutlet UIBarButtonItem *btnBack;
+@property (retain, nonatomic) IBOutlet UIView *viewStatusNow;
+@property (retain, nonatomic) IBOutlet UIView *viewStatusForecast;
+@property (retain, nonatomic) IBOutlet UISegmentedControl *segmentedStatus;
 @property (retain, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (retain,nonatomic)   NSDictionary * data;
 @property (retain,nonatomic)   NSDictionary * stat;
@@ -28,4 +31,12 @@
 @property (retain,nonatomic)   NSDictionary * typeNameMap;
 @property (retain,nonatomic)   NSMutableDictionary * typeColorMap;
 @property (nonatomic,strong)   NSMutableArray * floors;
+
+//预测数据
+@property (retain,nonatomic)   NSDictionary * dataForecast;
+- (IBAction)chooseBeganAction;
+@property (retain, nonatomic) IBOutlet UIView *dateTouchArea;
+
+@property (retain, nonatomic) IBOutlet UITextField *textBeganDate;
+
 @end
