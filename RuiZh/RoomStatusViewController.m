@@ -9,7 +9,8 @@
 #import "RoomStatusViewController.h"
 
 @interface RoomStatusViewController () 
-
+#define kWidth 100
+#define kHeight 40
 
 @end
 
@@ -38,18 +39,20 @@
     switch (Index)
     {
         case 0:
-            [self showView:self.viewStatusNow];
+            [self showView:self.viewStatusNow subType:kCATransitionFromLeft];
+            [self hiddenView:self.viewStatusForecast];
+            [self loadStatusNow];
                break;
         case 1:
+            [self showView:self.viewStatusForecast subType:kCATransitionFromRight];
+            [self hiddenView:self.viewStatusNow];
             [self loadForecast:@"2016-07-01"];
-            [MBProgressHUD hideHUD];
             break;
        
     }
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 //加载实时房态
@@ -59,10 +62,8 @@
     self.data= [NetUtil doGetSync:urlStr];
     [MBProgressHUD hideHUD];
     if([[self.data valueForKey:@"Result"] isEqualToString:@"True"]) {
-        
         [MBProgressHUD showSuccess:@"获取成功"];
       
-        
         [self initTypeList];
 
     }else{
@@ -75,26 +76,132 @@
     [MBProgressHUD showMessage:@"加载..."];
     NSString *urlStr=[NSString stringWithFormat:@"/GetFormxForecat?dtfrom=%@&days=20",dateString];
     self.dataForecast= [NetUtil doGetSync:urlStr];
-//    dateTouchArea add
-//    self.textBeganDate action
+    self.roomAlltype = [self.dataForecast valueForKey:@"Data"];
+    
+    
+    [MBProgressHUD hideHUD];
 
+    self.kCount = 21;
+    UIView *tableViewHeadView=[[UIView alloc]initWithFrame:CGRectMake(0, 0,  self.kCount*kWidth,kHeight)];
+    self.myHeadView=tableViewHeadView;
+    
+    for(int i=0;i< self.kCount;i++){
+        
+        HeadView *headView=[[HeadView alloc]initWithFrame:CGRectMake(i*kWidth, 0, kWidth, kHeight)];
+        headView.num=[NSString stringWithFormat:@"%03d",i];
+        headView.detail=@"查看会议室安排";
+        headView.backgroundColor=[UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1];
+        [tableViewHeadView addSubview:headView];
+    }
+    
+    UITableView *tableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.myHeadView.frame.size.width, 460) style:UITableViewStylePlain];
+    tableView.delegate=self;
+    tableView.dataSource=self;
+    tableView.bounces=NO;
+    tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
+    self.myTableView=tableView;
+    tableView.backgroundColor=[UIColor whiteColor];
+    
+    UIScrollView *myScrollView=[[UIScrollView alloc]initWithFrame:CGRectMake(kWidth*0.7, 0, self.view.frame.size.width-kWidth*0.7, 480)];
+    [myScrollView addSubview:tableView];
+    myScrollView.bounces=NO;
+    myScrollView.contentSize=CGSizeMake(self.myHeadView.frame.size.width,0);
+    [self.tableViewContain addSubview:myScrollView];
+    
+    self.timeView=[[TimeView alloc]initWithFrame:CGRectMake(0, kHeight, kWidth*0.7, self.kCount*(kHeight+kHeightMargin))];
+    self.timeView.cellDecs = self.typeArray;
+    self.timeView.timeTableView.reloadData;
+//    self.timeView=[[TimeView alloc] initWithFrame:CGRectMake(0, kHeight, kWidth*0.7, self.kCount*(kHeight+kHeightMargin)) descString:self.typeArray];
+    [self.tableViewContain addSubview:self.timeView];
 }
+
+-(void) dealforecastData{
+    for (id roomType in self.roomAlltype) {
+        [self.typeArray addObject:[roomType valueForKey:@"房型"]];
+//        [self.typeArray addObject:[roomType valueForKey:@"房型"]];
+        
+    }
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return  self.kCount-1;
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellIdentifier=@"cell";
+    
+    MyCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if(cell==nil){
+        
+        cell=[[MyCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell.delegate=self;
+        cell.backgroundColor=[UIColor grayColor];
+        cell.selectionStyle=UITableViewCellSelectionStyleNone;
+    }
+    [self.currentTime removeAllObjects];
+//    for(MeetModel *model in self.meets){
+//        
+////        NSArray *timeArray=[ model.meetTime componentsSeparatedByString:@":"];
+////        int min=[timeArray[0] intValue]*60+[timeArray[1] intValue];
+////        int currentTime=indexPath.row*30+510;
+////        if(min>currentTime&&min<currentTime+30){
+////            [self.currentTime addObject:model];
+////        }
+//    }
+    cell.index=indexPath.row;
+    cell.currentTime=self.currentTime;
+    return cell;
+}
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    
+    return self.myHeadView;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    
+    return kHeight;
+}
+-(void)myHeadView:(HeadView *)headView point:(CGPoint)point
+{
+    CGPoint myPoint= [self.myTableView convertPoint:point fromView:headView];
+    
+    [self convertRoomFromPoint:myPoint];
+}
+-(void)convertRoomFromPoint:(CGPoint)ponit
+{
+//    NSString *roomNum=[NSString stringWithFormat:@"%03d",(int)(ponit.x)/kWidth];
+//    int currentTime=(ponit.y-kHeight-kHeightMargin)*30.0/(kHeight+kHeightMargin)+510;
+//    UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"clicked room" message:[NSString stringWithFormat:@"time :%@ room :%@",[NSString stringWithFormat:@"%d:%02d",currentTime/60,currentTime%60],roomNum] delegate:nil cancelButtonTitle:@"cancel" otherButtonTitles:@"ok", nil];
+//    [alert show];
+}
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    CGFloat offsetY= self.myTableView.contentOffset.y;
+    CGPoint timeOffsetY=self.timeView.timeTableView.contentOffset;
+    timeOffsetY.y=offsetY;
+    self.timeView.timeTableView.contentOffset=timeOffsetY;
+    if(offsetY==0){
+        self.timeView.timeTableView.contentOffset=CGPointZero;
+    }
+}
+
 
 -(void)hiddenView:(UIView *) view {
     CATransition *animation = [CATransition animation];
-    animation.type = kCATransitionFade;
-    animation.duration = 0.4;
     [view.layer addAnimation:animation forKey:nil];
     
     view.hidden = YES;
 }
--(void)showView:(UIView *) view {
+-(void)showView:(UIView *) view subType:(NSString *) subtype{
     CATransition *animation = [CATransition animation];
     animation.type = kCATransitionPush;
+    animation.subtype = subtype;
     animation.duration = 0.4;
     [view.layer addAnimation:animation forKey:nil];
     
-    view.hidden = YES;
+    view.hidden = NO;
 }
 
 
@@ -208,14 +315,13 @@
          [self.navigationController popViewControllerAnimated:NO];
 }
 - (void)dealloc {
- 
-    [_dateTouchArea release];
+    [_tableViewContain release];
     [super dealloc];
 }
 - (IBAction)chooseBeganAction {
     //设置日期选择框
     UIDatePicker *datePicker = [[UIDatePicker alloc] init]; datePicker.datePickerMode = UIDatePickerModeDate;
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"\n\n\n\n\n\n\n\n\n\n\n\n" message:nil 　　preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"\n\n\n\n\n\n\n\n\n\n\n\n" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     [alert.view addSubview:datePicker];
     UIAlertAction *ok = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         NSDateFormatter* dateFormat = [[NSDateFormatter alloc] init];
@@ -227,7 +333,7 @@
         NSLog(@"%@",dateString);
     }];
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        　 }];
+         }];
     [alert addAction:ok];
     [alert addAction:cancel];
     [datePicker setLocale:[[NSLocale alloc]initWithLocaleIdentifier:@"zh_Hans_CN"]];

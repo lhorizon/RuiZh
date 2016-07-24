@@ -95,6 +95,12 @@
 		306CFC2D1D38C4FF00465FC8 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 306CFC2C1D38C4FF00465FC8 /* GDataXMLNode.m */; };
 		306CFC301D38CFD700465FC8 /* SystemUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 306CFC2F1D38CFD700465FC8 /* SystemUtil.m */; };
 		306CFC391D38E20800465FC8 /* RoomStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 306CFC381D38E20800465FC8 /* RoomStatusViewController.m */; };
+		30FF1D3F1D44C20F00DBD59D /* HeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FF1D3E1D44C20F00DBD59D /* HeadView.m */; };
+		30FF1D481D44C48B00DBD59D /* MyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FF1D411D44C48B00DBD59D /* MyCell.m */; };
+		30FF1D491D44C48B00DBD59D /* MyLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FF1D431D44C48B00DBD59D /* MyLabel.m */; };
+		30FF1D4A1D44C48B00DBD59D /* TimeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FF1D451D44C48B00DBD59D /* TimeCell.m */; };
+		30FF1D4B1D44C48B00DBD59D /* TimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FF1D471D44C48B00DBD59D /* TimeView.m */; };
+		30FF1D4E1D44C81100DBD59D /* MeetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FF1D4D1D44C81100DBD59D /* MeetModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -222,6 +228,18 @@
 		306CFC2F1D38CFD700465FC8 /* SystemUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemUtil.m; sourceTree = "<group>"; };
 		306CFC371D38E20800465FC8 /* RoomStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomStatusViewController.h; sourceTree = "<group>"; };
 		306CFC381D38E20800465FC8 /* RoomStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomStatusViewController.m; sourceTree = "<group>"; };
+		30FF1D3D1D44C20F00DBD59D /* HeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeadView.h; sourceTree = "<group>"; };
+		30FF1D3E1D44C20F00DBD59D /* HeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeadView.m; sourceTree = "<group>"; };
+		30FF1D401D44C48B00DBD59D /* MyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCell.h; sourceTree = "<group>"; };
+		30FF1D411D44C48B00DBD59D /* MyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCell.m; sourceTree = "<group>"; };
+		30FF1D421D44C48B00DBD59D /* MyLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLabel.h; sourceTree = "<group>"; };
+		30FF1D431D44C48B00DBD59D /* MyLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLabel.m; sourceTree = "<group>"; };
+		30FF1D441D44C48B00DBD59D /* TimeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeCell.h; sourceTree = "<group>"; };
+		30FF1D451D44C48B00DBD59D /* TimeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeCell.m; sourceTree = "<group>"; };
+		30FF1D461D44C48B00DBD59D /* TimeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeView.h; sourceTree = "<group>"; };
+		30FF1D471D44C48B00DBD59D /* TimeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeView.m; sourceTree = "<group>"; };
+		30FF1D4C1D44C81100DBD59D /* MeetModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetModel.h; sourceTree = "<group>"; };
+		30FF1D4D1D44C81100DBD59D /* MeetModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -472,6 +490,18 @@
 			children = (
 				305279741D3E5661001E5F1C /* CollectionCell.xib */,
 				305279761D3E57AC001E5F1C /* CollectionCell.h */,
+				30FF1D3D1D44C20F00DBD59D /* HeadView.h */,
+				30FF1D401D44C48B00DBD59D /* MyCell.h */,
+				30FF1D411D44C48B00DBD59D /* MyCell.m */,
+				30FF1D421D44C48B00DBD59D /* MyLabel.h */,
+				30FF1D431D44C48B00DBD59D /* MyLabel.m */,
+				30FF1D4C1D44C81100DBD59D /* MeetModel.h */,
+				30FF1D4D1D44C81100DBD59D /* MeetModel.m */,
+				30FF1D441D44C48B00DBD59D /* TimeCell.h */,
+				30FF1D451D44C48B00DBD59D /* TimeCell.m */,
+				30FF1D461D44C48B00DBD59D /* TimeView.h */,
+				30FF1D471D44C48B00DBD59D /* TimeView.m */,
+				30FF1D3E1D44C20F00DBD59D /* HeadView.m */,
 				305279771D3E57AC001E5F1C /* CollectionCell.m */,
 			);
 			name = view;
@@ -688,17 +718,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30FF1D491D44C48B00DBD59D /* MyLabel.m in Sources */,
 				3043963E1D32832700824021 /* LoginViewController.m in Sources */,
 				304395811D326DCD00824021 /* ViewController.m in Sources */,
+				30FF1D4A1D44C48B00DBD59D /* TimeCell.m in Sources */,
+				30FF1D3F1D44C20F00DBD59D /* HeadView.m in Sources */,
 				3043957E1D326DCD00824021 /* AppDelegate.m in Sources */,
 				306CFC391D38E20800465FC8 /* RoomStatusViewController.m in Sources */,
+				30FF1D4B1D44C48B00DBD59D /* TimeView.m in Sources */,
 				306CFC2D1D38C4FF00465FC8 /* GDataXMLNode.m in Sources */,
 				304396411D328CD800824021 /* HomeViewController.m in Sources */,
+				30FF1D4E1D44C81100DBD59D /* MeetModel.m in Sources */,
 				305279781D3E57AC001E5F1C /* CollectionCell.m in Sources */,
 				304396D31D32A5FF00824021 /* MBProgressHUD+MJ.m in Sources */,
 				306CFC301D38CFD700465FC8 /* SystemUtil.m in Sources */,
 				3052796D1D3D34A4001E5F1C /* Roommodel.m in Sources */,
 				304396871D32A34300824021 /* UserModel.m in Sources */,
+				30FF1D481D44C48B00DBD59D /* MyCell.m in Sources */,
 				304396D61D32A5FF00824021 /* README.md in Sources */,
 				3043957B1D326DCD00824021 /* main.m in Sources */,
 				306CFC2A1D37918800465FC8 /* NetUtil.m in Sources */,

@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "SystemUtil.h"
 #import "CollectionCell.h"
-
-@interface RoomStatusViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
+#import "HeadView.h"
+#import "MyCell.h"
+#import "TimeView.h"
+@interface RoomStatusViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UITableViewDelegate,UITableViewDataSource,MyCellDelegate>
 @property (retain, nonatomic) IBOutlet UITextField *vrNum;
 @property (retain, nonatomic) IBOutlet UITextField *orNum;
 @property (retain, nonatomic) IBOutlet UITextField *odNum;
@@ -32,11 +34,20 @@
 @property (retain,nonatomic)   NSMutableDictionary * typeColorMap;
 @property (nonatomic,strong)   NSMutableArray * floors;
 
-//预测数据
+//房态预测数据
 @property (retain,nonatomic)   NSDictionary * dataForecast;
-- (IBAction)chooseBeganAction;
-@property (retain, nonatomic) IBOutlet UIView *dateTouchArea;
+@property (nonatomic,strong)   NSMutableArray * roomAlltype;
+@property (nonatomic,strong)   NSMutableArray * typeArray;
+@property (nonatomic,strong) UIView *myHeadView;
+@property (nonatomic,strong) UITableView *myTableView;
+@property (nonatomic,strong) NSMutableArray *meets;
+@property (nonatomic,strong) NSMutableArray *currentTime;
+@property (nonatomic,assign) int kCount;
+@property (nonatomic,strong) TimeView *timeView;
+@property (retain, nonatomic) IBOutlet UIView *tableViewContain;
 
+
+- (IBAction)chooseBeganAction;
 @property (retain, nonatomic) IBOutlet UITextField *textBeganDate;
 
 @end
