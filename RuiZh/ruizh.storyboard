@@ -430,7 +430,7 @@ CQ
                                 <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                             </view>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Loo-0K-wKX">
-                                <rect key="frame" x="36" y="146" width="341" height="582"/>
+                                <rect key="frame" x="0.0" y="146" width="414" height="582"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cwR-Qa-Omk">
                                         <rect key="frame" x="-8" y="0.0" width="341" height="64"/>
