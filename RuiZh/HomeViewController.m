@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.titlebar.leftBarButtonItem.title =@"";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,4 +34,8 @@
 }
 */
 
+- (void)dealloc {
+    [_titlebar release];
+    [super dealloc];
+}
 @end

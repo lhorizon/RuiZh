@@ -8,5 +8,6 @@
 
 #import <UIKit/UIKit.h> 
 @interface HomeViewController : UIViewController
+@property (retain, nonatomic) IBOutlet UINavigationItem *titlebar;
 
 @end
