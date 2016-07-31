@@ -40,11 +40,11 @@
     {
         case 0:
             [self showView:self.viewStatusNow subType:kCATransitionFromLeft];
-            [self hiddenView:self.viewStatusForecast];
+            [self hiddenView:self.tableViewContain];
             [self loadStatusNow];
                break;
         case 1:
-            [self showView:self.viewStatusForecast subType:kCATransitionFromRight];
+            [self showView:self.tableViewContain subType:kCATransitionFromRight];
             [self hiddenView:self.viewStatusNow];
             [self loadForecast:@"2016-07-01"];
             break;

@@ -22,7 +22,7 @@
 @property (retain, nonatomic) IBOutlet UITextField *roomCount;
 @property (retain, nonatomic) IBOutlet UIBarButtonItem *btnBack;
 @property (retain, nonatomic) IBOutlet UIView *viewStatusNow;
-@property (retain, nonatomic) IBOutlet UIView *viewStatusForecast;
+@property (retain, nonatomic) IBOutlet UIView *tableViewContain;
 @property (retain, nonatomic) IBOutlet UISegmentedControl *segmentedStatus;
 @property (retain, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (retain,nonatomic)   NSDictionary * data;
@@ -44,7 +44,7 @@
 @property (nonatomic,strong) NSMutableArray *currentTime;
 @property (nonatomic,assign) int kCount;
 @property (nonatomic,strong) TimeView *timeView;
-@property (retain, nonatomic) IBOutlet UIView *tableViewContain;
+  
 
 
 - (IBAction)chooseBeganAction;

@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.titlebar.leftBarButtonItem.title =@"";
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,7 +36,18 @@
 */
 
 - (void)dealloc {
-    [_titlebar release];
     [super dealloc];
+}
+- (IBAction)queryRoomStatus {
+}
+
+- (IBAction)gosetting:(id)sender {
+    NSLog(@"gosetting :%@",@"ehehe");
+}
+- (IBAction)actionRoomstatus {
+//self.navigationController pushViewController:
+// animated:YES];
+    
+    
 }
 @end

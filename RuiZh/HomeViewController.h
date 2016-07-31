@@ -10,4 +10,6 @@
 @interface HomeViewController : UIViewController
 @property (retain, nonatomic) IBOutlet UINavigationItem *titlebar;
 
+
+@property (retain, nonatomic) IBOutlet UIView *viewRoomStatus;
 @end

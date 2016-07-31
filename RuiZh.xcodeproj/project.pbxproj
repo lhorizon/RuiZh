@@ -587,6 +587,7 @@
 				TargetAttributes = {
 					304395751D326DCD00824021 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = EAE5FF6V62;
 					};
 					3043958E1D326DCD00824021 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -864,6 +865,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = RuiZh/Info.plist;
 				"LD_MAP_FILE_PATH[arch=*]" = "$(TARGET_TEMP_DIR)/$(PRODUCT_NAME)-LinkMap-$(CURRENT_VARIANT)-$(CURRENT_ARCH).txt";
@@ -877,6 +880,7 @@
 				OTHER_LIBTOOLFLAGS = "-lxml2";
 				PRODUCT_BUNDLE_IDENTIFIER = lihang.RuiZh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WARNING_CFLAGS = "-Wall";
 			};
 			name = Debug;
@@ -887,6 +891,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = RuiZh/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -899,6 +905,7 @@
 				OTHER_LIBTOOLFLAGS = "-lxml2";
 				PRODUCT_BUNDLE_IDENTIFIER = lihang.RuiZh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WARNING_CFLAGS = "-Wall";
 			};
 			name = Release;
