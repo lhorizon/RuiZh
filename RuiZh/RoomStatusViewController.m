@@ -11,7 +11,7 @@
 @interface RoomStatusViewController () 
 #define kWidth 100
 #define kHeight 40
-
+@property (retain,nonatomic)   NSString * toaday;
 @end
 
 @implementation RoomStatusViewController
@@ -28,6 +28,13 @@
     //    [MBProgressHUD showMessage:@"Loading..."];
     
     [self.segmentedStatus addTarget:self action:@selector(doSomethingInSegment:)forControlEvents:UIControlEventValueChanged ];
+    
+    NSDate *epochNSDate = [[NSDate alloc] init];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    self.toaday=[dateFormatter stringFromDate:epochNSDate];
+    self.textBeganDate.text = self.toaday;
     
 }
 //切换标签动作
@@ -46,7 +53,7 @@
         case 1:
             [self showView:self.tableViewContain subType:kCATransitionFromRight];
             [self hiddenView:self.viewStatusNow];
-            [self loadForecast:@"2016-07-01"];
+            [self loadForecast:self.toaday];
             break;
        
     }
@@ -77,55 +84,68 @@
     NSString *urlStr=[NSString stringWithFormat:@"/GetFormxForecat?dtfrom=%@&days=20",dateString];
     self.dataForecast= [NetUtil doGetSync:urlStr];
     self.roomAlltype = [self.dataForecast valueForKey:@"Data"];
-    
+    [self dealforecastData];
     
     [MBProgressHUD hideHUD];
-
-    self.kCount = 21;
-    UIView *tableViewHeadView=[[UIView alloc]initWithFrame:CGRectMake(0, 0,  self.kCount*kWidth,kHeight)];
+ 
+    UIView *tableViewHeadView=[[UIView alloc]initWithFrame:CGRectMake(0, 60,  [self.dateArray count]*kWidth,kHeight)];
     self.myHeadView=tableViewHeadView;
     
-    for(int i=0;i< self.kCount;i++){
+    for(int i=0;i< [self.dateArray count];i++){
         
         HeadView *headView=[[HeadView alloc]initWithFrame:CGRectMake(i*kWidth, 0, kWidth, kHeight)];
-        headView.num=[NSString stringWithFormat:@"%03d",i];
-        headView.detail=@"查看会议室安排";
-        headView.backgroundColor=[UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1];
+        headView.num=[self.dateArray objectAtIndex:i];
+        headView.backgroundColor = [UIColor whiteColor];
         [tableViewHeadView addSubview:headView];
     }
+    UITextField *textMaster = [[UITextField alloc]initWithFrame:CGRectMake(0, 0, kWidth, kHeight) ];
+    textMaster.text =@"房型";
+    [self.tableViewContain addSubview:textMaster];
     
-    UITableView *tableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.myHeadView.frame.size.width, 460) style:UITableViewStylePlain];
+    UIScrollView *myScrollView=[[UIScrollView alloc]initWithFrame:CGRectMake(kWidth , 60, self.view.frame.size.width-kWidth, self.tableViewContain.frame.size.height -kHeight-60)];
+    
+    UITableView *tableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.myHeadView.frame.size.width,myScrollView.frame.size.height ) style:UITableViewStylePlain];
     tableView.delegate=self;
     tableView.dataSource=self;
     tableView.bounces=NO;
     tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
     self.myTableView=tableView;
     tableView.backgroundColor=[UIColor whiteColor];
-    
-    UIScrollView *myScrollView=[[UIScrollView alloc]initWithFrame:CGRectMake(kWidth*0.7, 0, self.view.frame.size.width-kWidth*0.7, 480)];
     [myScrollView addSubview:tableView];
     myScrollView.bounces=NO;
     myScrollView.contentSize=CGSizeMake(self.myHeadView.frame.size.width,0);
     [self.tableViewContain addSubview:myScrollView];
     
-    self.timeView=[[TimeView alloc]initWithFrame:CGRectMake(0, kHeight, kWidth*0.7, self.kCount*(kHeight+kHeightMargin))];
-    self.timeView.cellDecs = self.typeArray;
-    self.timeView.timeTableView.reloadData;
+    self.timeView=[[TitleView alloc] initWithFrame:CGRectMake(0, kHeight+75.0, kWidth, [self.typeArray count
+                                                              ]*(kHeight+kHeightMargin)) cellDecs:self.typeArray];
 //    self.timeView=[[TimeView alloc] initWithFrame:CGRectMake(0, kHeight, kWidth*0.7, self.kCount*(kHeight+kHeightMargin)) descString:self.typeArray];
     [self.tableViewContain addSubview:self.timeView];
 }
 
 -(void) dealforecastData{
+    if(!self.typeArray){
+        self.typeArray = [[NSMutableArray alloc]init];
+        self.dateArray =  [[NSMutableArray alloc]init];
+    }
+    
     for (id roomType in self.roomAlltype) {
-        [self.typeArray addObject:[roomType valueForKey:@"房型"]];
-//        [self.typeArray addObject:[roomType valueForKey:@"房型"]];
+        NSString *fx =[@"" stringByAppendingString:  [roomType valueForKey:@"房型"]];
+        [self.typeArray addObject:fx];
         
+        if([self.dateArray count]==0){
+            NSArray *keys =[roomType allKeys];
+            for(int i = 0;i< [keys count];i++){
+                NSString* date =[keys objectAtIndex:i];
+                if([date length]==10)
+                [self.dateArray addObject: [date substringFromIndex:5] ] ;
+            }
+        }
     }
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return  self.kCount-1;
+    return  [self.typeArray count] ;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -306,7 +326,7 @@
         [self.navigationController popViewControllerAnimated:NO];
     }]];
     [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDestructive handler:nil]];
-   
+    
     [self presentViewController:alert animated:YES completion:NULL];
     NSLog(@" cell item is section: %ld  row:%ld",(long)indexPath.section , (long)indexPath.row);
 }
@@ -315,7 +335,6 @@
          [self.navigationController popViewControllerAnimated:NO];
 }
 - (void)dealloc {
-    [_tableViewContain release];
     [super dealloc];
 }
 - (IBAction)chooseBeganAction {

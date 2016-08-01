@@ -40,13 +40,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RuiZh/RoomStatusViewController.m"
-            timestampString = "491053863.737169"
+            filePath = "RuiZh/TimeView.m"
+            timestampString = "491764049.923882"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "295"
-            endingLineNumber = "295"
-            landmarkName = "-collectionView:didSelectItemAtIndexPath:"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RuiZh/TimeView.m"
+            timestampString = "491764071.060259"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "-tableView:numberOfRowsInSection:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -57,27 +73,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RuiZh/RoomStatusViewController.m"
-            timestampString = "491053863.737169"
+            timestampString = "491771492.005483"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "323"
-            endingLineNumber = "323"
-            landmarkName = "-chooseBeganAction"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RuiZh/RoomStatusViewController.m"
-            timestampString = "491048696.236292"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
             landmarkName = "-loadForecast:"
             landmarkType = "5">
          </BreakpointContent>
@@ -88,13 +88,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RuiZh/TimeView.m"
-            timestampString = "491053957.676406"
+            filePath = "RuiZh/RoomStatusViewController.m"
+            timestampString = "491771492.005483"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "-initWithFrame:"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
+            landmarkName = "-dealforecastData"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -104,13 +104,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RuiZh/TimeView.m"
-            timestampString = "491054537.017833"
+            filePath = "RuiZh/RoomStatusViewController.m"
+            timestampString = "491771492.005483"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
+            landmarkName = "-dealforecastData"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

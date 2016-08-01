@@ -99,7 +99,7 @@
 		30FF1D481D44C48B00DBD59D /* MyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FF1D411D44C48B00DBD59D /* MyCell.m */; };
 		30FF1D491D44C48B00DBD59D /* MyLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FF1D431D44C48B00DBD59D /* MyLabel.m */; };
 		30FF1D4A1D44C48B00DBD59D /* TimeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FF1D451D44C48B00DBD59D /* TimeCell.m */; };
-		30FF1D4B1D44C48B00DBD59D /* TimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FF1D471D44C48B00DBD59D /* TimeView.m */; };
+		30FF1D4B1D44C48B00DBD59D /* TitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FF1D471D44C48B00DBD59D /* TitleView.m */; };
 		30FF1D4E1D44C81100DBD59D /* MeetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FF1D4D1D44C81100DBD59D /* MeetModel.m */; };
 /* End PBXBuildFile section */
 
@@ -236,8 +236,8 @@
 		30FF1D431D44C48B00DBD59D /* MyLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLabel.m; sourceTree = "<group>"; };
 		30FF1D441D44C48B00DBD59D /* TimeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeCell.h; sourceTree = "<group>"; };
 		30FF1D451D44C48B00DBD59D /* TimeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeCell.m; sourceTree = "<group>"; };
-		30FF1D461D44C48B00DBD59D /* TimeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeView.h; sourceTree = "<group>"; };
-		30FF1D471D44C48B00DBD59D /* TimeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeView.m; sourceTree = "<group>"; };
+		30FF1D461D44C48B00DBD59D /* TitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleView.h; sourceTree = "<group>"; };
+		30FF1D471D44C48B00DBD59D /* TitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleView.m; sourceTree = "<group>"; };
 		30FF1D4C1D44C81100DBD59D /* MeetModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetModel.h; sourceTree = "<group>"; };
 		30FF1D4D1D44C81100DBD59D /* MeetModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -499,8 +499,8 @@
 				30FF1D4D1D44C81100DBD59D /* MeetModel.m */,
 				30FF1D441D44C48B00DBD59D /* TimeCell.h */,
 				30FF1D451D44C48B00DBD59D /* TimeCell.m */,
-				30FF1D461D44C48B00DBD59D /* TimeView.h */,
-				30FF1D471D44C48B00DBD59D /* TimeView.m */,
+				30FF1D461D44C48B00DBD59D /* TitleView.h */,
+				30FF1D471D44C48B00DBD59D /* TitleView.m */,
 				30FF1D3E1D44C20F00DBD59D /* HeadView.m */,
 				305279771D3E57AC001E5F1C /* CollectionCell.m */,
 			);
@@ -726,7 +726,7 @@
 				30FF1D3F1D44C20F00DBD59D /* HeadView.m in Sources */,
 				3043957E1D326DCD00824021 /* AppDelegate.m in Sources */,
 				306CFC391D38E20800465FC8 /* RoomStatusViewController.m in Sources */,
-				30FF1D4B1D44C48B00DBD59D /* TimeView.m in Sources */,
+				30FF1D4B1D44C48B00DBD59D /* TitleView.m in Sources */,
 				306CFC2D1D38C4FF00465FC8 /* GDataXMLNode.m in Sources */,
 				304396411D328CD800824021 /* HomeViewController.m in Sources */,
 				30FF1D4E1D44C81100DBD59D /* MeetModel.m in Sources */,

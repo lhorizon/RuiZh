@@ -15,7 +15,7 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        self.timeLabel=[[MyLabel alloc]initWithFrame:CGRectMake(17, -1, self.frame.size.width, self.frame.size.height*0.3)];
+        self.timeLabel=[[MyLabel alloc]initWithFrame:CGRectMake(17, 1, self.frame.size.width*0.5, self.frame.size.height*0.3)];
         [self.timeLabel setVerticalAlignment:VerticalAlignmentTop];
         [self.contentView addSubview:self.timeLabel];
     }

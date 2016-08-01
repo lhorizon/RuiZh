@@ -34,9 +34,16 @@
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
+                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mb3-eS-ScS">
+                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                    </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
+            <constraints>
+                <constraint firstItem="Mb3-eS-ScS" firstAttribute="width" secondItem="J5M-So-DyZ" secondAttribute="width" id="Vjc-kQ-icB"/>
+                <constraint firstItem="Mb3-eS-ScS" firstAttribute="height" secondItem="J5M-So-DyZ" secondAttribute="height" id="tdE-de-oW8"/>
+            </constraints>
             <connections>
                 <outlet property="textContent" destination="SS9-d9-u2j" id="deA-DM-I2t"/>
                 <outlet property="typeDesc" destination="gG8-Or-sDX" id="gc0-jc-uAM"/>

@@ -11,7 +11,7 @@
 #import "CollectionCell.h"
 #import "HeadView.h"
 #import "MyCell.h"
-#import "TimeView.h"
+#import "TitleView.h"
 @interface RoomStatusViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UITableViewDelegate,UITableViewDataSource,MyCellDelegate>
 @property (retain, nonatomic) IBOutlet UITextField *vrNum;
 @property (retain, nonatomic) IBOutlet UITextField *orNum;
@@ -22,7 +22,6 @@
 @property (retain, nonatomic) IBOutlet UITextField *roomCount;
 @property (retain, nonatomic) IBOutlet UIBarButtonItem *btnBack;
 @property (retain, nonatomic) IBOutlet UIView *viewStatusNow;
-@property (retain, nonatomic) IBOutlet UIView *tableViewContain;
 @property (retain, nonatomic) IBOutlet UISegmentedControl *segmentedStatus;
 @property (retain, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (retain,nonatomic)   NSDictionary * data;
@@ -38,13 +37,13 @@
 @property (retain,nonatomic)   NSDictionary * dataForecast;
 @property (nonatomic,strong)   NSMutableArray * roomAlltype;
 @property (nonatomic,strong)   NSMutableArray * typeArray;
+@property (nonatomic,strong)   NSMutableArray * dateArray;
 @property (nonatomic,strong) UIView *myHeadView;
 @property (nonatomic,strong) UITableView *myTableView;
 @property (nonatomic,strong) NSMutableArray *meets;
-@property (nonatomic,strong) NSMutableArray *currentTime;
-@property (nonatomic,assign) int kCount;
-@property (nonatomic,strong) TimeView *timeView;
-  
+@property (nonatomic,strong) NSMutableArray *currentTime; 
+@property (nonatomic,strong) TitleView *timeView;
+@property (retain, nonatomic) IBOutlet UIView *tableViewContain;
 
 
 - (IBAction)chooseBeganAction;

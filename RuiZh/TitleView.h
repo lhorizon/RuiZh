@@ -8,7 +8,7 @@
 #define kHeightMargin 3
 #import <UIKit/UIKit.h>
 
-@interface TimeView : UIView
+@interface TitleView : UIView
 @property (nonatomic,strong) UITableView *timeTableView;
 @property (nonatomic,strong) NSMutableArray  *cellDecs;
 @end
