@@ -18,15 +18,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self.refreshBtn setTintColor: [UIColor whiteColor]];
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     self.collectionView.allowsSelection = true;
     self.typeNameMap = [NSDictionary dictionaryWithObjectsAndKeys:@"空净",@"VR",@"住净",@"OR",@"住脏",@"OD",@"维修",@"VM",@"清扫",@"VC",@"空脏",@"VD",nil];
 
     [self.collectionView registerClass:[CollectionCell class] forCellWithReuseIdentifier:@"CollectionCell"];
+  
     [self loadStatusNow];
     //    [MBProgressHUD showMessage:@"Loading..."];
-    
+    self.userinfo = [NSUserDefaults standardUserDefaults];
     [self.segmentedStatus addTarget:self action:@selector(doSomethingInSegment:)forControlEvents:UIControlEventValueChanged ];
     
     NSDate *epochNSDate = [[NSDate alloc] init];
@@ -49,10 +52,15 @@
             [self showView:self.viewStatusNow subType:kCATransitionFromLeft];
             [self hiddenView:self.tableViewContain];
             [self loadStatusNow];
+            [self.refreshBtn setEnabled:true];
+            [self.refreshBtn setTintColor: [UIColor whiteColor]];
+            
                break;
         case 1:
             [self showView:self.tableViewContain subType:kCATransitionFromRight];
             [self hiddenView:self.viewStatusNow];
+            [self.refreshBtn setEnabled:false];
+            [self.refreshBtn setTintColor: [UIColor clearColor]];
             [self loadForecast:self.toaday];
             break;
        
@@ -64,12 +72,12 @@
 
 //加载实时房态
 - (void) loadStatusNow{
-    [MBProgressHUD showMessage:@"加载..."];
+    [MBProgressHUD showMessage:@"加载"];
     NSString *urlStr=@"/GetFormx";
     self.data= [NetUtil doGetSync:urlStr];
     [MBProgressHUD hideHUD];
     if([[self.data valueForKey:@"Result"] isEqualToString:@"True"]) {
-        [MBProgressHUD showSuccess:@"获取成功"];
+       
       
         [self initTypeList];
 
@@ -90,16 +98,19 @@
  
     UIView *tableViewHeadView=[[UIView alloc]initWithFrame:CGRectMake(0, 60,  [self.dateArray count]*kWidth,kHeight)];
     self.myHeadView=tableViewHeadView;
-    
+    self.myHeadView.backgroundColor = [UIColor colorWithRed:(float)108.0/255.0f green:(float)147 /255.0f blue:(float)198/255.0f alpha:1.0f];
     for(int i=0;i< [self.dateArray count];i++){
         
-        HeadView *headView=[[HeadView alloc]initWithFrame:CGRectMake(i*kWidth, 0, kWidth, kHeight)];
+        HeadView *headView=[[HeadView alloc]initWithFrame:CGRectMake(i*kWidth, 10, kWidth, kHeight)];
         headView.num=[self.dateArray objectAtIndex:i];
-        headView.backgroundColor = [UIColor whiteColor];
         [tableViewHeadView addSubview:headView];
     }
-    UITextField *textMaster = [[UITextField alloc]initWithFrame:CGRectMake(0, 0, kWidth, kHeight) ];
-    textMaster.text =@"房型";
+    UITextField *textMaster = [[UITextField alloc]initWithFrame:CGRectMake(0, 60, kWidth, kHeight) ];
+    textMaster.text =@"    房型";
+    textMaster.backgroundColor = [UIColor colorWithRed:(float)108.0/255.0f green:(float)147 /255.0f blue:(float)198/255.0f alpha:1.0f];
+    textMaster.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+    textMaster.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
+
     [self.tableViewContain addSubview:textMaster];
     
     UIScrollView *myScrollView=[[UIScrollView alloc]initWithFrame:CGRectMake(kWidth , 60, self.view.frame.size.width-kWidth, self.tableViewContain.frame.size.height -kHeight-60)];
@@ -110,6 +121,7 @@
     tableView.bounces=NO;
     tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
     self.myTableView=tableView;
+    [self.myTableView registerClass:[RoomforecastTableViewCell class] forCellReuseIdentifier:@"RoomforecastTableViewCell"];
     tableView.backgroundColor=[UIColor whiteColor];
     [myScrollView addSubview:tableView];
     myScrollView.bounces=NO;
@@ -134,6 +146,7 @@
         
         if([self.dateArray count]==0){
             NSArray *keys =[roomType allKeys];
+            [self.dateArray addObject:@"间数"];
             for(int i = 0;i< [keys count];i++){
                 NSString* date =[keys objectAtIndex:i];
                 if([date length]==10)
@@ -145,21 +158,27 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return  [self.typeArray count] ;
+     unsigned long count =  [self.typeArray count] ;
+    return  count;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *cellIdentifier=@"cell";
     
-    MyCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if(cell==nil){
-        
-        cell=[[MyCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-        cell.delegate=self;
-        cell.backgroundColor=[UIColor grayColor];
-        cell.selectionStyle=UITableViewCellSelectionStyleNone;
-    }
-    [self.currentTime removeAllObjects];
+    
+    RoomforecastTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RoomforecastTableViewCell" forIndexPath:indexPath];
+    
+    cell.lefttext.text =@"tttt";
+//    static NSString *cellIdentifier=@"cell";
+//    
+//    MyCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+//    if(cell==nil){
+//        
+//        cell=[[MyCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+//        cell.delegate=self;
+//        cell.backgroundColor=[UIColor grayColor];
+//        cell.selectionStyle=UITableViewCellSelectionStyleNone;
+//    }
+//    [self.currentTime removeAllObjects];
 //    for(MeetModel *model in self.meets){
 //        
 ////        NSArray *timeArray=[ model.meetTime componentsSeparatedByString:@":"];
@@ -169,8 +188,8 @@
 ////            [self.currentTime addObject:model];
 ////        }
 //    }
-    cell.index=indexPath.row;
-    cell.currentTime=self.currentTime;
+//    cell.index=indexPath.row;
+//    cell.currentTime=self.currentTime;
     return cell;
 }
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -315,22 +334,62 @@
     NSDictionary * item = [[[self.floors objectAtIndex:indexPath.section] valueForKey:@"units"] objectAtIndex:indexPath.row];
     NSString* currentStatusDesc = [NSString stringWithFormat:@"房间号:%@－%@\n当前状态:%@\n",[item valueForKey:@"rom"],[item valueForKey:@"typ"],[self.typeNameMap valueForKey:[item valueForKey:@"sta"]]];
     
+    NSString *sta = [item valueForKey:@"sta"];
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:currentStatusDesc message:@"请选择要修改的房态类型" preferredStyle:UIAlertControllerStyleActionSheet];
-    [alert addAction:[UIAlertAction actionWithTitle:@"空脏" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        [self.navigationController popViewControllerAnimated:NO];
-    }]];
-    [alert addAction:[UIAlertAction actionWithTitle:@"住脏" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        [self.navigationController popViewControllerAnimated:NO];
-    }]];
-    [alert addAction:[UIAlertAction actionWithTitle:@"空净" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        [self.navigationController popViewControllerAnimated:NO];
-    }]];
+    
+    //设置添加操作选项
+//vr:vd,vc,vm else
+//or:od  else
+//od:vm,or  else
+//vm:vr,vd,vc else
+//vc:vr,vd,vm  else
+//vd:vr,vc,vm  else
+    if([sta isEqualToString:@"VC"] ||[sta isEqualToString:@"VM"]||[sta isEqualToString:@"VD"]){
+        
+        [self ModifyFormxSta:item toSta:@"VR" alert:alert];
+    }
+    if([sta isEqualToString:@"OD"] ){
+       [self ModifyFormxSta:item toSta:@"OR" alert:alert];
+    }
+    if([sta isEqualToString:@"OR"]||[sta isEqualToString:@"VM"]){
+     [self ModifyFormxSta:item toSta:@"OD" alert:alert];
+    }
+    if([sta isEqualToString:@"VC"] ||[sta isEqualToString:@"VR"]||[sta isEqualToString:@"VD"]){
+     [self ModifyFormxSta:item toSta:@"VM" alert:alert];
+    }
+    if([sta isEqualToString:@"VR"]||[sta isEqualToString:@"VM"]||[sta isEqualToString:@"VD"]){
+       [self ModifyFormxSta:item toSta:@"VC" alert:alert];
+    }
+    if([sta isEqualToString:@"VC"] ||[sta isEqualToString:@"VR"]||[sta isEqualToString:@"VM"]){
+       [self ModifyFormxSta:item toSta:@"VD" alert:alert];
+    }
+ 
     [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDestructive handler:nil]];
     
     [self presentViewController:alert animated:YES completion:NULL];
     NSLog(@" cell item is section: %ld  row:%ld",(long)indexPath.section , (long)indexPath.row);
 }
-
+- (void)ModifyFormxSta:(NSDictionary *) item toSta:(NSString *) tosta alert:(UIAlertController *) alert{
+//user:
+//room:[item valueForKey:@"rom"]
+//oldsta:[item valueForKey:@"sta"]
+//newsta:
+    [alert addAction:[UIAlertAction actionWithTitle:[ self.typeNameMap valueForKey:tosta] style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        NSString *name = [self.userinfo valueForKey:@"name"];
+        NSString *room = [item valueForKey:@"rom"];
+        NSString *oldSta = [item valueForKey:@"sta"];
+        NSString *urlStr=[NSString stringWithFormat:@"/ModifyFormxSta?user=%@&room=%@&oldsta=%@&newsta=%@",name,room,oldSta,tosta];
+//{"Result":"True","ErrMsg":"","Data":{"typ":"标准大床","rom":"202","floorid":"2","sta":"OD","dpt":"03","ftpx":1}}
+        NSDictionary* operResult=  [NetUtil doGetSync:urlStr];
+        if([[operResult valueForKey:@"Result"] isEqualToString:@"True"]){
+            [MBProgressHUD showSuccess:@"操作成功"];
+            [self loadStatusNow];
+            [self.collectionView reloadData];
+        }else{
+            [MBProgressHUD showSuccess:@"操作失败"];
+        };
+    }]];
+}
 - (IBAction)backAction:(id)sender {
          [self.navigationController popViewControllerAnimated:NO];
 }
@@ -360,4 +419,8 @@
     [self presentViewController:alert animated:YES completion:^{ }];
 }
 
+- (IBAction)refresh:(id)sender {
+    [self loadStatusNow];
+    [self.collectionView reloadData];
+}
 @end

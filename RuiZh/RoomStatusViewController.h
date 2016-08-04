@@ -11,6 +11,7 @@
 #import "CollectionCell.h"
 #import "HeadView.h"
 #import "MyCell.h"
+#import "RoomforecastTableViewCell.h"
 #import "TitleView.h"
 @interface RoomStatusViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UITableViewDelegate,UITableViewDataSource,MyCellDelegate>
 @property (retain, nonatomic) IBOutlet UITextField *vrNum;
@@ -44,9 +45,11 @@
 @property (nonatomic,strong) NSMutableArray *currentTime; 
 @property (nonatomic,strong) TitleView *timeView;
 @property (retain, nonatomic) IBOutlet UIView *tableViewContain;
-
+@property (nonatomic,strong) NSUserDefaults *userinfo;
 
 - (IBAction)chooseBeganAction;
 @property (retain, nonatomic) IBOutlet UITextField *textBeganDate;
+- (IBAction)refresh:(id)sender;
+@property (retain, nonatomic) IBOutlet UIBarButtonItem *refreshBtn;
 
 @end
