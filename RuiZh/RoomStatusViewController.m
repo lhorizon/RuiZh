@@ -116,6 +116,7 @@
     }
     UITextField *textMaster = [[UITextField alloc]initWithFrame:CGRectMake(0, 60, kWidth, kHeight) ];
     textMaster.text =@"    房型";
+    textMaster.textColor = [UIColor whiteColor];
     textMaster.backgroundColor = [UIColor colorWithRed:(float)108.0/255.0f green:(float)147 /255.0f blue:(float)198/255.0f alpha:1.0f];
     textMaster.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     textMaster.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
