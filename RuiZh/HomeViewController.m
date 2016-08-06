@@ -16,7 +16,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.titlebar.leftBarButtonItem.title =@"";
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] init];
+    backItem.title = @"返回"; 
+    self.titlebar.backBarButtonItem = backItem;
+    [self.titlebar.backBarButtonItem  setTintColor: [UIColor whiteColor]];
+    self.navigationItem.hidesBackButton = YES;
 
 }
 

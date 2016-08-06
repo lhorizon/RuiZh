@@ -13,5 +13,16 @@
 @property (retain, nonatomic) IBOutlet UISegmentedControl *tabanalytics;
 @property (retain, nonatomic) IBOutlet UIView *viewShourufenxi;
 @property (retain, nonatomic) IBOutlet UIView *jianbao;
+@property (retain, nonatomic) IBOutlet UITextField *textfieldBeginTime;
+@property (retain, nonatomic) IBOutlet UITextField *textfieldEndTime;
+@property (retain, nonatomic) IBOutlet UIView *jianbaoContainer;
+@property (retain, nonatomic) IBOutlet UIView *shouruContainer;
+
+@property   bool   isjianbao;
+- (IBAction)mdfBeginTime;
+- (IBAction)mdfyEndTime;
 @property (retain,nonatomic)   NSDictionary * yeingyejianbaoData;
+@property (retain,nonatomic) NSMutableArray * jianbaoTypes;;
+@property (retain,nonatomic) NSMutableArray * jianbaodValues;
+@property (retain,nonatomic)   NSDictionary * fenxiData;
 @end

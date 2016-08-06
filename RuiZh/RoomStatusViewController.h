@@ -36,9 +36,14 @@
 
 //房态预测数据
 @property (retain,nonatomic)   NSDictionary * dataForecast;
+//data内容
 @property (nonatomic,strong)   NSMutableArray * roomAlltype;
+//所有的房间类型
 @property (nonatomic,strong)   NSMutableArray * typeArray;
+//上方标题栏显示内容
 @property (nonatomic,strong)   NSMutableArray * dateArray;
+//表格主显示数据
+@property (nonatomic,strong)   NSMutableArray * mainContentArray;
 @property (nonatomic,strong) UIView *myHeadView;
 @property (nonatomic,strong) UITableView *myTableView;
 @property (nonatomic,strong) NSMutableArray *meets;

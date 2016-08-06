@@ -9,7 +9,7 @@
 #define kHeightMargin 3
 #import <UIKit/UIKit.h>
 
-@class MyCell,HeadView,MeetModel;
+@class MyCell,HeadView,MeetModel,HeadView;
 
 @protocol MyCellDelegate <NSObject>
 
@@ -21,4 +21,5 @@
 @property (nonatomic,assign) id<MyCellDelegate> delegate;
 @property (nonatomic,strong) NSMutableArray *currentTime;
 @property (nonatomic,assign) int index;
+@property unsigned long count;
 @end

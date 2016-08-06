@@ -247,14 +247,15 @@
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uys-Nd-7BG" userLabel="setting">
                                         <rect key="frame" x="186" y="2" width="73" height="100"/>
                                         <subviews>
-                                            <button opaque="NO" tag="5" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xeH-Y2-9JC">
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xeH-Y2-9JC">
                                                 <rect key="frame" x="0.0" y="0.0" width="73" height="100"/>
                                                 <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="15"/>
                                                 <connections>
                                                     <action selector="gosetting:" destination="n1d-W7-moT" eventType="touchUpInside" id="qxO-D6-C7b"/>
+                                                    <segue destination="xsc-W0-ixR" kind="show" id="pbm-3U-ghG"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="设置" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlo-vH-W05">
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="设置" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlo-vH-W05">
                                                 <rect key="frame" x="0.0" y="71" width="73" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="egp-1I-98t"/>
@@ -262,7 +263,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="app_phonecharge.png" translatesAutoresizingMaskIntoConstraints="NO" id="Nj1-rf-Gg1">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app_phonecharge.png" translatesAutoresizingMaskIntoConstraints="NO" id="Nj1-rf-Gg1">
                                                 <rect key="frame" x="10" y="10" width="53" height="53"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="53" id="0r3-dZ-RIq"/>
@@ -377,7 +378,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="73" height="100"/>
                                                 <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="15"/>
                                                 <connections>
-                                                    <segue destination="bUX-DQ-OHc" kind="show" id="3hN-Z4-Ftr"/>
+                                                    <segue destination="bUX-DQ-OHc" kind="show" id="z0Z-xT-his"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -466,7 +467,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rD7-VX-hsA">
-                                <rect key="frame" x="0.0" y="110" width="414" height="626"/>
+                                <rect key="frame" x="0.0" y="103" width="414" height="633"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H2X-nN-ub8" userLabel="View begin time">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
@@ -533,16 +534,16 @@
                                 </segments>
                             </segmentedControl>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gFX-W1-XSo">
-                                <rect key="frame" x="0.0" y="110" width="414" height="626"/>
+                                <rect key="frame" x="0.0" y="103" width="414" height="633"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FVx-nz-SV4" userLabel="Viewcount">
-                                        <rect key="frame" x="20" y="20" width="334" height="120"/>
+                                        <rect key="frame" x="20" y="10" width="334" height="100"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wBm-ew-BCh" userLabel="czpercent">
-                                                <rect key="frame" x="167" y="0.0" width="167" height="120"/>
+                                                <rect key="frame" x="167" y="0.0" width="167" height="100"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="30.23%" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N4m-wg-CSQ" userLabel="percent">
-                                                        <rect key="frame" x="63" y="44" width="68" height="23"/>
+                                                        <rect key="frame" x="63" y="34" width="68" height="23"/>
                                                         <string key="placeholder" base64-UTF8="YES">
 CQ
 </string>
@@ -550,12 +551,12 @@ CQ
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="   出租率" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZcZ-Jj-Te4">
-                                                        <rect key="frame" x="50" y="67" width="94" height="17"/>
+                                                        <rect key="frame" x="50" y="57" width="94" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="office_chart_line_percentage.png" translatesAutoresizingMaskIntoConstraints="NO" id="JtU-ST-Hcd" userLabel="per_img.png">
-                                                        <rect key="frame" x="10" y="35" width="50" height="50"/>
+                                                        <rect key="frame" x="10" y="25" width="50" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="50" id="p9a-MI-9VI"/>
                                                             <constraint firstAttribute="height" constant="50" id="u9a-sx-qxa"/>
@@ -574,17 +575,17 @@ CQ
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J2a-qJ-XSr" userLabel="kfcount">
-                                                <rect key="frame" x="0.0" y="0.0" width="167" height="120"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="167" height="100"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="house.png" translatesAutoresizingMaskIntoConstraints="NO" id="dnw-GS-7DX">
-                                                        <rect key="frame" x="10" y="35" width="50" height="50"/>
+                                                        <rect key="frame" x="10" y="25" width="50" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="70p-Iu-ajE"/>
                                                             <constraint firstAttribute="width" constant="50" id="dF9-EA-yLy"/>
                                                         </constraints>
                                                     </imageView>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="   客房总数" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XFc-gF-4Fx" userLabel="客房总数">
-                                                        <rect key="frame" x="50" y="67" width="72" height="17"/>
+                                                        <rect key="frame" x="50" y="57" width="72" height="17"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="17" id="Uvz-oo-y4m"/>
                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="lrN-sb-W2k"/>
@@ -598,7 +599,7 @@ CQ
                                                         </variation>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="999" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zue-yh-9pi">
-                                                        <rect key="frame" x="71" y="37" width="30" height="40"/>
+                                                        <rect key="frame" x="71" y="27" width="30" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="TBe-ft-XJL"/>
                                                             <constraint firstAttribute="width" constant="30" id="tha-I0-l32"/>
@@ -638,7 +639,7 @@ CQ
                                             <constraint firstAttribute="bottom" secondItem="wBm-ew-BCh" secondAttribute="bottom" id="DXR-gr-N3b"/>
                                             <constraint firstItem="J2a-qJ-XSr" firstAttribute="leading" secondItem="FVx-nz-SV4" secondAttribute="leading" id="OTs-4v-w7m"/>
                                             <constraint firstItem="wBm-ew-BCh" firstAttribute="leading" secondItem="J2a-qJ-XSr" secondAttribute="trailing" id="SYr-7O-SRv"/>
-                                            <constraint firstAttribute="height" constant="120" id="Yhf-oT-Owr"/>
+                                            <constraint firstAttribute="height" constant="100" id="Yhf-oT-Owr"/>
                                             <constraint firstItem="J2a-qJ-XSr" firstAttribute="top" secondItem="FVx-nz-SV4" secondAttribute="top" id="ZNp-Ia-uU1"/>
                                             <constraint firstAttribute="bottom" secondItem="J2a-qJ-XSr" secondAttribute="bottom" id="d0i-XV-fDS"/>
                                             <constraint firstItem="wBm-ew-BCh" firstAttribute="top" secondItem="FVx-nz-SV4" secondAttribute="top" id="dtH-8k-KE4"/>
@@ -648,7 +649,7 @@ CQ
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oga-LO-rzB" userLabel="total count">
-                                        <rect key="frame" x="27" y="150" width="360" height="34"/>
+                                        <rect key="frame" x="27" y="120" width="360" height="34"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FHE-Ec-tLb" userLabel="kongjing">
                                                 <rect key="frame" x="0.0" y="-8" width="60" height="50"/>
@@ -950,7 +951,7 @@ CQ
                                     <constraint firstItem="Oga-LO-rzB" firstAttribute="top" secondItem="FVx-nz-SV4" secondAttribute="bottom" constant="10" id="TVb-Bo-wra"/>
                                     <constraint firstItem="HFl-K7-9Ff" firstAttribute="trailing" secondItem="gFX-W1-XSo" secondAttribute="trailing" id="U0e-PW-l52"/>
                                     <constraint firstAttribute="trailing" secondItem="FVx-nz-SV4" secondAttribute="trailing" constant="20" id="d3p-Vz-uTc"/>
-                                    <constraint firstItem="FVx-nz-SV4" firstAttribute="top" secondItem="gFX-W1-XSo" secondAttribute="top" constant="20" id="gGe-sn-xan"/>
+                                    <constraint firstItem="FVx-nz-SV4" firstAttribute="top" secondItem="gFX-W1-XSo" secondAttribute="top" constant="10" id="gGe-sn-xan"/>
                                     <constraint firstItem="HFl-K7-9Ff" firstAttribute="leading" secondItem="gFX-W1-XSo" secondAttribute="leading" id="jF6-ru-2ZN"/>
                                     <constraint firstItem="FVx-nz-SV4" firstAttribute="centerX" secondItem="gFX-W1-XSo" secondAttribute="centerX" id="uJj-1T-aLn"/>
                                     <constraint firstItem="HFl-K7-9Ff" firstAttribute="bottom" secondItem="gFX-W1-XSo" secondAttribute="bottom" id="uML-o6-Mdh"/>
@@ -968,7 +969,7 @@ CQ
                             <constraint firstItem="rD7-VX-hsA" firstAttribute="centerY" secondItem="gFX-W1-XSo" secondAttribute="centerY" id="OSl-iu-V2t"/>
                             <constraint firstItem="gFX-W1-XSo" firstAttribute="centerX" secondItem="QwZ-AH-5CC" secondAttribute="centerX" id="QzV-Be-71y"/>
                             <constraint firstItem="rD7-VX-hsA" firstAttribute="height" secondItem="gFX-W1-XSo" secondAttribute="height" id="SkT-g6-IIP"/>
-                            <constraint firstItem="gFX-W1-XSo" firstAttribute="top" secondItem="SIv-QF-knU" secondAttribute="bottom" constant="10" id="VCN-ZI-ikb"/>
+                            <constraint firstItem="gFX-W1-XSo" firstAttribute="top" secondItem="SIv-QF-knU" secondAttribute="bottom" constant="3" id="VCN-ZI-ikb"/>
                             <constraint firstItem="rD7-VX-hsA" firstAttribute="width" secondItem="QwZ-AH-5CC" secondAttribute="width" id="VJD-t5-Gzp"/>
                             <constraint firstItem="rD7-VX-hsA" firstAttribute="bottom" secondItem="gFX-W1-XSo" secondAttribute="bottom" id="fhH-sH-qYC"/>
                             <constraint firstItem="rD7-VX-hsA" firstAttribute="centerX" secondItem="gFX-W1-XSo" secondAttribute="centerX" id="gcX-2c-R5M"/>
@@ -1054,21 +1055,27 @@ CQ
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mM8-NZ-N08" userLabel="right">
                                         <rect key="frame" x="207" y="0.0" width="207" height="50"/>
                                     </view>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="至：" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZtB-gv-gBr" userLabel="至:">
-                                        <rect key="frame" x="207" y="0.0" width="104" height="50"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="至：" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZtB-gv-gBr" userLabel="至:">
+                                        <rect key="frame" x="207" y="0.0" width="151" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2019－07-07" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hJQ-a8-mZZ" userLabel="endTime">
-                                        <rect key="frame" x="259" y="0.0" width="155" height="50"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2019－07-07" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hJQ-a8-mZZ" userLabel="endTime">
+                                        <rect key="frame" x="258" y="0.0" width="156" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qDQ-KV-NQ6" userLabel="btnLeft">
                                         <rect key="frame" x="0.0" y="0.0" width="207" height="50"/>
+                                        <connections>
+                                            <action selector="mdfBeginTime" destination="bUX-DQ-OHc" eventType="touchUpInside" id="Sbx-9S-dRf"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ERH-va-18y" userLabel="btnRight">
                                         <rect key="frame" x="207" y="0.0" width="207" height="50"/>
+                                        <connections>
+                                            <action selector="mdfyEndTime" destination="bUX-DQ-OHc" eventType="touchUpInside" id="xhX-Xv-Tcg"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.88233811961155106" green="1" blue="0.86843560532798181" alpha="1" colorSpace="calibratedRGB"/>
@@ -1149,7 +1156,11 @@ CQ
                     <navigationItem key="navigationItem" title="统计分析" id="69F-V1-EXh"/>
                     <connections>
                         <outlet property="jianbao" destination="jHl-bc-Jbb" id="H9e-9S-QA7"/>
+                        <outlet property="jianbaoContainer" destination="jHl-bc-Jbb" id="has-Ah-Og6"/>
+                        <outlet property="shouruContainer" destination="4Wa-sU-5dq" id="mhX-RJ-hG7"/>
                         <outlet property="tabanalytics" destination="LJK-f3-mpB" id="qCr-yQ-aal"/>
+                        <outlet property="textfieldBeginTime" destination="SFN-Gm-MOS" id="x4t-EO-FbC"/>
+                        <outlet property="textfieldEndTime" destination="hJQ-a8-mZZ" id="BOV-5A-N1g"/>
                         <outlet property="viewShourufenxi" destination="4Wa-sU-5dq" id="G2N-8z-4bF"/>
                     </connections>
                 </viewController>
@@ -1157,7 +1168,7 @@ CQ
             </objects>
             <point key="canvasLocation" x="1355" y="687"/>
         </scene>
-        <!--View Controller-->
+        <!--设置-->
         <scene sceneID="yEP-0L-VCR">
             <objects>
                 <viewController id="xsc-W0-ixR" sceneMemberID="viewController">
@@ -1166,13 +1177,15 @@ CQ
                         <viewControllerLayoutGuide type="bottom" id="iZT-Qo-2cf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="esK-30-NkN">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="设置" id="ZfC-Xf-5qn"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KqW-wV-O3y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="758" y="1192"/>
         </scene>
     </scenes>
     <resources>

@@ -145,20 +145,32 @@
 -(void) dealforecastData{
         self.typeArray = [[NSMutableArray alloc]init];
         self.dateArray =  [[NSMutableArray alloc]init];
+    self.mainContentArray = [[NSMutableArray alloc]init];
     
     for (id roomType in self.roomAlltype) {
         NSString *fx =[@"" stringByAppendingString:  [roomType valueForKey:@"房型"]];
         [self.typeArray addObject:fx];
         
+        NSArray *keys =[roomType allKeys];
+        NSMutableArray *rowcontent = [[NSMutableArray alloc] init];
+        [rowcontent addObject:[roomType valueForKey:@"间数"]];
         if([self.dateArray count]==0){
-            NSArray *keys =[roomType allKeys];
             [self.dateArray addObject:@"间数"];
             for(int i = 0;i< [keys count];i++){
                 NSString* date =[keys objectAtIndex:i];
+            if(![date isEqualToString:@"间数"]&&![date isEqualToString:@"房型"])
+                [rowcontent addObject:[roomType valueForKey:date]];
                 if([date length]==10)
-                [self.dateArray addObject: [date substringFromIndex:5] ] ;
+                    [self.dateArray addObject: [date substringFromIndex:5] ] ;
+            }
+        }else{
+            for(int i = 0;i< [keys count];i++){
+                NSString* date =[keys objectAtIndex:i];
+                if(![date isEqualToString:@"间数"]&&![date isEqualToString:@"房型"])
+                [rowcontent addObject:[roomType valueForKey:date]];
             }
         }
+        [self.mainContentArray addObject:rowcontent];
     }
 }
 
@@ -187,26 +199,16 @@
     MyCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if(cell==nil){
         
-        cell=[[MyCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell=[[MyCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier ] ;
         cell.delegate=self;
             cell.backgroundColor=[UIColor grayColor];
         cell.selectionStyle=UITableViewCellSelectionStyleNone;
         cell.selectionStyle=UITableViewCellSelectionStyleNone;
     }
     [self.currentTime removeAllObjects];
-//    for(NSDictionary *aType in self.roomAlltype){
-//        
-//        
-//        
-////        NSArray *timeArray=[ model.meetTime componentsSeparatedByString:@":"];
-////        int min=[timeArray[0] intValue]*60+[timeArray[1] intValue];
-////        int currentTime=indexPath.row*30+510;
-////        if(min>currentTime&&min<currentTime+30){
-////            [self.currentTime addObject:model];
-////        }
-//    }
+
     cell.index=indexPath.row;
-    cell.currentTime=self.roomAlltype;
+    cell.currentTime=[self.mainContentArray objectAtIndex:indexPath.row];
     return cell;
 }
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -412,7 +414,6 @@
          [self.navigationController popViewControllerAnimated:NO];
 }
 - (void)dealloc {
-    [_navigationItem release];
     [super dealloc];
 }
 - (IBAction)chooseBeganAction {

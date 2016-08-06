@@ -16,13 +16,14 @@
 
 @implementation MyCell
 
+ 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         
         for(int i=0;i<21;i++){
-        
+            
             HeadView *headView=[[HeadView alloc]initWithFrame:CGRectMake(i*100, 0, 100-kWidthMargin, 40+kHeightMargin)];
             headView.delegate=self;
             headView.backgroundColor=[UIColor whiteColor];
@@ -40,35 +41,66 @@
     }
 
 }
--(void)setCurrentTime:(NSMutableArray *)currentTime
+-(void)setCurrentTime:(NSMutableArray *) roomAllType
 {
-     _currentTime=currentTime;
-    int count=currentTime.count;
+    _currentTime = roomAllType;
+    self.count=[self.currentTime count];
+    if(self.count>0){
+        NSLog(@"contentView.subviews 个数：%lu",(unsigned long)[self.contentView.subviews count]);
+        for(int i=0;i<self.count;i++){
+            
+//            MeetModel *model=currentTime[i];
+            
+            HeadView *headView=(HeadView *)self.contentView.subviews[0];
+            if(i==0){
+                headView.backgroundColor=[UIColor grayColor];
+                
+                [headView setNum:[NSString stringWithFormat:@"%@",[self.currentTime objectAtIndex:0]]];
+            }else{
+                headView.backgroundColor=[UIColor whiteColor];
+                HeadView *leftHeadView =self.contentView.subviews[i];
+                if(headView!=leftHeadView) leftHeadView.backgroundColor=[UIColor whiteColor];
+                    [leftHeadView setNum:[NSString stringWithFormat:@"%@",[self.currentTime objectAtIndex:i]]];
+                    [leftHeadView setDetail:[NSString stringWithFormat:@"总数:%@",[self.currentTime objectAtIndex:0]]];
+                
+            }
+        
+        }
+    }else{
+        
+        for(HeadView *headView in self.contentView.subviews){
+            
+            headView.backgroundColor=[UIColor whiteColor];
+        }
+    }
+    
+//    int count=roomAllType.count;
 //    if(count>0){
 //        for(int i=0;i<count;i++){
-//        
-//            NSDictionary *model=currentTime[i];
 //            
-//            HeadView *headView = (HeadView *)self.contentView.subviews[@"aa%d" stringByAppendingFormat:i];;
+//            NSDictionary *model=roomAllType[i];
+//            
+//            HeadView *headView;
 ////            if([model.meetRoom isEqualToString:@"000"]){
-////              
+////                
 ////                headView=(HeadView *)self.contentView.subviews[0];
 ////            }else{
-////               
+////                
 ////                NSArray *room=[model.meetRoom componentsSeparatedByString:@"0"];
-////                headView=(HeadView *)self.contentView.subviews[[[room lastObject] intValue]];
+//                headView=(HeadView *)self.contentView.subviews[1];
 ////            }
-////            headView.backgroundColor=[UIColor greenColor];
-//            
+////            self.
+//            headView.backgroundColor=[UIColor redColor];
+//            [headView setNum:@"1"];
 //            for(HeadView *leftHeadView in self.contentView.subviews){
-//            
+//                
 //                if(headView!=leftHeadView) leftHeadView.backgroundColor=[UIColor whiteColor];
 //            }
 //        }
 //    }else{
-//       
-//        for(HeadView *headView in self.contentView.subviews){
 //        
+//        for(HeadView *headView in self.contentView.subviews){
+//            
 //            headView.backgroundColor=[UIColor whiteColor];
 //        }
 //    }

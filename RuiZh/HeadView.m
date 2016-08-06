@@ -27,6 +27,7 @@
         self.detailRoom=[[UILabel alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height*0.5)];
         self.detailRoom.textAlignment=NSTextAlignmentCenter;
         self.detailRoom.font=[UIFont systemFontOfSize:12];
+        self.detailRoom.textColor = [UIColor redColor];
         self.detailRoom.center=CGPointMake(self.frame.size.width*0.5, self.frame.size.height-self.frame.size.height*0.25);
         [self addSubview:self.detailRoom];
         
