@@ -96,8 +96,9 @@
 		306CFC301D38CFD700465FC8 /* SystemUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 306CFC2F1D38CFD700465FC8 /* SystemUtil.m */; };
 		306CFC391D38E20800465FC8 /* RoomStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 306CFC381D38E20800465FC8 /* RoomStatusViewController.m */; };
 		30F1C05F1D53A432009C94CA /* Roomforecast.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30F1C05E1D53A432009C94CA /* Roomforecast.xib */; };
-		30F1C0621D53A743009C94CA /* RoomforecastTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30F1C0611D53A743009C94CA /* RoomforecastTableViewCell.m */; };
+		30F1C0621D53A743009C94CA /* Roomforecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 30F1C0611D53A743009C94CA /* Roomforecast.m */; };
 		30F1C0AA1D53B49E009C94CA /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 30F1C0A91D53B49E009C94CA /* libxml2.tbd */; };
+		30F1C0AD1D554FFA009C94CA /* AnalyticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30F1C0AC1D554FFA009C94CA /* AnalyticsViewController.m */; };
 		30FF1D3F1D44C20F00DBD59D /* HeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FF1D3E1D44C20F00DBD59D /* HeadView.m */; };
 		30FF1D481D44C48B00DBD59D /* MyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FF1D411D44C48B00DBD59D /* MyCell.m */; };
 		30FF1D491D44C48B00DBD59D /* MyLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FF1D431D44C48B00DBD59D /* MyLabel.m */; };
@@ -232,10 +233,12 @@
 		306CFC371D38E20800465FC8 /* RoomStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomStatusViewController.h; sourceTree = "<group>"; };
 		306CFC381D38E20800465FC8 /* RoomStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomStatusViewController.m; sourceTree = "<group>"; };
 		30F1C05E1D53A432009C94CA /* Roomforecast.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Roomforecast.xib; sourceTree = "<group>"; };
-		30F1C0601D53A743009C94CA /* RoomforecastTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomforecastTableViewCell.h; sourceTree = "<group>"; };
-		30F1C0611D53A743009C94CA /* RoomforecastTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomforecastTableViewCell.m; sourceTree = "<group>"; };
+		30F1C0601D53A743009C94CA /* Roomforecast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Roomforecast.h; sourceTree = "<group>"; };
+		30F1C0611D53A743009C94CA /* Roomforecast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Roomforecast.m; sourceTree = "<group>"; };
 		30F1C0A71D53B486009C94CA /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		30F1C0A91D53B49E009C94CA /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		30F1C0AB1D554FFA009C94CA /* AnalyticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyticsViewController.h; sourceTree = "<group>"; };
+		30F1C0AC1D554FFA009C94CA /* AnalyticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyticsViewController.m; sourceTree = "<group>"; };
 		30FF1D3D1D44C20F00DBD59D /* HeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeadView.h; sourceTree = "<group>"; };
 		30FF1D3E1D44C20F00DBD59D /* HeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeadView.m; sourceTree = "<group>"; };
 		30FF1D401D44C48B00DBD59D /* MyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCell.h; sourceTree = "<group>"; };
@@ -365,6 +368,8 @@
 				304396401D328CD800824021 /* HomeViewController.m */,
 				306CFC371D38E20800465FC8 /* RoomStatusViewController.h */,
 				306CFC381D38E20800465FC8 /* RoomStatusViewController.m */,
+				30F1C0AB1D554FFA009C94CA /* AnalyticsViewController.h */,
+				30F1C0AC1D554FFA009C94CA /* AnalyticsViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -515,8 +520,8 @@
 				30FF1D3E1D44C20F00DBD59D /* HeadView.m */,
 				305279771D3E57AC001E5F1C /* CollectionCell.m */,
 				30F1C05E1D53A432009C94CA /* Roomforecast.xib */,
-				30F1C0601D53A743009C94CA /* RoomforecastTableViewCell.h */,
-				30F1C0611D53A743009C94CA /* RoomforecastTableViewCell.m */,
+				30F1C0601D53A743009C94CA /* Roomforecast.h */,
+				30F1C0611D53A743009C94CA /* Roomforecast.m */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -750,8 +755,9 @@
 				306CFC301D38CFD700465FC8 /* SystemUtil.m in Sources */,
 				3052796D1D3D34A4001E5F1C /* Roommodel.m in Sources */,
 				304396871D32A34300824021 /* UserModel.m in Sources */,
+				30F1C0AD1D554FFA009C94CA /* AnalyticsViewController.m in Sources */,
 				30FF1D481D44C48B00DBD59D /* MyCell.m in Sources */,
-				30F1C0621D53A743009C94CA /* RoomforecastTableViewCell.m in Sources */,
+				30F1C0621D53A743009C94CA /* Roomforecast.m in Sources */,
 				304396D61D32A5FF00824021 /* README.md in Sources */,
 				3043957B1D326DCD00824021 /* main.m in Sources */,
 				306CFC2A1D37918800465FC8 /* NetUtil.m in Sources */,
@@ -887,6 +893,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = RuiZh/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				"LD_MAP_FILE_PATH[arch=*]" = "$(TARGET_TEMP_DIR)/$(PRODUCT_NAME)-LinkMap-$(CURRENT_VARIANT)-$(CURRENT_ARCH).txt";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -916,6 +923,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = RuiZh/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

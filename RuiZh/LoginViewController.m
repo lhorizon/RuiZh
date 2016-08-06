@@ -36,13 +36,21 @@
     self.pwdfield.text  = [defaults valueForKey:PwdKey];
     self.rembSwitch.on  = [defaults boolForKey:RembPwdKey];
     self.loginBtn.enabled =   self.rembSwitch.on;
+    self.namefield.delegate  = self;
+    self.pwdfield.delegate  = self;
     
     [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:20/255.0 green:155/255.0 blue:213/255.0 alpha:1.0] ];
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],UITextAttributeTextColor,nil]];
     
  
 }
-
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+//当点击键盘上return按钮的时候调用
+{
+    //代理记录了当前正在工作的UITextField的实例，因此你点击哪个UITextField对象，形参就是哪个UITextField对象
+    [textField resignFirstResponder];//键盘回收代码
+    return YES;
+}
 - (void) textchanged{
     if(self.namefield.text.length&&self.pwdfield.text.length){
         self.loginBtn.enabled = YES;

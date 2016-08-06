@@ -18,8 +18,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] init];
+    backItem.title = @"返回";
+    self.navigationItem.backBarButtonItem = backItem;
+    [self.navigationItem.backBarButtonItem  setTintColor: [UIColor whiteColor]];
     [self.refreshBtn setTintColor: [UIColor whiteColor]];
+    
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     self.collectionView.allowsSelection = true;
@@ -95,15 +99,20 @@
     [self dealforecastData];
     
     [MBProgressHUD hideHUD];
+    if(!self.tableViewContain.subviews )
+    for(int i = 0;i<=[self.tableViewContain.subviews count];i++){
+        [ [ self.tableViewContain.subviews objectAtindex:i] removeFromsuperview];
+    }
+    
+        UIView *tableViewHeadView=[[UIView alloc]initWithFrame:CGRectMake(0, 60,  [self.dateArray count]*kWidth,kHeight)];
+        self.myHeadView=tableViewHeadView;
+        self.myHeadView.backgroundColor = [UIColor colorWithRed:(float)108.0/255.0f green:(float)147 /255.0f blue:(float)198/255.0f alpha:1.0f];
  
-    UIView *tableViewHeadView=[[UIView alloc]initWithFrame:CGRectMake(0, 60,  [self.dateArray count]*kWidth,kHeight)];
-    self.myHeadView=tableViewHeadView;
-    self.myHeadView.backgroundColor = [UIColor colorWithRed:(float)108.0/255.0f green:(float)147 /255.0f blue:(float)198/255.0f alpha:1.0f];
     for(int i=0;i< [self.dateArray count];i++){
         
         HeadView *headView=[[HeadView alloc]initWithFrame:CGRectMake(i*kWidth, 10, kWidth, kHeight)];
         headView.num=[self.dateArray objectAtIndex:i];
-        [tableViewHeadView addSubview:headView];
+        [self.myHeadView addSubview:headView];
     }
     UITextField *textMaster = [[UITextField alloc]initWithFrame:CGRectMake(0, 60, kWidth, kHeight) ];
     textMaster.text =@"    房型";
@@ -113,7 +122,7 @@
 
     [self.tableViewContain addSubview:textMaster];
     
-    UIScrollView *myScrollView=[[UIScrollView alloc]initWithFrame:CGRectMake(kWidth , 60, self.view.frame.size.width-kWidth, self.tableViewContain.frame.size.height -kHeight-60)];
+    UIScrollView *myScrollView=[[UIScrollView alloc]initWithFrame:CGRectMake(kWidth , 60, self.view.frame.size.width-kWidth, self.tableViewContain.frame.size.height -kHeight-30)];
     
     UITableView *tableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.myHeadView.frame.size.width,myScrollView.frame.size.height ) style:UITableViewStylePlain];
     tableView.delegate=self;
@@ -121,24 +130,21 @@
     tableView.bounces=NO;
     tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
     self.myTableView=tableView;
-    [self.myTableView registerClass:[RoomforecastTableViewCell class] forCellReuseIdentifier:@"RoomforecastTableViewCell"];
-    tableView.backgroundColor=[UIColor whiteColor];
+    tableView.backgroundColor=[UIColor redColor];
+    
     [myScrollView addSubview:tableView];
-    myScrollView.bounces=NO;
+    myScrollView.bounces=YES;
     myScrollView.contentSize=CGSizeMake(self.myHeadView.frame.size.width,0);
     [self.tableViewContain addSubview:myScrollView];
     
     self.timeView=[[TitleView alloc] initWithFrame:CGRectMake(0, kHeight+75.0, kWidth, [self.typeArray count
                                                               ]*(kHeight+kHeightMargin)) cellDecs:self.typeArray];
-//    self.timeView=[[TimeView alloc] initWithFrame:CGRectMake(0, kHeight, kWidth*0.7, self.kCount*(kHeight+kHeightMargin)) descString:self.typeArray];
     [self.tableViewContain addSubview:self.timeView];
 }
 
 -(void) dealforecastData{
-    if(!self.typeArray){
         self.typeArray = [[NSMutableArray alloc]init];
         self.dateArray =  [[NSMutableArray alloc]init];
-    }
     
     for (id roomType in self.roomAlltype) {
         NSString *fx =[@"" stringByAppendingString:  [roomType valueForKey:@"房型"]];
@@ -165,21 +171,32 @@
 {
     
     
-    RoomforecastTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RoomforecastTableViewCell" forIndexPath:indexPath];
-    
-    cell.lefttext.text =@"tttt";
-//    static NSString *cellIdentifier=@"cell";
+//    Roomforecast *cell = [tableView dequeueReusableCellWithIdentifier:@"Roomforecast" forIndexPath:indexPath];
 //    
-//    MyCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-//    if(cell==nil){
-//        
-//        cell=[[MyCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-//        cell.delegate=self;
-//        cell.backgroundColor=[UIColor grayColor];
-//        cell.selectionStyle=UITableViewCellSelectionStyleNone;
+//    cell.lefttext.text =@"tttt";
+//    if(indexPath.row%2==0){
+//        cell.backgroundColor = [UIColor yellowColor]; 
+//    }else{
+//        cell.backgroundColor = [UIColor orangeColor];
 //    }
-//    [self.currentTime removeAllObjects];
-//    for(MeetModel *model in self.meets){
+//
+//    
+    
+    static NSString *cellIdentifier=@"cell";
+//
+    MyCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if(cell==nil){
+        
+        cell=[[MyCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell.delegate=self;
+            cell.backgroundColor=[UIColor grayColor];
+        cell.selectionStyle=UITableViewCellSelectionStyleNone;
+        cell.selectionStyle=UITableViewCellSelectionStyleNone;
+    }
+    [self.currentTime removeAllObjects];
+//    for(NSDictionary *aType in self.roomAlltype){
+//        
+//        
 //        
 ////        NSArray *timeArray=[ model.meetTime componentsSeparatedByString:@":"];
 ////        int min=[timeArray[0] intValue]*60+[timeArray[1] intValue];
@@ -188,8 +205,8 @@
 ////            [self.currentTime addObject:model];
 ////        }
 //    }
-//    cell.index=indexPath.row;
-//    cell.currentTime=self.currentTime;
+    cell.index=indexPath.row;
+    cell.currentTime=self.roomAlltype;
     return cell;
 }
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -221,6 +238,7 @@
     CGPoint timeOffsetY=self.timeView.timeTableView.contentOffset;
     timeOffsetY.y=offsetY;
     self.timeView.timeTableView.contentOffset=timeOffsetY;
+    
     if(offsetY==0){
         self.timeView.timeTableView.contentOffset=CGPointZero;
     }
@@ -394,6 +412,7 @@
          [self.navigationController popViewControllerAnimated:NO];
 }
 - (void)dealloc {
+    [_navigationItem release];
     [super dealloc];
 }
 - (IBAction)chooseBeganAction {
@@ -408,6 +427,8 @@
         NSString *dateString = [dateFormat stringFromDate:datePicker.date];
         //求出当天的时间字符串
         self.textBeganDate.text =dateString;
+        self.toaday =dateString;
+        [self loadForecast:dateString];
         NSLog(@"%@",dateString);
     }];
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {

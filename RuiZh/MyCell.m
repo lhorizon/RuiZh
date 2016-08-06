@@ -21,7 +21,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         
-        for(int i=0;i<20;i++){
+        for(int i=0;i<21;i++){
         
             HeadView *headView=[[HeadView alloc]initWithFrame:CGRectMake(i*100, 0, 100-kWidthMargin, 40+kHeightMargin)];
             headView.delegate=self;
@@ -44,34 +44,34 @@
 {
      _currentTime=currentTime;
     int count=currentTime.count;
-    if(count>0){
-        for(int i=0;i<count;i++){
-        
-            MeetModel *model=currentTime[i];
-            
-            HeadView *headView;
-            if([model.meetRoom isEqualToString:@"000"]){
-              
-                headView=(HeadView *)self.contentView.subviews[0];
-            }else{
-               
-                NSArray *room=[model.meetRoom componentsSeparatedByString:@"0"];
-                headView=(HeadView *)self.contentView.subviews[[[room lastObject] intValue]];
-            }
-            headView.backgroundColor=[UIColor greenColor];
-            
-            for(HeadView *leftHeadView in self.contentView.subviews){
-              
-                if(headView!=leftHeadView) leftHeadView.backgroundColor=[UIColor whiteColor];
-            }
-        }
-    }else{
-       
-        for(HeadView *headView in self.contentView.subviews){
-        
-            headView.backgroundColor=[UIColor whiteColor];
-        }
-    }
+//    if(count>0){
+//        for(int i=0;i<count;i++){
+//        
+//            NSDictionary *model=currentTime[i];
+//            
+//            HeadView *headView = (HeadView *)self.contentView.subviews[@"aa%d" stringByAppendingFormat:i];;
+////            if([model.meetRoom isEqualToString:@"000"]){
+////              
+////                headView=(HeadView *)self.contentView.subviews[0];
+////            }else{
+////               
+////                NSArray *room=[model.meetRoom componentsSeparatedByString:@"0"];
+////                headView=(HeadView *)self.contentView.subviews[[[room lastObject] intValue]];
+////            }
+////            headView.backgroundColor=[UIColor greenColor];
+//            
+//            for(HeadView *leftHeadView in self.contentView.subviews){
+//            
+//                if(headView!=leftHeadView) leftHeadView.backgroundColor=[UIColor whiteColor];
+//            }
+//        }
+//    }else{
+//       
+//        for(HeadView *headView in self.contentView.subviews){
+//        
+//            headView.backgroundColor=[UIColor whiteColor];
+//        }
+//    }
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {

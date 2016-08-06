@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RoomforecastTableViewCell : UITableViewCell
+@interface Roomforecast : UITableViewCell
 @property (retain, nonatomic) IBOutlet UITextField *lefttext;
 @property (retain, nonatomic) IBOutlet UITextField *righttext;
 
