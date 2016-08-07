@@ -11,10 +11,10 @@
 #import "SystemUtil.h"
 #import "CollectionCell.h"
 #import "HeadView.h"
-#import "MyCell.h"
+#import "JianbaoCell.h"
 #import "Roomforecast.h"
 #import "TitleView.h"
-@interface AnalyticsViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,MyCellDelegate>
+@interface AnalyticsViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,JianbaoCellDelegate>
 @property (retain, nonatomic) IBOutlet UISegmentedControl *tabanalytics;
 
 @property (retain, nonatomic) IBOutlet UITextField *textfieldBeginTime;

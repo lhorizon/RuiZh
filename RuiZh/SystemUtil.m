@@ -104,4 +104,24 @@
 {
     return [SystemUtil getColor: [@"#" stringByAppendingString:  [SystemUtil decimalToHexStr:decimalString ]]];
 }
++(NSDate *) computeDate:(NSDate *)  now days:(NSInteger *)days{
+    NSDate * mydate = [NSDate date];
+
+//    DebugLog(@"---当前的时间的字符串 =%@",currentDateStr);
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    
+    NSDateComponents *comps = nil;
+    
+    comps = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitMonth fromDate:mydate];
+    
+    NSDateComponents *adcomps = [[NSDateComponents alloc] init];
+    
+    [adcomps setYear:0];
+    
+    [adcomps setMonth:0];
+    
+    [adcomps setDay:*days];
+    return  [calendar dateByAddingComponents:adcomps toDate:mydate options:0];
+}
+
 @end

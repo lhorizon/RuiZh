@@ -95,6 +95,7 @@
 		306CFC2D1D38C4FF00465FC8 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 306CFC2C1D38C4FF00465FC8 /* GDataXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		306CFC301D38CFD700465FC8 /* SystemUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 306CFC2F1D38CFD700465FC8 /* SystemUtil.m */; };
 		306CFC391D38E20800465FC8 /* RoomStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 306CFC381D38E20800465FC8 /* RoomStatusViewController.m */; };
+		30E4589F1D57A5E40039227A /* JianbaoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E4589E1D57A5E40039227A /* JianbaoCell.m */; };
 		30F1C05F1D53A432009C94CA /* Roomforecast.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30F1C05E1D53A432009C94CA /* Roomforecast.xib */; };
 		30F1C0621D53A743009C94CA /* Roomforecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 30F1C0611D53A743009C94CA /* Roomforecast.m */; };
 		30F1C0AA1D53B49E009C94CA /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 30F1C0A91D53B49E009C94CA /* libxml2.tbd */; };
@@ -232,6 +233,8 @@
 		306CFC2F1D38CFD700465FC8 /* SystemUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemUtil.m; sourceTree = "<group>"; };
 		306CFC371D38E20800465FC8 /* RoomStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomStatusViewController.h; sourceTree = "<group>"; };
 		306CFC381D38E20800465FC8 /* RoomStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomStatusViewController.m; sourceTree = "<group>"; };
+		30E4589D1D57A5E40039227A /* JianbaoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JianbaoCell.h; sourceTree = "<group>"; };
+		30E4589E1D57A5E40039227A /* JianbaoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JianbaoCell.m; sourceTree = "<group>"; };
 		30F1C05E1D53A432009C94CA /* Roomforecast.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Roomforecast.xib; sourceTree = "<group>"; };
 		30F1C0601D53A743009C94CA /* Roomforecast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Roomforecast.h; sourceTree = "<group>"; };
 		30F1C0611D53A743009C94CA /* Roomforecast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Roomforecast.m; sourceTree = "<group>"; };
@@ -522,6 +525,8 @@
 				30F1C05E1D53A432009C94CA /* Roomforecast.xib */,
 				30F1C0601D53A743009C94CA /* Roomforecast.h */,
 				30F1C0611D53A743009C94CA /* Roomforecast.m */,
+				30E4589D1D57A5E40039227A /* JianbaoCell.h */,
+				30E4589E1D57A5E40039227A /* JianbaoCell.m */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -743,6 +748,7 @@
 				3043963E1D32832700824021 /* LoginViewController.m in Sources */,
 				304395811D326DCD00824021 /* ViewController.m in Sources */,
 				30FF1D4A1D44C48B00DBD59D /* TimeCell.m in Sources */,
+				30E4589F1D57A5E40039227A /* JianbaoCell.m in Sources */,
 				30FF1D3F1D44C20F00DBD59D /* HeadView.m in Sources */,
 				3043957E1D326DCD00824021 /* AppDelegate.m in Sources */,
 				306CFC391D38E20800465FC8 /* RoomStatusViewController.m in Sources */,

@@ -33,7 +33,9 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd"];
     NSString *today =[dateFormatter stringFromDate:epochNSDate];
-    self.textfieldEndTime.text = today;
+    self.textfieldEndTime.text =[ @"" stringByAppendingFormat:@"%@", [SystemUtil computeDate:today days:-90] ];
+//    NSData be
+    
     self.textfieldBeginTime.text = today;
     
     
@@ -63,8 +65,6 @@
 }
 //加载营业简报
 -(void) loadYingyeJianbao:(NSString *) dtstart dtend:(NSString *) dtend {
-    dtstart = @"2016-06-01";
-    dtend = @"2016-06-18";
     [MBProgressHUD showMessage:@"加载"];
     NSString *urlStr=[NSString stringWithFormat:@"/GetBusinessLevelReportData?dtstart=%@&dtend=%@",dtstart,dtend];
     NSDictionary *data =[NetUtil doGetSync:urlStr];
@@ -75,12 +75,7 @@
         self.yeingyejianbaoData = [data valueForKey:@"Data"];
         [self dealJianbaoData];
 
-        if (!self.jianbaoContainer.subviews) {
-            for(int i = 0;i<=[self.jianbaoContainer.subviews count];i++){
-                [ [ self.jianbaoContainer.subviews objectAtIndex:i] removeFromsuperview];
-            }
-        }
-        
+        [self.jianbaoContainer.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
         
         UIView *tableViewHeadView=[[UIView alloc]initWithFrame:CGRectMake(0, 0,  [self.jianbaoTitles count]*kWidth,kHeight)];
         self.myHeadView = tableViewHeadView;
@@ -101,7 +96,7 @@
         
         [self.jianbaoContainer addSubview:textMaster];
 //
-        UIScrollView *myScrollView=[[UIScrollView alloc]initWithFrame:CGRectMake(kWidth +15, 0, self.view.frame.size.width-kWidth,  self.jianbaoContainer.frame.size.height -kHeight)];
+        UIScrollView *myScrollView=[[UIScrollView alloc]initWithFrame:CGRectMake(kWidth +15,0, self.view.frame.size.width-kWidth,  self.jianbaoContainer.frame.size.height - self.myHeadView.frame.size.height)];
         
         UITableView *tableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.myHeadView.frame.size.width,myScrollView.frame.size.height ) style:UITableViewStylePlain];
         tableView.delegate=self;
@@ -118,6 +113,8 @@
         
         self.jianbaotimeView=[[TitleView alloc] initWithFrame:CGRectMake(0, kHeight+20, kWidth+15, [self.jianbaoDatelist count
                                                                                                    ]*(kHeight+kHeightMargin)) cellDecs:self.jianbaoDatelist];
+//        0, kHeight+75.0, kWidth, [self.typeArray count
+//                                  ]*(kHeight+kHeightMargin)) cellDecs:self.typeArray
         [self.jianbaoContainer addSubview:self.jianbaotimeView];
         
     }else{
@@ -173,10 +170,10 @@
 {
     static NSString *cellIdentifier=@"cell";
     //
-    MyCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    JianbaoCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if(cell==nil){
         
-        cell=[[MyCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier ] ;
+        cell=[[JianbaoCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier ] ;
         cell.delegate=self;
         cell.backgroundColor=[UIColor grayColor];
         cell.selectionStyle=UITableViewCellSelectionStyleNone;

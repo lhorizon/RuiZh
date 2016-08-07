@@ -14,4 +14,5 @@
 
 +(UIColor *) getColorFromDecimal:(NSString *)decimalString;
 + (NSDictionary *)dictionaryWithJsonString:(NSString *) jsonString;
++(NSDate *) computeDate:(NSDate *)  now days:(NSInteger *)days;
 @end
