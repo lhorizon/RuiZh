@@ -237,7 +237,7 @@
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uys-Nd-7BG" userLabel="setting">
                                         <rect key="frame" x="186" y="2" width="73" height="100"/>
                                         <subviews>
-                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xeH-Y2-9JC">
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xeH-Y2-9JC">
                                                 <rect key="frame" x="0.0" y="0.0" width="73" height="100"/>
                                                 <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="15"/>
                                                 <connections>
@@ -245,7 +245,7 @@
                                                     <segue destination="xsc-W0-ixR" kind="show" id="pbm-3U-ghG"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="设置" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlo-vH-W05">
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="设置" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlo-vH-W05">
                                                 <rect key="frame" x="0.0" y="71" width="73" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="egp-1I-98t"/>
@@ -253,7 +253,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app_phonecharge.png" translatesAutoresizingMaskIntoConstraints="NO" id="Nj1-rf-Gg1">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="app_phonecharge.png" translatesAutoresizingMaskIntoConstraints="NO" id="Nj1-rf-Gg1">
                                                 <rect key="frame" x="10" y="10" width="53" height="53"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="53" id="0r3-dZ-RIq"/>
@@ -1126,7 +1126,7 @@ CQ
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="借方金额" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EkV-KD-nFT" userLabel="项目分类1">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="项目类别" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EkV-KD-nFT" userLabel="项目类别">
                                                 <rect key="frame" x="207" y="0.0" width="104" height="30"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1160,26 +1160,26 @@ CQ
                                             <constraint firstItem="4R8-bd-9xN" firstAttribute="leading" secondItem="WLJ-cv-Ahn" secondAttribute="leading" id="zYA-zr-hjA"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qcI-pR-XD8" userLabel="contain1">
-                                        <rect key="frame" x="0.0" y="30" width="414" height="21"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qcI-pR-XD8" userLabel="contain1">
+                                        <rect key="frame" x="0.0" y="30" width="414" height="34"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="项目分类" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xmb-Gj-SQl">
-                                                <rect key="frame" x="0.0" y="0.0" width="104" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="42020" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gCj-PS-MjQ">
+                                                <rect key="frame" x="104" y="0.0" width="103" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="借方金额" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gCj-PS-MjQ">
-                                                <rect key="frame" x="104" y="0.0" width="103" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="储值" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3GT-eC-y4N" userLabel="储值">
+                                                <rect key="frame" x="207" y="0.0" width="104" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="借方金额" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3GT-eC-y4N" userLabel="项目分类1">
-                                                <rect key="frame" x="207" y="0.0" width="104" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="111111" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Dh-TA-gg5" userLabel="贷方金额">
+                                                <rect key="frame" x="311" y="0.0" width="103" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="贷方金额" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Dh-TA-gg5" userLabel="贷方金额">
-                                                <rect key="frame" x="311" y="0.0" width="103" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="房吧" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xmb-Gj-SQl">
+                                                <rect key="frame" x="0.0" y="0.0" width="104" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -1204,26 +1204,26 @@ CQ
                                             <constraint firstItem="gCj-PS-MjQ" firstAttribute="top" secondItem="qcI-pR-XD8" secondAttribute="top" id="sxY-hV-3kH"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dzT-Hr-SP9" userLabel="contain2">
-                                        <rect key="frame" x="0.0" y="51" width="414" height="21"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dzT-Hr-SP9" userLabel="contain2">
+                                        <rect key="frame" x="0.0" y="64" width="414" height="34"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="项目分类" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bbg-P5-yak">
-                                                <rect key="frame" x="0.0" y="0.0" width="104" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="房租" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bbg-P5-yak" userLabel="房租">
+                                                <rect key="frame" x="0.0" y="0.0" width="104" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="借方金额" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vyU-gh-9gk">
-                                                <rect key="frame" x="104" y="0.0" width="103" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="32434" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vyU-gh-9gk">
+                                                <rect key="frame" x="104" y="0.0" width="103" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="借方金额" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dQj-ro-4ZP" userLabel="项目分类1">
-                                                <rect key="frame" x="207" y="0.0" width="104" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="微信" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dQj-ro-4ZP" userLabel="项目分类1">
+                                                <rect key="frame" x="207" y="0.0" width="104" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="贷方金额" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vYH-7Y-ZJX" userLabel="贷方金额">
-                                                <rect key="frame" x="311" y="0.0" width="103" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="贷方金额" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vYH-7Y-ZJX" userLabel="贷方金额">
+                                                <rect key="frame" x="311" y="0.0" width="103" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -1248,26 +1248,26 @@ CQ
                                             <constraint firstItem="bbg-P5-yak" firstAttribute="leading" secondItem="dzT-Hr-SP9" secondAttribute="leading" id="tfA-ps-mdK"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KLZ-Ov-E31" userLabel="contain3">
-                                        <rect key="frame" x="0.0" y="72" width="414" height="21"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KLZ-Ov-E31" userLabel="contain3">
+                                        <rect key="frame" x="0.0" y="98" width="414" height="34"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="项目分类" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="czG-kG-n0j">
-                                                <rect key="frame" x="0.0" y="0.0" width="104" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="会员卡" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="czG-kG-n0j">
+                                                <rect key="frame" x="0.0" y="0.0" width="104" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="借方金额" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WnR-iZ-5aR">
-                                                <rect key="frame" x="104" y="0.0" width="103" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="30" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WnR-iZ-5aR">
+                                                <rect key="frame" x="104" y="0.0" width="103" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="借方金额" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5bb-s1-kOc" userLabel="项目分类1">
-                                                <rect key="frame" x="207" y="0.0" width="104" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="现金" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5bb-s1-kOc" userLabel="项目分类1">
+                                                <rect key="frame" x="207" y="0.0" width="104" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="贷方金额" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i4w-mA-CEE" userLabel="贷方金额">
-                                                <rect key="frame" x="311" y="0.0" width="103" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="213123" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i4w-mA-CEE" userLabel="贷方金额">
+                                                <rect key="frame" x="311" y="0.0" width="103" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -1292,26 +1292,26 @@ CQ
                                             <constraint firstItem="5bb-s1-kOc" firstAttribute="width" secondItem="WnR-iZ-5aR" secondAttribute="width" id="rBs-mn-4mj"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fb1-yR-gcm" userLabel="contain4">
-                                        <rect key="frame" x="0.0" y="93" width="414" height="21"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fb1-yR-gcm" userLabel="contain4">
+                                        <rect key="frame" x="0.0" y="132" width="414" height="35"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="项目分类" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="koH-pN-Mp0">
-                                                <rect key="frame" x="0.0" y="0.0" width="104" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="杂项" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="koH-pN-Mp0">
+                                                <rect key="frame" x="0.0" y="0.0" width="104" height="35"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="借方金额" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MU2-g2-yKM">
-                                                <rect key="frame" x="104" y="0.0" width="103" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="888" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MU2-g2-yKM">
+                                                <rect key="frame" x="104" y="0.0" width="103" height="35"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="借方金额" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t6N-l4-6Oc" userLabel="项目分类1">
-                                                <rect key="frame" x="207" y="0.0" width="104" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="银联" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t6N-l4-6Oc" userLabel="项目分类1">
+                                                <rect key="frame" x="207" y="0.0" width="104" height="35"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="贷方金额" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Efo-fP-mRN" userLabel="贷方金额">
-                                                <rect key="frame" x="311" y="0.0" width="103" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="213123" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Efo-fP-mRN" userLabel="贷方金额">
+                                                <rect key="frame" x="311" y="0.0" width="103" height="35"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -1336,26 +1336,26 @@ CQ
                                             <constraint firstAttribute="bottom" secondItem="MU2-g2-yKM" secondAttribute="bottom" id="qfq-vw-pn7"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9hZ-Kr-Clg" userLabel="contain5">
-                                        <rect key="frame" x="0.0" y="114" width="414" height="21"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9hZ-Kr-Clg" userLabel="contain5">
+                                        <rect key="frame" x="0.0" y="167" width="414" height="34"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="项目分类" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b9x-lv-yhq">
-                                                <rect key="frame" x="0.0" y="0.0" width="104" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b9x-lv-yhq">
+                                                <rect key="frame" x="0.0" y="0.0" width="104" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="借方金额" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vnq-6b-C1y">
-                                                <rect key="frame" x="104" y="0.0" width="103" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vnq-6b-C1y">
+                                                <rect key="frame" x="104" y="0.0" width="103" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="借方金额" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jFb-1n-Fen" userLabel="项目分类1">
-                                                <rect key="frame" x="207" y="0.0" width="104" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="应收" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jFb-1n-Fen" userLabel="项目分类1">
+                                                <rect key="frame" x="207" y="0.0" width="104" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="贷方金额" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w85-BM-QwJ" userLabel="贷方金额">
-                                                <rect key="frame" x="311" y="0.0" width="103" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.00" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w85-BM-QwJ" userLabel="贷方金额">
+                                                <rect key="frame" x="311" y="0.0" width="103" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -1380,26 +1380,26 @@ CQ
                                             <constraint firstItem="b9x-lv-yhq" firstAttribute="top" secondItem="9hZ-Kr-Clg" secondAttribute="top" id="skY-8X-8pH"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nc9-0Q-PzX" userLabel="contain6">
-                                        <rect key="frame" x="0.0" y="135" width="414" height="21"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nc9-0Q-PzX" userLabel="contain6">
+                                        <rect key="frame" x="0.0" y="201" width="414" height="34"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="项目分类" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CUW-uD-8W3">
-                                                <rect key="frame" x="0.0" y="0.0" width="104" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CUW-uD-8W3">
+                                                <rect key="frame" x="0.0" y="0.0" width="104" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="借方金额" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vpd-ag-LGu">
-                                                <rect key="frame" x="104" y="0.0" width="103" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vpd-ag-LGu">
+                                                <rect key="frame" x="104" y="0.0" width="103" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="借方金额" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="My0-Gx-2hd" userLabel="项目分类1">
-                                                <rect key="frame" x="207" y="0.0" width="104" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="支付宝" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="My0-Gx-2hd" userLabel="项目分类1">
+                                                <rect key="frame" x="207" y="0.0" width="104" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="贷方金额" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u8m-XZ-Csa" userLabel="贷方金额">
-                                                <rect key="frame" x="311" y="0.0" width="103" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="89766" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u8m-XZ-Csa" userLabel="贷方金额">
+                                                <rect key="frame" x="311" y="0.0" width="103" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -1424,26 +1424,26 @@ CQ
                                             <constraint firstItem="CUW-uD-8W3" firstAttribute="leading" secondItem="Nc9-0Q-PzX" secondAttribute="leading" id="z0A-OP-dt8"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C6t-gg-a0D" userLabel="contain7">
-                                        <rect key="frame" x="0.0" y="156" width="414" height="21"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C6t-gg-a0D" userLabel="contain7">
+                                        <rect key="frame" x="0.0" y="235" width="414" height="34"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="项目分类" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NMy-yt-eJc">
-                                                <rect key="frame" x="0.0" y="0.0" width="104" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="借方合计" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NMy-yt-eJc">
+                                                <rect key="frame" x="0.0" y="0.0" width="104" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="借方金额" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1eg-CV-xTt">
-                                                <rect key="frame" x="104" y="0.0" width="103" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="234234" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1eg-CV-xTt">
+                                                <rect key="frame" x="104" y="0.0" width="103" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="借方金额" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ri7-bI-hbd" userLabel="项目分类1">
-                                                <rect key="frame" x="207" y="0.0" width="104" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="贷方合计" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ri7-bI-hbd" userLabel="项目分类1">
+                                                <rect key="frame" x="207" y="0.0" width="104" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="贷方金额" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HQf-zM-rX2" userLabel="贷方金额">
-                                                <rect key="frame" x="311" y="0.0" width="103" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="12312313" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HQf-zM-rX2" userLabel="贷方金额">
+                                                <rect key="frame" x="311" y="0.0" width="103" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -1468,26 +1468,26 @@ CQ
                                             <constraint firstAttribute="bottom" secondItem="NMy-yt-eJc" secondAttribute="bottom" id="w8A-5i-S4e"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="701-vn-w3G" userLabel="contain8">
-                                        <rect key="frame" x="0.0" y="177" width="414" height="21"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="701-vn-w3G" userLabel="contain8">
+                                        <rect key="frame" x="0.0" y="269" width="414" height="34"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="项目分类" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m17-7w-mR0">
-                                                <rect key="frame" x="0.0" y="0.0" width="104" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="借贷差额" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m17-7w-mR0">
+                                                <rect key="frame" x="0.0" y="0.0" width="104" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="借方金额" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U2D-u8-dBx">
-                                                <rect key="frame" x="104" y="0.0" width="103" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="8768" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U2D-u8-dBx">
+                                                <rect key="frame" x="104" y="0.0" width="103" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="借方金额" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oL3-YE-92h" userLabel="项目分类1">
-                                                <rect key="frame" x="207" y="0.0" width="104" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="本期末余额" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oL3-YE-92h" userLabel="项目分类1">
+                                                <rect key="frame" x="207" y="0.0" width="104" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="贷方金额" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OnI-1x-v6J" userLabel="贷方金额">
-                                                <rect key="frame" x="311" y="0.0" width="103" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="986" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OnI-1x-v6J" userLabel="贷方金额">
+                                                <rect key="frame" x="311" y="0.0" width="103" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -1512,26 +1512,26 @@ CQ
                                             <constraint firstItem="m17-7w-mR0" firstAttribute="leading" secondItem="701-vn-w3G" secondAttribute="leading" id="y8E-Ej-y36"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lEe-Ea-xfh" userLabel="contain9">
-                                        <rect key="frame" x="0.0" y="198" width="414" height="21"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lEe-Ea-xfh" userLabel="contain9">
+                                        <rect key="frame" x="0.0" y="303" width="414" height="34"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="项目分类" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VJR-Pi-cik">
-                                                <rect key="frame" x="0.0" y="0.0" width="104" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VJR-Pi-cik">
+                                                <rect key="frame" x="0.0" y="0.0" width="104" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="借方金额" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="848-dG-ASQ">
-                                                <rect key="frame" x="104" y="0.0" width="103" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="848-dG-ASQ">
+                                                <rect key="frame" x="104" y="0.0" width="103" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="借方金额" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y0b-6f-Ucy" userLabel="项目分类1">
-                                                <rect key="frame" x="207" y="0.0" width="104" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y0b-6f-Ucy" userLabel="项目分类1">
+                                                <rect key="frame" x="207" y="0.0" width="104" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="贷方金额" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ozD-Vg-djA" userLabel="贷方金额">
-                                                <rect key="frame" x="311" y="0.0" width="103" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ozD-Vg-djA" userLabel="贷方金额">
+                                                <rect key="frame" x="311" y="0.0" width="103" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -1556,26 +1556,26 @@ CQ
                                             <constraint firstItem="VJR-Pi-cik" firstAttribute="leading" secondItem="lEe-Ea-xfh" secondAttribute="leading" id="uqs-TZ-Kdr"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b24-Fz-oIH" userLabel="contain10">
-                                        <rect key="frame" x="0.0" y="219" width="414" height="21"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b24-Fz-oIH" userLabel="contain10">
+                                        <rect key="frame" x="0.0" y="337" width="414" height="34"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="项目分类" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YuC-dl-2I4">
-                                                <rect key="frame" x="0.0" y="0.0" width="104" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="本期现金充值" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YuC-dl-2I4">
+                                                <rect key="frame" x="0.0" y="0.0" width="104" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="21334" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8cy-9j-dhe">
+                                                <rect key="frame" x="104" y="0.0" width="103" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="借方金额" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8cy-9j-dhe">
-                                                <rect key="frame" x="104" y="0.0" width="103" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="上期末应收欠款" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6eY-OS-jNV" userLabel="项目分类1">
+                                                <rect key="frame" x="207" y="0.0" width="104" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="借方金额" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6eY-OS-jNV" userLabel="项目分类1">
-                                                <rect key="frame" x="207" y="0.0" width="104" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="贷方金额" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Lc-Ci-EqL" userLabel="贷方金额">
-                                                <rect key="frame" x="311" y="0.0" width="103" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Lc-Ci-EqL" userLabel="贷方金额">
+                                                <rect key="frame" x="311" y="0.0" width="103" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -1600,26 +1600,26 @@ CQ
                                             <constraint firstItem="3Lc-Ci-EqL" firstAttribute="trailing" secondItem="b24-Fz-oIH" secondAttribute="trailing" id="wso-V4-hYH"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rex-PH-nPq" userLabel="contain11">
-                                        <rect key="frame" x="0.0" y="240" width="414" height="21"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rex-PH-nPq" userLabel="contain11">
+                                        <rect key="frame" x="0.0" y="371" width="414" height="34"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="项目分类" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w9a-hp-XOq">
-                                                <rect key="frame" x="0.0" y="0.0" width="104" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="本期银联充值" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w9a-hp-XOq">
+                                                <rect key="frame" x="0.0" y="0.0" width="104" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="00" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cre-9d-PmM">
+                                                <rect key="frame" x="104" y="0.0" width="103" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="借方金额" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cre-9d-PmM">
-                                                <rect key="frame" x="104" y="0.0" width="103" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="本期应收挂帐" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c3q-Pz-bfr" userLabel="项目分类1">
+                                                <rect key="frame" x="207" y="0.0" width="104" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="借方金额" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c3q-Pz-bfr" userLabel="项目分类1">
-                                                <rect key="frame" x="207" y="0.0" width="104" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="贷方金额" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U6P-0a-cFt" userLabel="贷方金额">
-                                                <rect key="frame" x="311" y="0.0" width="103" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="09789" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U6P-0a-cFt" userLabel="贷方金额">
+                                                <rect key="frame" x="311" y="0.0" width="103" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -1644,26 +1644,26 @@ CQ
                                             <constraint firstItem="w9a-hp-XOq" firstAttribute="top" secondItem="rex-PH-nPq" secondAttribute="top" id="xdI-9Y-0aw"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ic4-m8-O18" userLabel="contain12">
-                                        <rect key="frame" x="0.0" y="261" width="414" height="252"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ic4-m8-O18" userLabel="contain12">
+                                        <rect key="frame" x="0.0" y="405" width="414" height="35"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="项目分类" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QbW-gJ-NJI">
-                                                <rect key="frame" x="0.0" y="0.0" width="104" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="本期赠送充值" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QbW-gJ-NJI">
+                                                <rect key="frame" x="0.0" y="0.0" width="104" height="35"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="12313" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YiI-dC-ZxP">
+                                                <rect key="frame" x="104" y="0.0" width="103" height="35"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="借方金额" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YiI-dC-ZxP">
-                                                <rect key="frame" x="104" y="0.0" width="103" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="本期应收回款" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sop-i3-a67" userLabel="项目分类1">
+                                                <rect key="frame" x="207" y="0.0" width="104" height="35"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="借方金额" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sop-i3-a67" userLabel="项目分类1">
-                                                <rect key="frame" x="207" y="0.0" width="104" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="贷方金额" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G2u-ZH-oeA" userLabel="贷方金额">
-                                                <rect key="frame" x="311" y="0.0" width="103" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="贷方金额" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G2u-ZH-oeA" userLabel="贷方金额">
+                                                <rect key="frame" x="311" y="0.0" width="103" height="35"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -1689,25 +1689,25 @@ CQ
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7SM-9h-PaB" userLabel="contain13">
-                                        <rect key="frame" x="0.0" y="513" width="414" height="21"/>
+                                        <rect key="frame" x="0.0" y="440" width="414" height="34"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="项目分类" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H6X-fD-tnh">
-                                                <rect key="frame" x="0.0" y="0.0" width="104" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="本期充值合计" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H6X-fD-tnh">
+                                                <rect key="frame" x="0.0" y="0.0" width="104" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="234" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UGu-ac-Sf8">
+                                                <rect key="frame" x="104" y="0.0" width="103" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="借方金额" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UGu-ac-Sf8">
-                                                <rect key="frame" x="104" y="0.0" width="103" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="本期应收欠款" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qOf-8e-9Vi" userLabel="项目分类1">
+                                                <rect key="frame" x="207" y="0.0" width="104" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="借方金额" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qOf-8e-9Vi" userLabel="项目分类1">
-                                                <rect key="frame" x="207" y="0.0" width="104" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="贷方金额" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ndu-ZO-Gcs" userLabel="贷方金额">
-                                                <rect key="frame" x="311" y="0.0" width="103" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123123" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ndu-ZO-Gcs" userLabel="贷方金额">
+                                                <rect key="frame" x="311" y="0.0" width="103" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -1733,25 +1733,25 @@ CQ
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LkZ-Zk-vm7" userLabel="contain14">
-                                        <rect key="frame" x="0.0" y="534" width="414" height="21"/>
+                                        <rect key="frame" x="0.0" y="474" width="414" height="34"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="项目分类" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c44-RO-Vqg">
-                                                <rect key="frame" x="0.0" y="0.0" width="104" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c44-RO-Vqg">
+                                                <rect key="frame" x="0.0" y="0.0" width="104" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="借方金额" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dji-RP-IWP">
-                                                <rect key="frame" x="104" y="0.0" width="103" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dji-RP-IWP">
+                                                <rect key="frame" x="104" y="0.0" width="103" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="借方金额" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c43-aV-gAU" userLabel="项目分类1">
-                                                <rect key="frame" x="207" y="0.0" width="104" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c43-aV-gAU" userLabel="项目分类1">
+                                                <rect key="frame" x="207" y="0.0" width="104" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="贷方金额" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yfF-AX-fDN" userLabel="贷方金额">
-                                                <rect key="frame" x="311" y="0.0" width="103" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yfF-AX-fDN" userLabel="贷方金额">
+                                                <rect key="frame" x="311" y="0.0" width="103" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -1777,25 +1777,25 @@ CQ
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gi8-ei-EGw" userLabel="contain15">
-                                        <rect key="frame" x="0.0" y="555" width="414" height="21"/>
+                                        <rect key="frame" x="0.0" y="508" width="414" height="34"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="项目分类" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uba-eZ-gtm">
-                                                <rect key="frame" x="0.0" y="0.0" width="104" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="上期末储值金额" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uba-eZ-gtm">
+                                                <rect key="frame" x="0.0" y="0.0" width="104" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HoW-pn-B4V">
+                                                <rect key="frame" x="104" y="0.0" width="103" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="借方金额" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HoW-pn-B4V">
-                                                <rect key="frame" x="104" y="0.0" width="103" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="本期剩余积分" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hFb-Xn-Sr9" userLabel="项目分类1">
+                                                <rect key="frame" x="207" y="0.0" width="104" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="借方金额" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hFb-Xn-Sr9" userLabel="项目分类1">
-                                                <rect key="frame" x="207" y="0.0" width="104" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="贷方金额" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CJd-vM-sjL" userLabel="贷方金额">
-                                                <rect key="frame" x="311" y="0.0" width="103" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CJd-vM-sjL" userLabel="贷方金额">
+                                                <rect key="frame" x="311" y="0.0" width="103" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -1821,25 +1821,25 @@ CQ
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Shw-2V-yox" userLabel="contain16">
-                                        <rect key="frame" x="0.0" y="555" width="414" height="21"/>
+                                        <rect key="frame" x="0.0" y="542" width="414" height="34"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="项目分类" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IX8-LS-O75">
-                                                <rect key="frame" x="0.0" y="0.0" width="104" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="本期储值卡充值" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IX8-LS-O75">
+                                                <rect key="frame" x="0.0" y="0.0" width="104" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="6667" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UyE-c9-Xsh">
+                                                <rect key="frame" x="104" y="0.0" width="103" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="借方金额" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UyE-c9-Xsh">
-                                                <rect key="frame" x="104" y="0.0" width="103" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="本期发生积分" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4jw-qi-XM3" userLabel="项目分类1">
+                                                <rect key="frame" x="207" y="0.0" width="104" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="借方金额" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4jw-qi-XM3" userLabel="项目分类1">
-                                                <rect key="frame" x="207" y="0.0" width="104" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="贷方金额" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bkm-Qz-wBF" userLabel="贷方金额">
-                                                <rect key="frame" x="311" y="0.0" width="103" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="98769" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bkm-Qz-wBF" userLabel="贷方金额">
+                                                <rect key="frame" x="311" y="0.0" width="103" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -1869,6 +1869,7 @@ CQ
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Nc9-0Q-PzX" secondAttribute="trailing" id="0hw-gS-PIt"/>
                                     <constraint firstItem="WLJ-cv-Ahn" firstAttribute="top" secondItem="4Wa-sU-5dq" secondAttribute="top" id="1ga-lM-5vg"/>
+                                    <constraint firstItem="lEe-Ea-xfh" firstAttribute="height" secondItem="701-vn-w3G" secondAttribute="height" id="1qz-pT-Tn5"/>
                                     <constraint firstAttribute="trailing" secondItem="Ic4-m8-O18" secondAttribute="trailing" id="1ze-hN-pcg"/>
                                     <constraint firstAttribute="trailing" secondItem="Fb1-yR-gcm" secondAttribute="trailing" id="21g-EM-IR6"/>
                                     <constraint firstAttribute="trailing" secondItem="lEe-Ea-xfh" secondAttribute="trailing" id="22e-cp-EYv"/>
@@ -1878,31 +1879,39 @@ CQ
                                     <constraint firstItem="KLZ-Ov-E31" firstAttribute="top" secondItem="dzT-Hr-SP9" secondAttribute="bottom" id="560-xv-ap4"/>
                                     <constraint firstItem="KLZ-Ov-E31" firstAttribute="leading" secondItem="4Wa-sU-5dq" secondAttribute="leading" id="7gf-5d-GdF"/>
                                     <constraint firstItem="Fb1-yR-gcm" firstAttribute="top" secondItem="KLZ-Ov-E31" secondAttribute="bottom" id="7zu-3k-Aar"/>
+                                    <constraint firstItem="Shw-2V-yox" firstAttribute="top" secondItem="gi8-ei-EGw" secondAttribute="bottom" id="AE3-Mh-FDz"/>
                                     <constraint firstAttribute="trailing" secondItem="701-vn-w3G" secondAttribute="trailing" id="Asr-Rr-UMA"/>
                                     <constraint firstItem="Shw-2V-yox" firstAttribute="leading" secondItem="4Wa-sU-5dq" secondAttribute="leading" id="CTJ-wo-oki"/>
+                                    <constraint firstItem="701-vn-w3G" firstAttribute="height" secondItem="C6t-gg-a0D" secondAttribute="height" id="CUy-eU-zBD"/>
                                     <constraint firstAttribute="bottom" secondItem="Shw-2V-yox" secondAttribute="bottom" id="CWg-MB-xO5"/>
                                     <constraint firstAttribute="trailing" secondItem="KLZ-Ov-E31" secondAttribute="trailing" id="Csb-br-a9c"/>
                                     <constraint firstItem="7SM-9h-PaB" firstAttribute="top" secondItem="Ic4-m8-O18" secondAttribute="bottom" id="CvW-I9-sbW"/>
                                     <constraint firstItem="qcI-pR-XD8" firstAttribute="top" secondItem="WLJ-cv-Ahn" secondAttribute="bottom" id="E6c-9h-l8e"/>
                                     <constraint firstItem="qcI-pR-XD8" firstAttribute="leading" secondItem="4Wa-sU-5dq" secondAttribute="leading" id="EpQ-ay-a41"/>
                                     <constraint firstItem="9hZ-Kr-Clg" firstAttribute="leading" secondItem="4Wa-sU-5dq" secondAttribute="leading" id="Eux-Fv-oIe"/>
+                                    <constraint firstItem="KLZ-Ov-E31" firstAttribute="height" secondItem="dzT-Hr-SP9" secondAttribute="height" id="FGP-BE-9dp"/>
                                     <constraint firstItem="gi8-ei-EGw" firstAttribute="top" secondItem="LkZ-Zk-vm7" secondAttribute="bottom" id="FsN-ML-i35"/>
                                     <constraint firstAttribute="trailing" secondItem="b24-Fz-oIH" secondAttribute="trailing" id="L9f-U8-bp6"/>
                                     <constraint firstItem="701-vn-w3G" firstAttribute="leading" secondItem="4Wa-sU-5dq" secondAttribute="leading" id="LPl-KT-SsV"/>
                                     <constraint firstItem="rex-PH-nPq" firstAttribute="leading" secondItem="4Wa-sU-5dq" secondAttribute="leading" id="LQQ-Pa-W4F"/>
+                                    <constraint firstItem="Nc9-0Q-PzX" firstAttribute="height" secondItem="9hZ-Kr-Clg" secondAttribute="height" id="M4r-Iq-WCf"/>
                                     <constraint firstItem="Nc9-0Q-PzX" firstAttribute="top" secondItem="9hZ-Kr-Clg" secondAttribute="bottom" id="MpC-pH-g2e"/>
                                     <constraint firstAttribute="trailing" secondItem="dzT-Hr-SP9" secondAttribute="trailing" id="NRp-mj-b4C"/>
+                                    <constraint firstItem="9hZ-Kr-Clg" firstAttribute="height" secondItem="Fb1-yR-gcm" secondAttribute="height" id="O46-VM-Exw"/>
                                     <constraint firstItem="WLJ-cv-Ahn" firstAttribute="width" secondItem="4Wa-sU-5dq" secondAttribute="width" id="QgJ-1Z-272"/>
+                                    <constraint firstItem="b24-Fz-oIH" firstAttribute="height" secondItem="lEe-Ea-xfh" secondAttribute="height" id="Qz2-sI-HaI"/>
                                     <constraint firstItem="b24-Fz-oIH" firstAttribute="leading" secondItem="4Wa-sU-5dq" secondAttribute="leading" id="RdO-61-AuI"/>
                                     <constraint firstItem="dzT-Hr-SP9" firstAttribute="top" secondItem="qcI-pR-XD8" secondAttribute="bottom" id="Reh-wf-9mI"/>
                                     <constraint firstAttribute="trailing" secondItem="qcI-pR-XD8" secondAttribute="trailing" id="RwF-7a-TmH"/>
                                     <constraint firstAttribute="trailing" secondItem="rex-PH-nPq" secondAttribute="trailing" id="SNP-tV-y6a"/>
+                                    <constraint firstItem="Fb1-yR-gcm" firstAttribute="height" secondItem="KLZ-Ov-E31" secondAttribute="height" id="TTp-AT-w4m"/>
                                     <constraint firstItem="LkZ-Zk-vm7" firstAttribute="height" secondItem="7SM-9h-PaB" secondAttribute="height" id="TgK-sN-kCZ"/>
                                     <constraint firstItem="Fb1-yR-gcm" firstAttribute="leading" secondItem="4Wa-sU-5dq" secondAttribute="leading" id="U02-3c-cod"/>
                                     <constraint firstAttribute="trailing" secondItem="C6t-gg-a0D" secondAttribute="trailing" id="XaZ-34-y9K"/>
                                     <constraint firstItem="gi8-ei-EGw" firstAttribute="leading" secondItem="4Wa-sU-5dq" secondAttribute="leading" id="YSx-tx-PGs"/>
                                     <constraint firstItem="C6t-gg-a0D" firstAttribute="leading" secondItem="4Wa-sU-5dq" secondAttribute="leading" id="Z8Q-fP-VHj"/>
                                     <constraint firstItem="Shw-2V-yox" firstAttribute="height" secondItem="gi8-ei-EGw" secondAttribute="height" id="Zxl-1W-npQ"/>
+                                    <constraint firstItem="C6t-gg-a0D" firstAttribute="height" secondItem="Nc9-0Q-PzX" secondAttribute="height" id="aY3-8k-QJn"/>
                                     <constraint firstAttribute="trailing" secondItem="LkZ-Zk-vm7" secondAttribute="trailing" id="c6Y-3I-BGL"/>
                                     <constraint firstItem="7SM-9h-PaB" firstAttribute="leading" secondItem="4Wa-sU-5dq" secondAttribute="leading" id="g5X-hP-CGd"/>
                                     <constraint firstItem="LkZ-Zk-vm7" firstAttribute="leading" secondItem="4Wa-sU-5dq" secondAttribute="leading" id="gpO-5X-XGi"/>
@@ -1910,6 +1919,7 @@ CQ
                                     <constraint firstItem="WLJ-cv-Ahn" firstAttribute="centerX" secondItem="4Wa-sU-5dq" secondAttribute="centerX" id="hSz-6f-lFf"/>
                                     <constraint firstItem="b24-Fz-oIH" firstAttribute="top" secondItem="lEe-Ea-xfh" secondAttribute="bottom" id="i2B-NC-Ahl"/>
                                     <constraint firstItem="701-vn-w3G" firstAttribute="top" secondItem="C6t-gg-a0D" secondAttribute="bottom" id="iet-OU-eA3"/>
+                                    <constraint firstItem="dzT-Hr-SP9" firstAttribute="height" secondItem="qcI-pR-XD8" secondAttribute="height" id="jBs-9P-Bf5"/>
                                     <constraint firstItem="Ic4-m8-O18" firstAttribute="height" secondItem="rex-PH-nPq" secondAttribute="height" id="kUS-V1-IE3"/>
                                     <constraint firstItem="Ic4-m8-O18" firstAttribute="top" secondItem="rex-PH-nPq" secondAttribute="bottom" id="kgn-Rg-lwx"/>
                                     <constraint firstItem="rex-PH-nPq" firstAttribute="top" secondItem="b24-Fz-oIH" secondAttribute="bottom" id="kx9-dU-KM2"/>
@@ -1917,6 +1927,7 @@ CQ
                                     <constraint firstAttribute="trailing" secondItem="gi8-ei-EGw" secondAttribute="trailing" id="lGi-rP-mab"/>
                                     <constraint firstItem="lEe-Ea-xfh" firstAttribute="leading" secondItem="4Wa-sU-5dq" secondAttribute="leading" id="lr4-KT-NZ4"/>
                                     <constraint firstItem="Nc9-0Q-PzX" firstAttribute="leading" secondItem="4Wa-sU-5dq" secondAttribute="leading" id="lxA-eT-brA"/>
+                                    <constraint firstItem="rex-PH-nPq" firstAttribute="height" secondItem="b24-Fz-oIH" secondAttribute="height" id="mH3-HV-veX"/>
                                     <constraint firstItem="7SM-9h-PaB" firstAttribute="height" secondItem="Ic4-m8-O18" secondAttribute="height" id="oti-Ie-uHN"/>
                                     <constraint firstItem="dzT-Hr-SP9" firstAttribute="leading" secondItem="4Wa-sU-5dq" secondAttribute="leading" id="rBN-8z-UXr"/>
                                     <constraint firstItem="9hZ-Kr-Clg" firstAttribute="top" secondItem="Fb1-yR-gcm" secondAttribute="bottom" id="uBi-ds-5lA"/>
@@ -1925,6 +1936,11 @@ CQ
                                     <constraint firstItem="Shw-2V-yox" firstAttribute="centerY" secondItem="gi8-ei-EGw" secondAttribute="centerY" id="xv2-tR-cH5"/>
                                     <constraint firstAttribute="trailing" secondItem="9hZ-Kr-Clg" secondAttribute="trailing" id="ygc-XU-TsQ"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="xv2-tR-cH5"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LJK-f3-mpB">
                                 <rect key="frame" x="27" y="74" width="360" height="27"/>
