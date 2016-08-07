@@ -119,8 +119,8 @@
     [adcomps setYear:0];
     
     [adcomps setMonth:0];
-    
-    [adcomps setDay:*days];
+    int day = days;
+    [adcomps setDay:day];
     return  [calendar dateByAddingComponents:adcomps toDate:mydate options:0];
 }
 

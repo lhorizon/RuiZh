@@ -54,4 +54,8 @@
     
     
 }
+- (IBAction)goSetting {
+    SettingViewController *svc = [[SettingViewController alloc] init];
+    [self.navigationController pushViewController:svc animated:YES];
+}
 @end

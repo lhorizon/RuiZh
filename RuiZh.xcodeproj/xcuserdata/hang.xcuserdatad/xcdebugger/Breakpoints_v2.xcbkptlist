@@ -57,11 +57,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RuiZh/AnalyticsViewController.m"
-            timestampString = "492190637.151862"
+            timestampString = "492305432.396499"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "-doSomethingInSegment:"
             landmarkType = "5">
          </BreakpointContent>

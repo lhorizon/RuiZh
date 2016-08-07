@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h> 
+#import "SettingViewController.h"
 @interface HomeViewController : UIViewController
 @property (retain, nonatomic) IBOutlet UINavigationItem *titlebar;
+- (IBAction)goSetting;
 
 
 @property (retain, nonatomic) IBOutlet UIView *viewRoomStatus;
