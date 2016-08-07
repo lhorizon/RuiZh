@@ -1,6 +1,6 @@
 //
 //  RoomStatusViewController.h
-//  RuiZh
+//  RuiZ
 //
 //  Created by 行 on 16/7/15.
 //  Copyright © 2016年 lihang personal. All rights reserved.

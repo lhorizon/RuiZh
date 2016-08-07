@@ -9,7 +9,8 @@
 #import "AnalyticsViewController.h"
 
 @interface AnalyticsViewController ()
-
+#define kWidth 100
+#define kHeight 40
 @end
 
 @implementation AnalyticsViewController
@@ -35,6 +36,9 @@
     self.textfieldEndTime.text = today;
     self.textfieldBeginTime.text = today;
     
+    
+    [self loadYingyeJianbao:self.textfieldBeginTime.text dtend:self.textfieldEndTime.text];
+    
 }
 -(void)doSomethingInSegment:(UISegmentedControl *)Seg
 {
@@ -45,20 +49,22 @@
     {
         case 0:
             self.isjianbao = YES;
-            [self.jianbao setHidden:NO];
-            [self.viewShourufenxi setHidden:YES];
+            [self.jianbaoContainer setHidden:NO];
+            [self.shouruContainer setHidden:YES];
             [self loadYingyeJianbao:self.textfieldBeginTime.text dtend:self.textfieldEndTime.text];
             break;
         case 1:
             self.isjianbao = NO;
-            [self.jianbao setHidden:YES];
-            [self.viewShourufenxi setHidden:NO];
+            [self.jianbaoContainer setHidden:YES];
+            [self.shouruContainer setHidden:NO];
             break;
             
     }
 }
 //加载营业简报
 -(void) loadYingyeJianbao:(NSString *) dtstart dtend:(NSString *) dtend {
+    dtstart = @"2016-06-01";
+    dtend = @"2016-06-18";
     [MBProgressHUD showMessage:@"加载"];
     NSString *urlStr=[NSString stringWithFormat:@"/GetBusinessLevelReportData?dtstart=%@&dtend=%@",dtstart,dtend];
     NSDictionary *data =[NetUtil doGetSync:urlStr];
@@ -67,18 +73,157 @@
     if(data!=nil&&[@"True" isEqualToString:[data valueForKey:@"Result"]]){
         [MBProgressHUD showSuccess:@"获取成功"];
         self.yeingyejianbaoData = [data valueForKey:@"Data"];
-            
+        [self dealJianbaoData];
+
+        if (!self.jianbaoContainer.subviews) {
+            for(int i = 0;i<=[self.jianbaoContainer.subviews count];i++){
+                [ [ self.jianbaoContainer.subviews objectAtIndex:i] removeFromsuperview];
+            }
+        }
+        
+        
+        UIView *tableViewHeadView=[[UIView alloc]initWithFrame:CGRectMake(0, 0,  [self.jianbaoTitles count]*kWidth,kHeight)];
+        self.myHeadView = tableViewHeadView;
+        self.myHeadView.backgroundColor = [UIColor colorWithRed:(float)108.0/255.0f green:(float)147 /255.0f blue:(float)198/255.0f alpha:1.0f];
+        
+        for(int i=0;i< [self.jianbaoTitles count];i++){
+            HeadView *headView=[[HeadView alloc]initWithFrame:CGRectMake(i*kWidth, 10, kWidth, kHeight)];
+            headView.num=[self.jianbaoTitles objectAtIndex:i];
+            [self.myHeadView addSubview:headView];
+        }
+        
+        UITextField *textMaster = [[UITextField alloc]initWithFrame:CGRectMake(0, 0, kWidth+15, kHeight) ];
+        textMaster.text =@"    日期";
+        textMaster.textColor = [UIColor whiteColor];
+        textMaster.backgroundColor = [UIColor colorWithRed:(float)108.0/255.0f green:(float)147 /255.0f blue:(float)198/255.0f alpha:1.0f];
+        textMaster.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+        textMaster.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
+        
+        [self.jianbaoContainer addSubview:textMaster];
+//
+        UIScrollView *myScrollView=[[UIScrollView alloc]initWithFrame:CGRectMake(kWidth +15, 0, self.view.frame.size.width-kWidth,  self.jianbaoContainer.frame.size.height -kHeight)];
+        
+        UITableView *tableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.myHeadView.frame.size.width,myScrollView.frame.size.height ) style:UITableViewStylePlain];
+        tableView.delegate=self;
+        tableView.dataSource=self;
+        tableView.bounces=NO;
+        tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
+        self.contentTableView=tableView;
+        self.contentTableView.backgroundColor=[UIColor redColor];
+//
+        [myScrollView addSubview:self.contentTableView];
+        myScrollView.bounces=YES;
+        myScrollView.contentSize=CGSizeMake(self.myHeadView.frame.size.width,0);
+        [self.jianbaoContainer addSubview:myScrollView];
+        
+        self.jianbaotimeView=[[TitleView alloc] initWithFrame:CGRectMake(0, kHeight+20, kWidth+15, [self.jianbaoDatelist count
+                                                                                                   ]*(kHeight+kHeightMargin)) cellDecs:self.jianbaoDatelist];
+        [self.jianbaoContainer addSubview:self.jianbaotimeView];
         
     }else{
         [MBProgressHUD showError:@"获取失败"];
     }
-    self.yeingyejianbaoData= [NetUtil doGetSync:urlStr];
     
     
 }
--(void) dealData{
+-(void) dealJianbaoData{
+        self.jianbaodValues = [[NSMutableArray alloc] init];
+        self.jianbaoDatelist =[[NSMutableArray alloc] init];
+        self.jianbaoTitles=[[NSMutableArray alloc] init];
+ 
+    
+    if(self.yeingyejianbaoData!=nil&&[self.yeingyejianbaoData count]>0){
+//        NSDictionary* item= [self.yeingyejianbaoData objectAtIndex:0];
+//        self.jianbaoTitles= [item allKeys];
+//        "总营业额": 8869,
+//        "房租": 8740,
+//        "其它": 129,
+//        "总房数": 86,
+//        "出租间数": 72,
+//        "出租率": 83.72,
+//        "平均房价": 121.39,
+//        "revpar": 101.63,
+//        "总收入": 11603,
+//        "本日余额": -5528
+        [self.jianbaoTitles addObject:@"总营业额"];
+                [self.jianbaoTitles addObject:@"房租"];        [self.jianbaoTitles addObject:@"其它"];        [self.jianbaoTitles addObject:@"总房数"];        [self.jianbaoTitles addObject:@"出租间数"];        [self.jianbaoTitles addObject:@"出租率"];        [self.jianbaoTitles addObject:@"平均房价"];        [self.jianbaoTitles addObject:@"revpar"];        [self.jianbaoTitles addObject:@"总收入"];        [self.jianbaoTitles addObject:@"本日余额"];
         
+        for (NSDictionary * colitem  in self.yeingyejianbaoData) {
+            [self.jianbaoDatelist addObject:[colitem valueForKey:@"日期"]];
+            
+            NSMutableArray * col = [[NSMutableArray alloc]init];
+            for (NSString * key in self.jianbaoTitles) {
+                if(![@"日期" isEqualToString:key])
+                [col addObject:[colitem objectForKey:key]];
+            }
+            [self.jianbaodValues addObject:col];
+        }
+    }
+    
+    
+    
+    
 }
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    unsigned long count =  [self.jianbaoDatelist count] ;
+    return  count;
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellIdentifier=@"cell";
+    //
+    MyCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if(cell==nil){
+        
+        cell=[[MyCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier ] ;
+        cell.delegate=self;
+        cell.backgroundColor=[UIColor grayColor];
+        cell.selectionStyle=UITableViewCellSelectionStyleNone;
+        cell.selectionStyle=UITableViewCellSelectionStyleNone;
+    }
+    
+    cell.index=indexPath.row;
+    cell.currentTime=[self.jianbaodValues objectAtIndex:indexPath.row];
+    return cell;
+}
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    
+    return self.myHeadView;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    
+    return kHeight;
+}
+-(void)myHeadView:(HeadView *)headView point:(CGPoint)point
+{
+    CGPoint myPoint= [self.contentTableView convertPoint:point fromView:headView];
+    
+    [self convertRoomFromPoint:myPoint];
+}
+-(void)convertRoomFromPoint:(CGPoint)ponit
+{
+    //    NSString *roomNum=[NSString stringWithFormat:@"%03d",(int)(ponit.x)/kWidth];
+    //    int currentTime=(ponit.y-kHeight-kHeightMargin)*30.0/(kHeight+kHeightMargin)+510;
+    //    UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"clicked room" message:[NSString stringWithFormat:@"time :%@ room :%@",[NSString stringWithFormat:@"%d:%02d",currentTime/60,currentTime%60],roomNum] delegate:nil cancelButtonTitle:@"cancel" otherButtonTitles:@"ok", nil];
+    //    [alert show];
+}
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    CGFloat offsetY= self.contentTableView.contentOffset.y;
+    CGPoint timeOffsetY=self.jianbaotimeView.timeTableView.contentOffset;
+    timeOffsetY.y=offsetY;
+    self.jianbaotimeView.timeTableView.contentOffset=timeOffsetY;
+    
+    if(offsetY==0){
+        self.jianbaotimeView.timeTableView.contentOffset=CGPointZero;
+    }
+}
+
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -105,6 +250,7 @@
     //设置日期选择框
     UIDatePicker *datePicker = [[UIDatePicker alloc] init]; datePicker.datePickerMode = UIDatePickerModeDate;
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"\n\n\n\n\n\n\n\n\n\n\n\n" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+
     [alert.view addSubview:datePicker];
     UIAlertAction *ok = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         NSDateFormatter* dateFormat = [[NSDateFormatter alloc] init];
@@ -117,12 +263,11 @@
         [self loadYingyeJianbao:self.textfieldBeginTime.text dtend:self.textfieldEndTime.text];
         NSLog(@"%@",dateString);
     }];
-    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
     }];
     [alert addAction:ok];
     [alert addAction:cancel];
     [datePicker setLocale:[[NSLocale alloc]initWithLocaleIdentifier:@"zh_Hans_CN"]];
-    
     [self presentViewController:alert animated:YES completion:^{ }];
 }
 - (IBAction)mdfyEndTime {

@@ -29,7 +29,7 @@
          self.timeTableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) style:UITableViewStylePlain];
          self.timeTableView.delegate=self;
          self.timeTableView.dataSource=self;
-         self.timeTableView.separatorStyle=UITableViewCellSeparatorStyleSingleLine;
+         self.timeTableView.separatorStyle=UITableViewCellSeparatorStyleNone;
          self.timeTableView.userInteractionEnabled=NO;
         [self addSubview: self.timeTableView];
     }
@@ -60,7 +60,6 @@
         cell=[[TimeCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     cell.timeLabel.text=self.cellDecs[indexPath.row];
-    
     return cell;
 }
 @end
