@@ -33,10 +33,10 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd"];
     NSString *today =[dateFormatter stringFromDate:epochNSDate];
-    self.textfieldEndTime.text =[ @"" stringByAppendingFormat:@"%@", [SystemUtil computeDate:today days:-90] ];
+    self.textfieldBeginTime.text =[ @"" stringByAppendingFormat:@"%@", [dateFormatter stringFromDate:[SystemUtil computeDate:today days:-10] ]];
 //    NSData be
     
-    self.textfieldBeginTime.text = today;
+    self.textfieldEndTime.text = today;
     
     
     [self loadYingyeJianbao:self.textfieldBeginTime.text dtend:self.textfieldEndTime.text];
@@ -111,7 +111,7 @@
         myScrollView.contentSize=CGSizeMake(self.myHeadView.frame.size.width,0);
         [self.jianbaoContainer addSubview:myScrollView];
         
-        self.jianbaotimeView=[[TitleView alloc] initWithFrame:CGRectMake(0, kHeight+20, kWidth+15, [self.jianbaoDatelist count
+        self.jianbaotimeView=[[TitleView alloc] initWithFrame:CGRectMake(0, kHeight+10, kWidth+15, [self.jianbaoDatelist count
                                                                                                    ]*(kHeight+kHeightMargin)) cellDecs:self.jianbaoDatelist];
 //        0, kHeight+75.0, kWidth, [self.typeArray count
 //                                  ]*(kHeight+kHeightMargin)) cellDecs:self.typeArray

@@ -45,17 +45,12 @@
 - (IBAction)queryRoomStatus {
 }
 
-- (IBAction)gosetting:(id)sender {
-    NSLog(@"gosetting :%@",@"ehehe");
-}
+
 - (IBAction)actionRoomstatus {
 //self.navigationController pushViewController:
 // animated:YES];
     
     
 }
-- (IBAction)goSetting {
-    SettingViewController *svc = [[SettingViewController alloc] init];
-    [self.navigationController pushViewController:svc animated:YES];
-}
+
 @end
