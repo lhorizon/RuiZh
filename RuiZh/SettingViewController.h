@@ -7,7 +7,13 @@
 //
 
 #import "ViewController.h"
+#import "LoginViewController.h"
+#define UserNameKey @"name"
+#define PwdKey @"pwd"
+#define RembPwdKey @"rmb_pwd"
 
-@interface SettingViewController : ViewController
+@interface SettingViewController : ViewController<UIAlertViewDelegate>
+- (IBAction)aboutAction;
+- (IBAction)userReset;
 
 @end

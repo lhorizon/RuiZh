@@ -11,7 +11,10 @@
 @implementation NetUtil
 
 +(NSDictionary *) doGetSync:(NSString *) paramString{
-    return [self doGetSync:defaultDomain paramString:paramString];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+     NSString * host  = [defaults valueForKey:@"host"];
+    host = (host ==nil||[host isEqualToString:@""])?defaultDomain:host;
+    return [self doGetSync:host paramString:paramString];
 }
 +(NSDictionary *) doGetSync :(NSString *)domain paramString:(NSString *) paramString{
     //    1.设置请求路径

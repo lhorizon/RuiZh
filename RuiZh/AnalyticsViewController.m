@@ -11,6 +11,7 @@
 @interface AnalyticsViewController ()
 #define kWidth 100
 #define kHeight 40
+@property (retain,nonatomic) NSMutableArray * subviews;
 @end
 
 @implementation AnalyticsViewController
@@ -35,10 +36,14 @@
     NSString *today =[dateFormatter stringFromDate:epochNSDate];
     self.textfieldBeginTime.text =[ @"" stringByAppendingFormat:@"%@", [dateFormatter stringFromDate:[SystemUtil computeDate:today days:-10] ]];
 //    NSData be
-    
     self.textfieldEndTime.text = today;
     
+    self.subviews = [[NSMutableArray alloc]init];
+    [self getSonViews:self.shouruContainer];
     
+    self.isjianbao = YES;
+    [self.jianbaoContainer setHidden:NO];
+    [self.shouruContainer setHidden:YES];
     [self loadYingyeJianbao:self.textfieldBeginTime.text dtend:self.textfieldEndTime.text];
     
 }
@@ -59,10 +64,140 @@
             self.isjianbao = NO;
             [self.jianbaoContainer setHidden:YES];
             [self.shouruContainer setHidden:NO];
+            [self loadfenxi:self.textfieldBeginTime.text dtend:self.textfieldEndTime.text];
             break;
             
     }
 }
+-(void) loadfenxi:(NSString *) dtstart dtend:(NSString *) dtend {
+//    dtstart = @"2016-05-01";
+//    dtend = @"2016-06-01";
+    [MBProgressHUD showMessage:@"加载"];
+    NSString *urlStr=[NSString stringWithFormat:@"/GetBusinessAnalysisReportData?dtstart=%@&dtend=%@",dtstart,dtend];
+    NSDictionary *data =[NetUtil doGetSync:urlStr];
+    [MBProgressHUD hideHUD];
+    
+    if(data!=nil&&[@"True" isEqualToString:[data valueForKey:@"Result"]]){
+        NSMutableDictionary * finalData = [[NSMutableDictionary alloc]init];
+        NSArray* dataArray = [data valueForKey:@"Data"];
+        for(NSDictionary *  itemObject in dataArray ){
+            NSArray *itemArray = [itemObject valueForKey:@"Data"];
+            for(NSDictionary *  item in itemArray ){
+                [ finalData setObject:[item  valueForKey:@"金额"]  forKey:[item  valueForKey:@"项目类别"] ];
+            }
+        }
+        
+        for(UITextField * view in self.subviews){
+            int tag= view.tag;
+            if(tag==1011){
+                view.text = [NSString  stringWithFormat:@"%@",[finalData valueForKey:@"房吧"]];
+            }else if(tag==1012){
+                
+                view.text = [NSString stringWithFormat:@"%@",[finalData valueForKey:@"储值"]];
+            }else  if(tag==1021){
+                
+                view.text = [NSString stringWithFormat:@"%@",[finalData valueForKey:@"房租"]];
+            }else if(tag==1022){
+                
+                view.text = [NSString stringWithFormat:@"%@",[finalData valueForKey:@"微信"]];
+            }else  if(tag==1031){
+                
+                view.text = [NSString stringWithFormat:@"%@",[finalData valueForKey:@"会员卡"]];
+            }else if(tag==10132){
+                
+                view.text = [NSString stringWithFormat:@"%@",[finalData valueForKey:@"现金"]];
+
+            }else  if(tag==1041){
+                
+                view.text = [NSString stringWithFormat:@"%@",[finalData valueForKey:@"杂项"]];
+            }else if(tag==1042){
+                
+                view.text = [NSString stringWithFormat:@"%@",[finalData valueForKey:@"银联"]];
+            }else  if(tag==1051){
+                
+                view.text = [NSString stringWithFormat:@"%@",[finalData valueForKey:@"应收"]];
+            }else if(tag==1061){
+                
+                view.text = [NSString stringWithFormat:@"%@",[finalData valueForKey:@"支付宝"]];
+            }else  if(tag==1071){
+                
+                view.text = [NSString stringWithFormat:@"%@",[finalData valueForKey:@"借方合计"]];
+            }else if(tag==1072){
+                
+                view.text = [NSString stringWithFormat:@"%@",[finalData valueForKey:@"贷方合计"]];
+            }else  if(tag==1081){
+                
+                view.text = [NSString stringWithFormat:@"%@",[finalData valueForKey:@"借贷差额"]];
+            }else if(tag==1082){
+                
+                view.text = [NSString stringWithFormat:@"%@",[finalData valueForKey:@"期末余额"]];
+            }else  if(tag==1101){
+                
+                view.text = [NSString stringWithFormat:@"%@",[finalData valueForKey:@"现金充值"]];
+            }else if(tag==1102){
+//                
+//                view.text = [NSString stringWithFormat:@"%@",[finalData valueForKey:@"上期末应收欠款"]];
+                
+                view.text = @"";
+            }else  if(tag==1111){
+                
+                view.text = [NSString stringWithFormat:@"%@",[finalData valueForKey:@"银联充值"]];
+            }else if(tag==1112){
+                
+                view.text = [NSString stringWithFormat:@"%@",[finalData valueForKey:@"应收挂帐"]];
+            }else  if(tag==1121){
+                
+                view.text = [NSString stringWithFormat:@"%@",[finalData valueForKey:@"赠送充值"]];
+            }else if(tag==1122){
+                
+                view.text = [NSString stringWithFormat:@"%@",[finalData valueForKey:@"应收回款"]];
+            }else  if(tag==1131){
+                
+                view.text = [NSString stringWithFormat:@"%@",[finalData valueForKey:@"本期充值合计"]];
+
+            }else if(tag==1132){
+                
+                view.text = [NSString stringWithFormat:@"%@",[finalData valueForKey:@"期末应收"]];
+            }else  if(tag==1151){
+                
+                view.text = [NSString stringWithFormat:@"%@",[finalData valueForKey:@"期末储值"]];
+            }else if(tag==1152){
+                
+                view.text = [NSString stringWithFormat:@"%@",[finalData valueForKey:@"期末积分"]];
+            }else  if(tag==1161){
+                
+                view.text = [NSString stringWithFormat:@"%@",[finalData valueForKey:@"储值充值"]];
+            }else if(tag==1162){
+                
+                view.text = [NSString stringWithFormat:@"%@",[finalData valueForKey:@"积分发生"]];
+            }
+        }
+        
+//        [self.shouruContainer subviews]
+             
+        
+        
+        for (UIView *find_label in self.self.shouruContainer.subviews) {
+            
+            if (find_label.tag == 1011)
+            {
+                find_label.backgroundColor = [UIColor redColor];
+                
+            }
+            
+        }
+    }
+}
+-(void) getSonViews:(UIView *)pview{
+    if ([[pview subviews] count]>0) {
+        for(UIView *son in [pview subviews]){
+            [self getSonViews:son];
+        }
+    }else{
+        [self.subviews addObject:pview];
+    }
+}
+
 //加载营业简报
 -(void) loadYingyeJianbao:(NSString *) dtstart dtend:(NSString *) dtend {
     [MBProgressHUD showMessage:@"加载"];
@@ -80,6 +215,10 @@
         UIView *tableViewHeadView=[[UIView alloc]initWithFrame:CGRectMake(0, 0,  [self.jianbaoTitles count]*kWidth,kHeight)];
         self.myHeadView = tableViewHeadView;
         self.myHeadView.backgroundColor = [UIColor colorWithRed:(float)108.0/255.0f green:(float)147 /255.0f blue:(float)198/255.0f alpha:1.0f];
+        if([self.jianbaoTitles count]==0){
+            [MBProgressHUD showError:@"未获取到数据"];
+            return;
+        }
         
         for(int i=0;i< [self.jianbaoTitles count];i++){
             HeadView *headView=[[HeadView alloc]initWithFrame:CGRectMake(i*kWidth, 10, kWidth, kHeight)];
@@ -96,7 +235,7 @@
         
         [self.jianbaoContainer addSubview:textMaster];
 //
-        UIScrollView *myScrollView=[[UIScrollView alloc]initWithFrame:CGRectMake(kWidth +15,0, self.view.frame.size.width-kWidth,  self.jianbaoContainer.frame.size.height - self.myHeadView.frame.size.height)];
+        UIScrollView *myScrollView=[[UIScrollView alloc]initWithFrame:CGRectMake(kWidth +15,0, self.view.frame.size.width-kWidth,  self.jianbaoContainer.frame.size.height  -3)];
         
         UITableView *tableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.myHeadView.frame.size.width,myScrollView.frame.size.height ) style:UITableViewStylePlain];
         tableView.delegate=self;
@@ -202,10 +341,29 @@
 }
 -(void)convertRoomFromPoint:(CGPoint)ponit
 {
-    //    NSString *roomNum=[NSString stringWithFormat:@"%03d",(int)(ponit.x)/kWidth];
-    //    int currentTime=(ponit.y-kHeight-kHeightMargin)*30.0/(kHeight+kHeightMargin)+510;
-    //    UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"clicked room" message:[NSString stringWithFormat:@"time :%@ room :%@",[NSString stringWithFormat:@"%d:%02d",currentTime/60,currentTime%60],roomNum] delegate:nil cancelButtonTitle:@"cancel" otherButtonTitles:@"ok", nil];
-    //    [alert show];
+//        NSString *roomNum=[NSString stringWithFormat:@"%03d",(int)(ponit.x)/kWidth];
+//        int currentTime=(ponit.y-kHeight-kHeightMargin)*30.0/(kHeight+kHeightMargin)+510;
+//    if([roomNum isEqualToString:@"001"]){
+//        NSLog(@"%@",[NSString stringWithFormat:@"%03d",(int)(ponit.y)/kHeight]);
+////        [MBProgressHUD showMessage:@"获取中..."];
+////        NSString *urlStr=[NSString stringWithFormat:@"/GetBusinessLevelReportDataByTyp?dtdate=%@&typ=%@",dtstart,@"B"];
+////        NSDictionary *data =[NetUtil doGetSync:urlStr];
+////        [MBProgressHUD hideHUD];
+//        
+//        NSString * dateS =  [self.jianbaoDatelist objectAtIndex:(int)(ponit.y)/kHeight-1] ;
+//        [MBProgressHUD showMessage:@"获取中..."];
+//                NSString *urlStr=[NSString stringWithFormat:@"/GetBusinessLevelReportDataByTyp?dtdate=%@&typ=%@",dateS,@"B"];
+//                NSArray *data =[[NetUtil doGetSync:urlStr] valueForKey:@"Data"];
+//                [MBProgressHUD hideHUD];
+//        NSString *msg =
+//        if(){
+//            
+//        }
+//        
+//        UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"clicked room" message:[NSString stringWithFormat:@"time :%@ room :%@",[NSString stringWithFormat:@"%d:%02d",currentTime/60,currentTime%60],roomNum] delegate:nil cancelButtonTitle:nil otherButtonTitles:@"ok", nil];
+//        [alert show];
+//    }
+    
 }
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
@@ -256,9 +414,13 @@
         NSString *dateString = [dateFormat stringFromDate:datePicker.date];
         //求出当天的时间字符串
         text.text =dateString;
-        if(self.isjianbao)
-        [self loadYingyeJianbao:self.textfieldBeginTime.text dtend:self.textfieldEndTime.text];
-        NSLog(@"%@",dateString);
+        if(self.isjianbao){
+            [self loadYingyeJianbao:self.textfieldBeginTime.text dtend:self.textfieldEndTime.text];
+        }else{
+            [self loadfenxi:self.textfieldBeginTime.text dtend:self.textfieldEndTime.text];
+            
+        }
+         NSLog(@"%@",dateString);
     }];
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
     }];

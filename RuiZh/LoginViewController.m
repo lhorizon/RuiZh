@@ -20,7 +20,7 @@
 @property (weak, nonatomic) IBOutlet UISwitch *rembSwitch;
 @property (weak, nonatomic) IBOutlet UIButton *loginBtn;
 - (IBAction)loginAction;
-
+@property (nonatomic,strong) NSString *hosturl;
 @end
 
 @implementation LoginViewController
@@ -32,17 +32,26 @@
     [[NSNotificationCenter defaultCenter] addObserver:self  selector:@selector(textchanged) name:UITextFieldTextDidChangeNotification object:self.pwdfield];
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    self.hosturl = [defaults valueForKey:@"host"];
+    self.urlfield.text = (self.hosturl ==nil||[self.hosturl isEqualToString:@""])?defaultDomain:self.hosturl;
+    if([defaults boolForKey:RembPwdKey]){
     self.namefield.text  = [defaults valueForKey:UserNameKey];
     self.pwdfield.text  = [defaults valueForKey:PwdKey];
+    }
     self.rembSwitch.on  = [defaults boolForKey:RembPwdKey];
     self.loginBtn.enabled =   self.rembSwitch.on;
     self.namefield.delegate  = self;
     self.pwdfield.delegate  = self;
+    self.urlfield.delegate = self;
     
     [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:20/255.0 green:155/255.0 blue:213/255.0 alpha:1.0] ];
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],UITextAttributeTextColor,nil]];
     
- 
+    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+    NSString *versionname = [@"版本号 " stringByAppendingString: [infoDictionary objectForKey:@"CFBundleShortVersionString"] ];
+    [self.btnVersion setTitle: versionname forState:UIControlStateNormal] ;
+    self.navigationitem.hidesBackButton = YES;
+    
 }
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 //当点击键盘上return按钮的时候调用
@@ -98,13 +107,14 @@
         [self performSegueWithIdentifier:@"LoginToHome" sender:nil];
         
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        
+        [defaults setObject:_namefield.text forKey:UserNameKey];
+        [defaults setObject:_pwdfield.text forKey:PwdKey];
         if(self.rembSwitch.isOn){
-            [defaults setObject:_namefield.text forKey:UserNameKey];
-            [defaults setObject:_pwdfield.text forKey:PwdKey];
             [defaults setBool:_rembSwitch.isOn forKey:RembPwdKey];
         }else{
-            [defaults setObject:@"" forKey:UserNameKey];
-            [defaults setObject:@"" forKey:PwdKey];
+//            [defaults setObject:@"" forKey:UserNameKey];
+//            [defaults setObject:@"" forKey:PwdKey];
             [defaults setBool:NO forKey:RembPwdKey];
         }
         [defaults synchronize];
@@ -115,4 +125,22 @@
 }
 
 
+
+- (IBAction)settingUrl {
+    [self.btnVersion setHidden: true];
+    [self.viewSetting setHidden:false];
+}
+- (void)dealloc { 
+    [_navigationitem release];
+    [super dealloc];
+}
+- (IBAction)actionSetting {
+    [self.btnVersion setHidden: false];
+    [self.viewSetting setHidden:true];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:self.urlfield.text forKey:@"host"];
+    [defaults synchronize];
+//    NetUtil.
+}
 @end

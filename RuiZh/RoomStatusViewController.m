@@ -331,6 +331,15 @@
 //每个UICollectionView展示的内容
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+     NSString *fontcolor  = [defaults valueForKey:@"fontcolor"];
+    UIColor *thecolor;
+    if(fontcolor==nil||[fontcolor isEqualToString:@"白色"]){
+        thecolor =[UIColor whiteColor];
+    }else{
+        thecolor =[UIColor blackColor];
+    }
     NSDictionary * item = [[[self.floors objectAtIndex:indexPath.section] valueForKey:@"units"] objectAtIndex:indexPath.row];
     NSString* romNum= [item valueForKey:@"rom"];
     NSString * status = [self.typeNameMap valueForKey:[item valueForKey:@"sta"]];
@@ -340,8 +349,8 @@
     cell.typeDesc.text =status;
     cell.textContent.backgroundColor  = bgColor;
     cell.typeDesc.backgroundColor = bgColor;
-    cell.typeDesc.textColor = [UIColor whiteColor];
-    cell.textContent.textColor = [UIColor whiteColor];
+    cell.typeDesc.textColor = thecolor;
+    cell.textContent.textColor = thecolor;
     cell.textContent.selectable = true;
     cell.typeDesc.selectable = true;
     
@@ -387,6 +396,9 @@
  
     [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDestructive handler:nil]];
     
+    NSUserDefaults *info = [NSUserDefaults standardUserDefaults];
+     NSString * updateable= [info valueForKey:@"updateable"];
+    if([updateable  isEqualToString:@"yes"])
     [self presentViewController:alert animated:YES completion:NULL];
     NSLog(@" cell item is section: %ld  row:%ld",(long)indexPath.section , (long)indexPath.row);
 }

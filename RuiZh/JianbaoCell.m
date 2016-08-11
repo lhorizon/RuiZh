@@ -22,7 +22,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         
-        for(int i=0;i<100;i++){
+        for(int i=0;i<150;i++){
             
             HeadView *headView=[[HeadView alloc]initWithFrame:CGRectMake(i*100, 0, 100-kWidthMargin, 40+kHeightMargin)];
             headView.delegate=self;

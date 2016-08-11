@@ -97,6 +97,7 @@
 		306CFC391D38E20800465FC8 /* RoomStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 306CFC381D38E20800465FC8 /* RoomStatusViewController.m */; };
 		30E4589F1D57A5E40039227A /* JianbaoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E4589E1D57A5E40039227A /* JianbaoCell.m */; };
 		30E458A21D57FFED0039227A /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E458A11D57FFED0039227A /* SettingViewController.m */; };
+		30E458A51D5CCBF50039227A /* DisplaysettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E458A41D5CCBF50039227A /* DisplaysettingViewController.m */; };
 		30F1C05F1D53A432009C94CA /* Roomforecast.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30F1C05E1D53A432009C94CA /* Roomforecast.xib */; };
 		30F1C0621D53A743009C94CA /* Roomforecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 30F1C0611D53A743009C94CA /* Roomforecast.m */; };
 		30F1C0AA1D53B49E009C94CA /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 30F1C0A91D53B49E009C94CA /* libxml2.tbd */; };
@@ -238,6 +239,8 @@
 		30E4589E1D57A5E40039227A /* JianbaoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JianbaoCell.m; sourceTree = "<group>"; };
 		30E458A01D57FFED0039227A /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		30E458A11D57FFED0039227A /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		30E458A31D5CCBF50039227A /* DisplaysettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplaysettingViewController.h; sourceTree = "<group>"; };
+		30E458A41D5CCBF50039227A /* DisplaysettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplaysettingViewController.m; sourceTree = "<group>"; };
 		30F1C05E1D53A432009C94CA /* Roomforecast.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Roomforecast.xib; sourceTree = "<group>"; };
 		30F1C0601D53A743009C94CA /* Roomforecast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Roomforecast.h; sourceTree = "<group>"; };
 		30F1C0611D53A743009C94CA /* Roomforecast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Roomforecast.m; sourceTree = "<group>"; };
@@ -378,6 +381,8 @@
 				30F1C0AC1D554FFA009C94CA /* AnalyticsViewController.m */,
 				30E458A01D57FFED0039227A /* SettingViewController.h */,
 				30E458A11D57FFED0039227A /* SettingViewController.m */,
+				30E458A31D5CCBF50039227A /* DisplaysettingViewController.h */,
+				30E458A41D5CCBF50039227A /* DisplaysettingViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -751,6 +756,7 @@
 			files = (
 				30FF1D491D44C48B00DBD59D /* MyLabel.m in Sources */,
 				3043963E1D32832700824021 /* LoginViewController.m in Sources */,
+				30E458A51D5CCBF50039227A /* DisplaysettingViewController.m in Sources */,
 				304395811D326DCD00824021 /* ViewController.m in Sources */,
 				30FF1D4A1D44C48B00DBD59D /* TimeCell.m in Sources */,
 				30E4589F1D57A5E40039227A /* JianbaoCell.m in Sources */,
@@ -827,7 +833,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: zeng xinxin (4PAGWXRJ28)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: zeng xinxin (4PAGWXRJ28)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -873,7 +880,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: zeng xinxin (4PAGWXRJ28)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: zeng xinxin (4PAGWXRJ28)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -901,8 +909,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_ENABLE_OBJC_WEAK = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: zeng xinxin (4PAGWXRJ28)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: zeng xinxin (4PAGWXRJ28)";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = RuiZh/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -931,8 +939,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_ENABLE_OBJC_WEAK = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: zeng xinxin (4PAGWXRJ28)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: zeng xinxin (4PAGWXRJ28)";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = RuiZh/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

@@ -13,7 +13,8 @@
 #define  defaultDomain @"http://61.4.83.137/rzservice/RZHotelService.asmx"
 
 @interface NetUtil : NSObject
- 
+
++(NSString *) hostUrl ;
 +(NSDictionary *) doGetSync:(NSString *) paramString;
 +(NSDictionary *) doGetSync:(NSString *)domain paramString:(NSString *) paramString;
 + (void) doGetAsync;

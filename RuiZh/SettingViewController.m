@@ -34,4 +34,26 @@
 }
 */
 
+- (void)dealloc {
+    [super dealloc];
+}
+- (IBAction)aboutAction {
+    UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"瑞中酒店移动助手" message:@"瑞中酒店助手，致力于解决酒店管理一体化，打造一流的酒店管理系统" delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
+//    alert.title = @"瑞中酒店移动助手";
+//    alert.message =@"瑞中酒店助手，致力于解决酒店管理一体化，打造一流的酒店管理系统";
+//    alert
+    [alert show];
+    
+}
+
+- (IBAction)userReset {
+      NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:false forKey:RembPwdKey];
+    [defaults setObject:@"" forKey:UserNameKey];
+    [defaults setObject:@"" forKey:PwdKey];
+    [defaults synchronize];
+    [self performSegueWithIdentifier:@"reset" sender:nil];
+//    LoginViewController *lv = [[LoginViewController alloc]init];
+//    [self.navigationController 	pushViewController:lv animated:true];
+}
 @end

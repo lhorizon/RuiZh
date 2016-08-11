@@ -21,7 +21,44 @@
     self.titlebar.backBarButtonItem = backItem;
     [self.titlebar.backBarButtonItem  setTintColor: [UIColor whiteColor]];
     self.navigationItem.hidesBackButton = YES;
+    self.userinfo = [NSUserDefaults standardUserDefaults];
+    [self checkPermission];
+    
+}
 
+-(void) checkPermission{
+    
+ 
+    
+    NSUserDefaults *info = [NSUserDefaults standardUserDefaults];
+    [info setObject:@"no" forKey:@"updateable"];
+    
+    self.funts = [[NSMutableArray alloc] init];
+    [MBProgressHUD showMessage:@"加载..."];
+    NSString *urlStr=[NSString stringWithFormat:@"/GetUserRoles?emp=%@",[self.userinfo valueForKey:@"name"]];
+    NSDictionary * data= [NetUtil doGetSync:urlStr];
+    [MBProgressHUD hideHUD];
+    if([[data valueForKey:@"Result"] isEqualToString:@"True"]){
+        NSArray* funtData= [data valueForKey:@"Data"];
+        for (NSDictionary* item in funtData) {
+            NSString * funt = [item valueForKey:@"funt"];
+            [self.funts addObject:funt];
+            if([funt isEqualToString:@"0902"]){
+                [self.viewFT setHidden:false];
+            }
+            if([funt isEqualToString:@"0903"]){
+                
+                [info setObject:@"yes" forKey:@"updateable"];
+            }
+            if([funt isEqualToString:@"0904"]){
+                
+                [self.viewBB setHidden:false];
+            }
+        }
+        
+        
+    }
+    [info synchronize];
 }
 
 - (void)didReceiveMemoryWarning {
