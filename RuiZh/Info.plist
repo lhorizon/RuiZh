@@ -11,10 +11,11 @@
 	<key>CFBundleGetInfoString</key>
 	<string></string>
 	<key>CFBundleIconFile</key>
-	<string></string>
+	<string>img_00.png</string>
 	<key>CFBundleIconFiles</key>
 	<array>
 		<string>img_00.png</string>
+		<string>img_120.png</string>
 	</array>
 	<key>CFBundleIdentifier</key>
 	<string>com.hang.ruizh</string>
