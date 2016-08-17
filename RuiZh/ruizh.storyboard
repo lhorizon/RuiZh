@@ -2130,14 +2130,20 @@ CQ
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="30" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bju-6K-A69">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="30" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bju-6K-A69">
                                                 <rect key="frame" x="423" y="5" width="97" height="30"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="95g-JV-Qjh"/>
                                                     <constraint firstAttribute="height" constant="30" id="GGt-Y3-p7Q"/>
                                                     <constraint firstAttribute="width" constant="97" id="ZCj-Ca-2X6"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="ZCj-Ca-2X6"/>
+                                                    </mask>
+                                                </variation>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="秒" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y01-kv-fL2">
                                                 <rect key="frame" x="550" y="12" width="20" height="17"/>
@@ -2161,19 +2167,19 @@ CQ
                                             <constraint firstAttribute="trailing" secondItem="n2B-A7-0Zx" secondAttribute="trailing" id="uyz-H0-sye"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XXA-3b-5jI" userLabel="房态 color">
-                                        <rect key="frame" x="10" y="153" width="580" height="40"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XXA-3b-5jI" userLabel="房态 color">
+                                        <rect key="frame" x="10" y="145" width="580" height="40"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="房态字体颜色" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UkR-W5-xl7">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="房态字体颜色" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UkR-W5-xl7">
                                                 <rect key="frame" x="20" y="0.0" width="560" height="40"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9u-Bq-AoK">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9u-Bq-AoK">
                                                 <rect key="frame" x="0.0" y="0.0" width="580" height="40"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wf2-oX-pZE">
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wf2-oX-pZE">
                                                 <rect key="frame" x="423" y="5" width="97" height="30"/>
                                                 <state key="normal" title="白色"/>
                                                 <connections>
@@ -2202,6 +2208,7 @@ CQ
                                     <constraint firstItem="6Qf-76-nyq" firstAttribute="leading" secondItem="cL9-Hh-GjF" secondAttribute="leading" constant="10" id="A73-Os-qCt"/>
                                     <constraint firstItem="6Qf-76-nyq" firstAttribute="top" secondItem="cL9-Hh-GjF" secondAttribute="top" constant="60" id="LeO-XD-RqY"/>
                                     <constraint firstItem="Wf2-oX-pZE" firstAttribute="trailing" secondItem="bju-6K-A69" secondAttribute="trailing" id="YWw-uE-z1Q"/>
+                                    <constraint firstItem="XXA-3b-5jI" firstAttribute="top" secondItem="6Qf-76-nyq" secondAttribute="bottom" constant="45" id="aG1-hS-3CI"/>
                                     <constraint firstItem="XXA-3b-5jI" firstAttribute="trailing" secondItem="6Qf-76-nyq" secondAttribute="trailing" id="chj-2g-kjX"/>
                                     <constraint firstItem="XXA-3b-5jI" firstAttribute="centerX" secondItem="6Qf-76-nyq" secondAttribute="centerX" id="eAF-hg-Jpu"/>
                                     <constraint firstItem="Wf2-oX-pZE" firstAttribute="leading" secondItem="bju-6K-A69" secondAttribute="leading" id="mMV-Lg-U5Z"/>
