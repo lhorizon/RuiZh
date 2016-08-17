@@ -101,8 +101,8 @@
                                     <constraint firstAttribute="height" constant="31" id="bj6-1z-Kvd"/>
                                 </constraints>
                             </switch>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NPe-ad-UBC">
-                                <rect key="frame" x="140" y="104" width="134" height="619"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NPe-ad-UBC">
+                                <rect key="frame" x="140" y="693" width="134" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="134" id="Hra-77-gIl"/>
                                     <constraint firstAttribute="height" constant="30" id="d8K-Dz-WyB"/>
@@ -161,6 +161,7 @@
                             <constraint firstItem="ejx-3g-iBO" firstAttribute="leading" secondItem="ADr-27-5Ey" secondAttribute="leading" id="Kbp-eR-fJT"/>
                             <constraint firstItem="Fre-Vr-lm3" firstAttribute="top" secondItem="XsL-QC-pO8" secondAttribute="bottom" constant="40" id="LJl-N0-4g7"/>
                             <constraint firstItem="J06-0o-O1e" firstAttribute="centerX" secondItem="XsL-QC-pO8" secondAttribute="trailing" id="OSv-fu-jOQ"/>
+                            <constraint firstItem="NPe-ad-UBC" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Fre-Vr-lm3" secondAttribute="bottom" constant="20" id="Rs4-fw-UIS"/>
                             <constraint firstItem="XsL-QC-pO8" firstAttribute="height" secondItem="wGP-pN-8rX" secondAttribute="height" id="SHa-Px-hvO"/>
                             <constraint firstItem="Fre-Vr-lm3" firstAttribute="centerX" secondItem="XsL-QC-pO8" secondAttribute="centerX" id="STp-q0-0dk"/>
                             <constraint firstAttribute="trailingMargin" secondItem="wGh-gP-Fhe" secondAttribute="trailing" id="TvG-N0-vaL"/>
@@ -591,7 +592,7 @@ CQ
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="空净" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bwI-Qb-SwE">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="\t空净" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bwI-Qb-SwE">
                                                         <rect key="frame" x="0.0" y="17" width="60" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -689,7 +690,7 @@ CQ
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="清扫" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jlk-pG-rFW">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="清扫\t" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jlk-pG-rFW">
                                                         <rect key="frame" x="0.0" y="17" width="60" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -2047,7 +2048,7 @@ CQ
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GKi-Db-MJ3">
                                                 <rect key="frame" x="0.0" y="0.0" width="394" height="40"/>
                                                 <connections>
-                                                    <segue destination="V5F-Jx-Khb" kind="show" id="uqv-74-TL3"/>
+                                                    <segue destination="V5F-Jx-Khb" kind="show" id="6K2-sc-KN4"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -2130,10 +2131,10 @@ CQ
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="30" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bju-6K-A69">
-                                                <rect key="frame" x="480" y="5" width="40" height="30"/>
+                                                <rect key="frame" x="423" y="5" width="97" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="GGt-Y3-p7Q"/>
-                                                    <constraint firstAttribute="width" constant="40" id="ZCj-Ca-2X6"/>
+                                                    <constraint firstAttribute="width" constant="97" id="ZCj-Ca-2X6"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -2172,7 +2173,7 @@ CQ
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9u-Bq-AoK">
                                                 <rect key="frame" x="0.0" y="0.0" width="580" height="40"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wf2-oX-pZE">
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wf2-oX-pZE">
                                                 <rect key="frame" x="423" y="5" width="97" height="30"/>
                                                 <state key="normal" title="白色"/>
                                                 <connections>
