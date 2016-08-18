@@ -323,6 +323,8 @@
     cell.currentTime=[self.jianbaodValues objectAtIndex:indexPath.row];
     return cell;
 }
+
+
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     
@@ -341,30 +343,38 @@
 }
 -(void)convertRoomFromPoint:(CGPoint)ponit
 {
-//        NSString *roomNum=[NSString stringWithFormat:@"%03d",(int)(ponit.x)/kWidth];
-//        int currentTime=(ponit.y-kHeight-kHeightMargin)*30.0/(kHeight+kHeightMargin)+510;
-//    if([roomNum isEqualToString:@"001"]){
-//        NSLog(@"%@",[NSString stringWithFormat:@"%03d",(int)(ponit.y)/kHeight]);
-////        [MBProgressHUD showMessage:@"获取中..."];
-////        NSString *urlStr=[NSString stringWithFormat:@"/GetBusinessLevelReportDataByTyp?dtdate=%@&typ=%@",dtstart,@"B"];
-////        NSDictionary *data =[NetUtil doGetSync:urlStr];
-////        [MBProgressHUD hideHUD];
-//        
-//        NSString * dateS =  [self.jianbaoDatelist objectAtIndex:(int)(ponit.y)/kHeight-1] ;
-//        [MBProgressHUD showMessage:@"获取中..."];
-//                NSString *urlStr=[NSString stringWithFormat:@"/GetBusinessLevelReportDataByTyp?dtdate=%@&typ=%@",dateS,@"B"];
-//                NSArray *data =[[NetUtil doGetSync:urlStr] valueForKey:@"Data"];
-//                [MBProgressHUD hideHUD];
-//        NSString *msg =
-//        if(){
-//            
-//        }
-//        
-//        UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"clicked room" message:[NSString stringWithFormat:@"time :%@ room :%@",[NSString stringWithFormat:@"%d:%02d",currentTime/60,currentTime%60],roomNum] delegate:nil cancelButtonTitle:nil otherButtonTitles:@"ok", nil];
-//        [alert show];
+
+        NSString * dateS =  [self.jianbaoDatelist objectAtIndex:(int)(ponit.y)/(40+kHeightMargin)-1] ;
+        NSLog(@"%@",dateS);
+        [MBProgressHUD showMessage:@"获取中..."];
+        NSString *urlStr=[NSString stringWithFormat:@"/GetBusinessLevelReportDataByTyp?dtdate=%@&typ=%@",dateS,@"01"];
+        NSArray *data =[[NetUtil doGetSync:urlStr] valueForKey:@"Data"];
+        NSString *msg =[[NSString alloc]init];
+    
+        for(NSDictionary *item in data){
+            NSLog(@"%@",dateS);
+            NSString* msgItem =[NSString stringWithFormat:@"%@  →  %@   \n",[item valueForKey:@"类型"],[item valueForKey:@"金额"]];
+            NSLog(@"%@",[@"msgitem:" stringByAppendingString:msgItem]);
+            msg=[msg stringByAppendingString:msgItem];
+            
+        }
+    NSLog(@"%@",[@"内容:" stringByAppendingString:msg]);
+    
+    [MBProgressHUD hideHUD];
+
+        UIAlertView *alert=[[UIAlertView alloc]initWithTitle:[dateS stringByAppendingString: @"房租明细"] message: msg delegate:nil cancelButtonTitle:nil otherButtonTitles:@"ok", nil];
+        [alert show];
 //    }
     
 }
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath  {
+    //
+    //        UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"clicked room" message:[NSString stringWithFormat:@"time :%@ room :%@",[NSString stringWithFormat:@"%d:%02d",currentTime/60,currentTime%60],roomNum] delegate:nil cancelButtonTitle:nil otherButtonTitles:@"ok", nil];
+    //        [alert show];
+    //    }
+    
+}
+
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     CGFloat offsetY= self.contentTableView.contentOffset.y;
