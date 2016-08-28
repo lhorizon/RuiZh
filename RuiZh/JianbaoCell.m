@@ -46,7 +46,7 @@
     _currentTime = roomAllType;
     self.count=[self.currentTime count];
     if(self.count>0){
-        NSLog(@"contentView.subviews 个数：%lu",(unsigned long)[self.contentView.subviews count]);
+//        NSLog(@"contentView.subviews 个数：%lu",(unsigned long)[self.contentView.subviews count]);
         for(int i=0;i<self.count;i++){
             
             //            MeetModel *model=currentTime[i];
@@ -60,7 +60,15 @@
                 headView.backgroundColor=[UIColor whiteColor];
                 HeadView *leftHeadView =self.contentView.subviews[i];
                 if(headView!=leftHeadView) leftHeadView.backgroundColor=[UIColor whiteColor];
-                [leftHeadView setNum:[NSString stringWithFormat:@"%@",[self.currentTime objectAtIndex:i]]];                 
+                NSString *value =[self.currentTime objectAtIndex:i];
+//                if(value !=nil && [value length]>0 {
+                    value = [NSString stringWithFormat:@"%0.2f",  [[self.currentTime objectAtIndex:i] doubleValue]];
+//                }
+//                if(value!=nil&&[value containsString:@".00"]){
+//                    [leftHeadView setNum:[self.currentTime objectAtIndex:i]];
+//                }else{
+                    [leftHeadView setNum:value];
+//                }
             }
             
         }

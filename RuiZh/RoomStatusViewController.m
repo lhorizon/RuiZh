@@ -167,8 +167,15 @@
         }else{
             for(int i = 0;i< [keys count];i++){
                 NSString* date =[keys objectAtIndex:i];
-                if(![date isEqualToString:@"间数"]&&![date isEqualToString:@"房型"])
-                [rowcontent addObject:[roomType valueForKey:date]];
+                if(![date isEqualToString:@"间数"]&&![date isEqualToString:@"房型"]){
+                    NSString *text = [roomType valueForKey:date];
+                    if([fx isEqualToString:@"百分比"]){
+                        text = [NSString stringWithFormat:@"%@",[roomType valueForKey:date]];
+                        [text stringByAppendingString:@"%%"];
+                    }
+                    [rowcontent addObject:text];
+                    
+                }
             }
         }
         [self.mainContentArray addObject:rowcontent];
