@@ -110,7 +110,7 @@
  
     for(int i=0;i< [self.dateArray count];i++){
         
-        HeadView *headView=[[HeadView alloc]initWithFrame:CGRectMake(i*kWidth, 10, kWidth, kHeight)];
+        TitlesView *headView=[[TitlesView alloc]initWithFrame:CGRectMake(i*kWidth, 10, kWidth, kHeight)];
         headView.num=[self.dateArray objectAtIndex:i];
         [self.myHeadView addSubview:headView];
     }

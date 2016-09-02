@@ -14,6 +14,7 @@
 #import "JianbaoCell.h"
 #import "Roomforecast.h"
 #import "TitleView.h"
+#import "TitlesView.h"
 @interface AnalyticsViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,JianbaoCellDelegate>
 @property (retain, nonatomic) IBOutlet UISegmentedControl *tabanalytics;
 

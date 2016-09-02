@@ -12,6 +12,7 @@
 #import "HeadView.h"
 #import "MyCell.h"
 #import "Roomforecast.h"
+#import "TitlesView.h"
 #import "TitleView.h"
 @interface RoomStatusViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UITableViewDelegate,UITableViewDataSource,MyCellDelegate>
 @property (retain, nonatomic) IBOutlet UITextField *vrNum;

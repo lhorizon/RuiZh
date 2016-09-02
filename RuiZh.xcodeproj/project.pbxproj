@@ -99,6 +99,7 @@
 		30E458A21D57FFED0039227A /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E458A11D57FFED0039227A /* SettingViewController.m */; };
 		30E458A51D5CCBF50039227A /* DisplaysettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E458A41D5CCBF50039227A /* DisplaysettingViewController.m */; };
 		30E458A71D5E010F0039227A /* img_120.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E458A61D5E010F0039227A /* img_120.png */; };
+		30E458AA1D79C36C0039227A /* TitlesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E458A91D79C36C0039227A /* TitlesView.m */; };
 		30F1C05F1D53A432009C94CA /* Roomforecast.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30F1C05E1D53A432009C94CA /* Roomforecast.xib */; };
 		30F1C0621D53A743009C94CA /* Roomforecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 30F1C0611D53A743009C94CA /* Roomforecast.m */; };
 		30F1C0AA1D53B49E009C94CA /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 30F1C0A91D53B49E009C94CA /* libxml2.tbd */; };
@@ -243,6 +244,8 @@
 		30E458A31D5CCBF50039227A /* DisplaysettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplaysettingViewController.h; sourceTree = "<group>"; };
 		30E458A41D5CCBF50039227A /* DisplaysettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplaysettingViewController.m; sourceTree = "<group>"; };
 		30E458A61D5E010F0039227A /* img_120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_120.png; sourceTree = "<group>"; };
+		30E458A81D79C36C0039227A /* TitlesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitlesView.h; sourceTree = "<group>"; };
+		30E458A91D79C36C0039227A /* TitlesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitlesView.m; sourceTree = "<group>"; };
 		30F1C05E1D53A432009C94CA /* Roomforecast.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Roomforecast.xib; sourceTree = "<group>"; };
 		30F1C0601D53A743009C94CA /* Roomforecast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Roomforecast.h; sourceTree = "<group>"; };
 		30F1C0611D53A743009C94CA /* Roomforecast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Roomforecast.m; sourceTree = "<group>"; };
@@ -524,6 +527,8 @@
 				305279761D3E57AC001E5F1C /* CollectionCell.h */,
 				30FF1D3D1D44C20F00DBD59D /* HeadView.h */,
 				30FF1D3E1D44C20F00DBD59D /* HeadView.m */,
+				30E458A81D79C36C0039227A /* TitlesView.h */,
+				30E458A91D79C36C0039227A /* TitlesView.m */,
 				30FF1D401D44C48B00DBD59D /* MyCell.h */,
 				30FF1D411D44C48B00DBD59D /* MyCell.m */,
 				30FF1D421D44C48B00DBD59D /* MyLabel.h */,
@@ -761,6 +766,7 @@
 				30FF1D491D44C48B00DBD59D /* MyLabel.m in Sources */,
 				3043963E1D32832700824021 /* LoginViewController.m in Sources */,
 				30E458A51D5CCBF50039227A /* DisplaysettingViewController.m in Sources */,
+				30E458AA1D79C36C0039227A /* TitlesView.m in Sources */,
 				304395811D326DCD00824021 /* ViewController.m in Sources */,
 				30FF1D4A1D44C48B00DBD59D /* TimeCell.m in Sources */,
 				30E4589F1D57A5E40039227A /* JianbaoCell.m in Sources */,

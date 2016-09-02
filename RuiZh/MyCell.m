@@ -61,7 +61,8 @@
                 HeadView *leftHeadView =self.contentView.subviews[i];
                 if(headView!=leftHeadView) leftHeadView.backgroundColor=[UIColor whiteColor];
                     [leftHeadView setNum:[NSString stringWithFormat:@"%@",[self.currentTime objectAtIndex:i]]];
-                    [leftHeadView setDetail:[NSString stringWithFormat:@"总数:%@",[self.currentTime objectAtIndex:0]]];
+                    int ky = [[self.currentTime objectAtIndex:0] intValue] -[[self.currentTime objectAtIndex:i] intValue];
+                    [leftHeadView setDetail:[NSString stringWithFormat:@"%d",ky]];
                 
             }
         
