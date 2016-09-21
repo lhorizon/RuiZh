@@ -280,6 +280,7 @@
     self.stat = [stats objectAtIndex:0];
     self.statColor = [statsColor objectAtIndex:0];
     [self dealColorMap];
+//    @"空净",@"VR",@"住净",@"OR",@"住脏",@"OD",@"维修",@"VM",@"清扫",@"VC",@"空脏",@"VD"
     [self.odNum setText:[[self.stat valueForKey:@"OD"] stringValue]];
     [self.orNum setText:[[self.stat valueForKey:@"OR"] stringValue]];
     [self.vcNum setText:[[self.stat valueForKey:@"VC"] stringValue]];

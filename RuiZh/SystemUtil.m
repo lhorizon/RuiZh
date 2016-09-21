@@ -97,7 +97,7 @@
     range.location =7;
     [[NSScanner scannerWithString:[hexColor substringWithRange:range]]scanHexInt:&blue];
  
-        return [UIColor colorWithRed:(float)(red/255.0f)green:(float)(green/255.0f)blue:(float)(blue/255.0f)alpha:(float)(alpha/255.0f)];
+        return [UIColor colorWithRed:(float)(blue/255.0f)green:(float)(green/255.0f)blue:(float)(red/255.0f)alpha:(float)(alpha/255.0f)];
 }
 
 +(UIColor *) getColorFromDecimal:(NSString *)decimalString
