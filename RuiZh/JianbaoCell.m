@@ -63,6 +63,9 @@
                 NSString *value =[self.currentTime objectAtIndex:i];
 //                if(value !=nil && [value length]>0 {
                     value = [NSString stringWithFormat:@"%0.2f",  [[self.currentTime objectAtIndex:i] doubleValue]];
+                if([value containsString:@".00"]){
+                    value = [value substringToIndex:[value length]-3];
+                }
 //                }
 //                if(value!=nil&&[value containsString:@".00"]){
 //                    [leftHeadView setNum:[self.currentTime objectAtIndex:i]];
@@ -80,36 +83,7 @@
         }
     }
     
-    //    int count=roomAllType.count;
-    //    if(count>0){
-    //        for(int i=0;i<count;i++){
-    //
-    //            NSDictionary *model=roomAllType[i];
-    //
-    //            HeadView *headView;
-    ////            if([model.meetRoom isEqualToString:@"000"]){
-    ////
-    ////                headView=(HeadView *)self.contentView.subviews[0];
-    ////            }else{
-    ////
-    ////                NSArray *room=[model.meetRoom componentsSeparatedByString:@"0"];
-    //                headView=(HeadView *)self.contentView.subviews[1];
-    ////            }
-    ////            self.
-    //            headView.backgroundColor=[UIColor redColor];
-    //            [headView setNum:@"1"];
-    //            for(HeadView *leftHeadView in self.contentView.subviews){
-    //
-    //                if(headView!=leftHeadView) leftHeadView.backgroundColor=[UIColor whiteColor];
-    //            }
-    //        }
-    //    }else{
-    //
-    //        for(HeadView *headView in self.contentView.subviews){
-    //
-    //            headView.backgroundColor=[UIColor whiteColor];
-    //        }
-    //    }
+   
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
